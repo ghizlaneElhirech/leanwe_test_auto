@@ -1,19 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-29T12:57:14.516825" rpa="false" schemaversion="5">
-<suite id="s1" name="Tests-Suits" source="C:\Users\ad\projects\Test\LeanweTest\tests-suits">
-<suite id="s1-s1" name="loginTest" source="C:\Users\ad\projects\Test\LeanweTest\tests-suits\loginTest.robot">
-<test id="s1-s1-t1" name="verifier la page d'accueil de l'application" line="5">
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-07-29T12:57:15.039663" level="INFO">"hello world"</msg>
-<arg>"hello world"</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-07-29T12:57:15.038551" elapsed="0.001112"/>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-29T14:46:34.745399" rpa="false" schemaversion="5">
+<suite id="s1" name="loginTest" source="C:\Users\ad\projects\Test\LeanweTest\tests-suits\loginTest.robot">
+<test id="s1-t1" name="verifier la page d'accueil de l'application" line="23">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-29T14:46:34.979808" level="INFO">Opening browser 'chrome' to base url 'https://staging.leanwe.com'.</msg>
+<arg>${Leanwe_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-29T14:46:34.979808" elapsed="2.283118"/>
 </kw>
-<status status="PASS" start="2024-07-29T12:57:15.036980" elapsed="0.003192"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-29T14:46:37.262926" elapsed="0.371745"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-29T14:46:39.636007" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-29T14:46:37.635741" elapsed="2.000266"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-29T14:46:39.636557" elapsed="0.087264"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-29T14:46:39.725121" level="INFO">Typing text 'samih.arjan@yopmail.com' into text field 'xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]'.</msg>
+<arg>xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]</arg>
+<arg>samih.arjan@yopmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-29T14:46:39.725121" elapsed="0.241896"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-29T14:46:39.967017" level="INFO">Typing text 'secret2023' into text field 'xpath=//input[@id='input-20']'.</msg>
+<arg>xpath=//input[@id='input-20']</arg>
+<arg>secret2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-29T14:46:39.967017" elapsed="0.179014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-29T14:46:40.147038" level="INFO">Clicking element 'xpath://body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/button[1]'.</msg>
+<arg>xpath://body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/button[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-29T14:46:40.146031" elapsed="0.071412"/>
+</kw>
+<status status="PASS" start="2024-07-29T14:46:34.979808" elapsed="5.239880"/>
 </test>
-<status status="PASS" start="2024-07-29T12:57:14.586891" elapsed="0.455615"/>
-</suite>
-<status status="PASS" start="2024-07-29T12:57:14.516825" elapsed="0.528706"/>
+<status status="PASS" start="2024-07-29T14:46:34.747101" elapsed="5.473092"/>
 </suite>
 <statistics>
 <total>
@@ -22,8 +55,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tests-Suits">Tests-Suits</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="loginTest">Tests-Suits.loginTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="loginTest">loginTest</stat>
 </suite>
 </statistics>
 <errors>

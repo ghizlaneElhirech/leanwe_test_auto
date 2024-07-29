@@ -14,12 +14,12 @@ jobs:
       uses: joonvena/robotframework-docker-action@v1.0
       with:
         robot_tests_dir: LeanweTest/tests-suits
-  #   - name: Store test report
-  #     uses: actions/upload-artifact@v1
-  #     if: always()
-  #     with:
-  #       name: reports
-  #       path: LeanweTest/output
+    - name: Store test report
+      uses: actions/upload-artifact@v1
+      if: always()
+      with:
+        name: reports
+        path: LeanweTest/output
 
   # report:
   #   if: always()

@@ -24,7 +24,7 @@ verifier la page d'accueil de l'application
     Open Browser    ${Leanwe_URL}    ${BROWSER}
     Maximize Browser Window
     Sleep     2s
-    Wait Until Element Is Visible    xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+    Wait Until Element Is Visible    
     input text       xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]      samih.arjan@yopmail.com
     input text       xpath=//input[@id='input-20']         secret2023
     click element    xpath://body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/button[1]

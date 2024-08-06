@@ -1,0 +1,5 @@
+Prenom,Nom,Type,phone,adresse,Pays,Ville,tarif journalier moyen,Reference,Post,Email
+Halim,Auto,business,+33-0626222038,44 rue Paul Bert,France,Aulnay-sous-Bois,600,2004,Java,Halim-auto2@guerrillamail.com
+Seellay,marina,internal,+33-780639009,"29, rue du al De Gaulle ",France,Villeneuve-le-Roi,330,2003,Data,seellay22@guerrillamail.com
+Ihssan,Benhima,internal,-780638976,"29, rue du Gral De Gaulle ",Maroc,Paris,300,2001,Data,ihssan.benhima1@guerrillamail.com
+Salomeh,Firass,external,+33 756784533,"800, rue de label paris",Egypt,Cairo,400,2002,Design,salomeh@guerrillamail.com

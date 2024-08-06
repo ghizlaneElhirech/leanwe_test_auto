@@ -159,7 +159,7 @@ ${RESOURCE_IMPORT_ITEM}                    xpath=//body/div[@id='spark-app']/div
 ${UPLOAD_FILE_FIELD}                       xpath://body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${COLLABORATORS_TYPE}                      xpath=//body/div[@id='spark-app']/div[@id='app']/div[2]/div[1]/div[1]/div[1]
 ${RESOURCE_TYPE_FIELD}                     xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PATH_TO_COLLABORATORS_FILE}              C:/Users/SanaaBOULLOUZ/Documents/employees-auto.csv 
+${PATH_TO_COLLABORATORS_FILE}              ${CURDIR}/ressources//employees-auto.csv 
 ${NAME_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${NAME_VALUE}                              Nom
 ${PRENOM_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
@@ -187,6 +187,16 @@ ${REFERENCE_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/
 ${REFERENCE_VALUE}                         Reference
 ${IMPORT_BUTTON}                           xpath=//button[@cy-data="nextStep_btn"]
 ${IMPORT_SUCESS_NOTIFICATION}              Importation terminée.
+${API_URL}                                 https://staging-api.leanwe.com  # Replace with your actual API endpoint
+${BASE_URL}                                https://staging-api.leanwe.com/api/v1/esns/d11d8e1d-5874-4eda-9f6e-05eefddd09b7
+${AUTH_TOKEN}                              your-auth-token  # Replace with the actual token if needed
+${UNIQUE_DOMAIN}                           guerrillamail.com  # unique domain
+${UNIQUE_Prefix}                           Importeed
+${AUTH_ENDPOINT}                           /login                  # Replace with your authentication endpoint
+${EMAIL-token}                             redouane@yopmail.com  # Replace with your email
+${PASSWORD-token}                          secret2023 # Replace with your password
+${TOKEN}                                   None
+${EMPLOYEES_ENDPOINT}                     /employees
 
 # --------------------------------------------------Resource Import/subcontractors--------------------------
 

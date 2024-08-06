@@ -1,5 +1,6 @@
 *** Settings ***
 Library      SeleniumLibrary
+Library      RequestsLibrary 
 Library      Collections
 Library      DateTime
 Resource     VARIABLES.resource
@@ -464,4 +465,27 @@ APPLY FILTERS IN PURCHASE PAGE
     Wait Until Element Is Visible         ${PURCHASE_CARD_TITLE_LOCATOR}
     ${card_title_text}=    Get Text       ${PURCHASE_CARD_TITLE_LOCATOR}
     Should Be Equal As Strings            ${card_title_text}                 ${purchase_name} 
+
+# ----------------------------CLEAN UP DATA
+
+Authenticate User
+    [Documentation]  This keyword authenticates the user and retrieves the token
+    ${response}=  POST  ${API_URL}${AUTH_ENDPOINT}  json={"email": "${EMAIL-token}", "password": "${PASSWORD-token}"}
+    Should Be Equal As Strings  ${response.status_code}  200
+    ${token}=  Set Variable  ${response.json()['token']}
+    Set Global Variable  ${TOKEN}  ${token}
+Clean Up Imported Data
+    [Documentation]  This keyword deletes previously imported collaborator data
+    ${response}=  GET  ${BASE_URL}${EMPLOYEES_ENDPOINT}?search=${UNIQUE_PREFIX}  headers=Authorization=Bearer ${TOKEN}
+    Should Be Equal As Strings  ${response.status_code}  200
+    ${collaborators}=  Evaluate  [ item for item in $response.json()['data']['data']]  json
+    FOR  ${collaborator}  IN  @{collaborators}
+        ${collaborator_id}=  Set Variable  ${collaborator['uuid']}
+        DELETE Collaborator  ${collaborator_id}
+    END
+
+DELETE Collaborator
+    [Arguments]  ${collaborator_id}
+    ${response}=  DELETE  ${BASE_URL}${EMPLOYEES_ENDPOINT}/${collaborator_id}  headers=Authorization=Bearer ${TOKEN}
+    Should Be Equal As Strings  ${response.status_code}  204
                       

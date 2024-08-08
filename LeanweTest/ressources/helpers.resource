@@ -20,7 +20,7 @@ Open Browser And Login
     LOG IN AS SUPPORT
 
 Close Browser
-    Close Browser
+    Close All Browsers
 
 Scroll Down
     Execute JavaScript            window.scrollBy(0, 200)
@@ -367,7 +367,7 @@ CLICK THE IMPORT BUTTON
     Wait Until Element Is Visible             ${IMPORT_BUTTON}
     Click Element                             ${IMPORT_BUTTON}   
 
-WAIT FOR THE IMPORT PROCESS TO FINISH SUCCESFULLY 
+WAIT FOR THE IMPORT PROCESS TO FINISH SUCCESSFULLY 
     Wait Until Page Contains                   Processus en cours 
     Wait Until Keyword Succeeds   7      7     Page Should Contain               Aucun processus d'importation n'est actuellement en cours.
     Wait Until Keyword Succeeds   7      7     Wait Until Page Contains             Importation terminée.  
@@ -470,15 +470,23 @@ APPLY FILTERS IN PURCHASE PAGE
 
 Authenticate User
     [Documentation]  This keyword authenticates the user and retrieves the token
-    ${response}=  POST  ${API_URL}${AUTH_ENDPOINT}  json={"email": "${EMAIL-token}", "password": "${PASSWORD-token}"}
+    ${headers}=  Create Dictionary  Accept=application/json  Content-Type=application/json
+    ${payload}=  Create Dictionary  email=${EMAIL-token}  password=${PASSWORD-token}
+    ${response}=  POST  ${API_URL}  headers=${headers}  json=${payload}
+    Log  ${response.status_code}
+    Log  ${response.text}
     Should Be Equal As Strings  ${response.status_code}  200
     ${token}=  Set Variable  ${response.json()['token']}
     Set Global Variable  ${TOKEN}  ${token}
 Clean Up Imported Data
     [Documentation]  This keyword deletes previously imported collaborator data
-    ${response}=  GET  ${BASE_URL}${EMPLOYEES_ENDPOINT}?search=${UNIQUE_PREFIX}  headers=Authorization=Bearer ${TOKEN}
+    ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
+    ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}?search=${UNIQUE_PREFIX}
+    ${response}=  GET  ${url}  headers=${headers}
+    Log  ${response.status_code}
+    Log  ${response.text}
     Should Be Equal As Strings  ${response.status_code}  200
-    ${collaborators}=  Evaluate  [ item for item in $response.json()['data']['data']]  json
+    ${collaborators}=  Evaluate  [item for item in $response.json()['data']['data']]  json
     FOR  ${collaborator}  IN  @{collaborators}
         ${collaborator_id}=  Set Variable  ${collaborator['uuid']}
         DELETE Collaborator  ${collaborator_id}
@@ -486,6 +494,11 @@ Clean Up Imported Data
 
 DELETE Collaborator
     [Arguments]  ${collaborator_id}
-    ${response}=  DELETE  ${BASE_URL}${EMPLOYEES_ENDPOINT}/${collaborator_id}  headers=Authorization=Bearer ${TOKEN}
-    Should Be Equal As Strings  ${response.status_code}  204
+    ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
+    ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}/${collaborator_id}/for_tests
+    ${response}=  DELETE  ${url}  headers=${headers}
+    Log  ${response.status_code}
+    Log  ${response.text}
+    Should Be Equal As Strings  ${response.status_code}  201
+    
                       

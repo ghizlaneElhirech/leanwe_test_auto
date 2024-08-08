@@ -5,7 +5,7 @@ ${LOGIN_PAGE_FORM_USERNAME_INPUT}        xpath=//input[@name="email"]
 ${LOGIN_PAGE_FORM_PASSWORD_INPUT}        xpath=//input[@name="password"]
 ${sidebar_Xpath}                         xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/aside[1]/div[2]
 ${CONTRACT_ITEM}                         xpath=//body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[2]/div[1]/aside[1]/div[2]/div[1]/div[1]/div[1]/div[2]
-${LOGIN_BUTTON}                          xpath://body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/button[1] 
+${LOGIN_BUTTON}                          xpath://body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/button[1] 
 ${DASHBOARD_TITLE_XPATH}                 xpath=//span[contains(text(),'Tableau de Bord')]
 ${ACESS_CONTRACTS_PAGE}                  xpath=//div[contains(text(),'Les Contrats')]
 ${CONTRACTS_TITLE_XPATH}                 xpath=//span[contains(text(),'Contrats')]
@@ -156,10 +156,10 @@ ${timesheet_day_14}                        xpath=//tbody/tr[1]/td[15e]/div[1]
 
 # --------------------------------------Resource Import/collab--------------------------------------
 ${RESOURCE_IMPORT_ITEM}                    xpath=//body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[2]/div[1]/aside[1]/div[2]/div[1]/a[2]/div[2]
-${UPLOAD_FILE_FIELD}                       xpath://body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+${UPLOAD_FILE_FIELD}                       xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${COLLABORATORS_TYPE}                      xpath=//body/div[@id='spark-app']/div[@id='app']/div[2]/div[1]/div[1]/div[1]
 ${RESOURCE_TYPE_FIELD}                     xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PATH_TO_COLLABORATORS_FILE}              ${CURDIR}/ressources//employees-auto.csv 
+${PATH_TO_COLLABORATORS_FILE}              C:/TESTS/LenweTests/leanwe-test-auto/LeanweTest/ressources/employees-auto.csv          #${CURDIR}/ressources//employees-auto.csv 
 ${NAME_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${NAME_VALUE}                              Nom
 ${PRENOM_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
@@ -187,14 +187,14 @@ ${REFERENCE_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/
 ${REFERENCE_VALUE}                         Reference
 ${IMPORT_BUTTON}                           xpath=//button[@cy-data="nextStep_btn"]
 ${IMPORT_SUCESS_NOTIFICATION}              Importation terminée.
-${API_URL}                                 https://staging-api.leanwe.com  # Replace with your actual API endpoint
+${API_URL}                                 https://staging-api.leanwe.com/login  # Replace with your actual API endpoint
 ${BASE_URL}                                https://staging-api.leanwe.com/api/v1/esns/d11d8e1d-5874-4eda-9f6e-05eefddd09b7
 ${AUTH_TOKEN}                              your-auth-token  # Replace with the actual token if needed
 ${UNIQUE_DOMAIN}                           guerrillamail.com  # unique domain
 ${UNIQUE_Prefix}                           Importeed
 ${AUTH_ENDPOINT}                           /login                  # Replace with your authentication endpoint
-${EMAIL-token}                             redouane@yopmail.com  # Replace with your email
-${PASSWORD-token}                          secret2023 # Replace with your password
+${EMAIL-token}                             redouane@yopmail.com  
+${PASSWORD-token}                          secret2023       
 ${TOKEN}                                   None
 ${EMPLOYEES_ENDPOINT}                     /employees
 

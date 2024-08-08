@@ -1,9 +1,8 @@
 *** Settings ***
 Library            SeleniumLibrary
 Library            Collections
-Resource          ../ressources/helpers.resource
-Suite Setup       Open Browser And Login
-Suite Teardown    SeleniumLibrary.Close Browser
+Resource           ../ressources/helpers.resource
+Suite Teardown        SeleniumLibrary.Close Browser
 
 
 *** Variables ***

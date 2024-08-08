@@ -1,7 +1,7 @@
 *** Settings ***
 Library            SeleniumLibrary
 Library            Collections
-Resource           ../ressources/helpers.resource
+Resource           C:\TESTS\LenweTests\leanwe-test-auto\LeanweTest\ressources\helpers.resource
 Suite Teardown        SeleniumLibrary.Close Browser
 
 

@@ -10,12 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: List directories
-      run: ls -R LeanweTest
     - name: Run tests
       uses: joonvena/robotframework-docker-action@v1.0
       with:
-        robot_tests_dir: LeanweTest/tests-suits
+        robot_tests_dir: LeanweTest
     - name: Store test report
       uses: actions/upload-artifact@v1
       if: always()

@@ -3,7 +3,7 @@
 Library          SeleniumLibrary
 Library          Process
 Library          Collections
-Resource        ../ressources/helpers.resource
+Resource         LeanweTest/ressources/helpers.resource
 
 
 *** Test Cases ***

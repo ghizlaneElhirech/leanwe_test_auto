@@ -1,8 +1,8 @@
 *** Settings ***
 Library            SeleniumLibrary
 Library            Collections
-Resource           ../ressources/helpers.resource
-Suite Teardown        SeleniumLibrary.Close Browser
+Resource           LeanweTest/ressources/helpers.resource
+Suite Teardown     SeleniumLibrary.Close Browser
 
 
 *** Variables ***

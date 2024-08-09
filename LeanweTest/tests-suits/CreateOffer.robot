@@ -1,7 +1,7 @@
 *** Settings ***
 Library            SeleniumLibrary
 Library            Collections
-Resource           LeanweTest/ressources/helpers.resource
+Resource           ../ressources/helpers.resource
 Suite Teardown     SeleniumLibrary.Close Browser
 
 

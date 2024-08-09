@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: List directories
+      run: ls -R /opt/robotframework/tests
     - name: Run tests
       uses: joonvena/robotframework-docker-action@v1.0
       with:

@@ -1,7 +1,7 @@
 *** Settings ***
 Library            SeleniumLibrary
 Library            Collections
-Resource           ../../ressources/helpers.resource
+Resource           ${CURDIR}/../ressources/helpers.resource
 Suite Teardown        SeleniumLibrary.Close Browser
 
 

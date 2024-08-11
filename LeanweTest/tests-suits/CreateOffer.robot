@@ -10,6 +10,7 @@ Suite Teardown        SeleniumLibrary.Close Browser
 
 *** Test Cases ***
 CREATE A NEW OFFER
+    LOG IN AS SUPPORT
     SELECT OFFER FROM SIDEBAR 
     CLICK THE ADD NEW BUTTON 
     ${offer_name}=     FILL OUT THE OFFER CREATION FORM 

@@ -181,7 +181,7 @@ CHECK THE DISPLAY OF SUCCESS NOTIFICATION
 Get Dynamic Offer Card Title Locator
     [Arguments]    ${offer_name}
     ${locator}=    Set Variable    xpath=//span[contains(text(),"${offer_name}")]
-    [Return]    ${locator}
+    RETURN     ${locator}
 SEARSH FOR NEW OFFER
     [Arguments]                               ${searched_offer} 
     Wait Until Page Contains                  Nouvelle Offre

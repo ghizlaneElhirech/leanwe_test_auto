@@ -214,6 +214,7 @@ Apply Filters And Verify Results
     Wait Until Element Is Visible         ${SELECTED_STATUS}   
     Click Element                         ${SELECTED_STATUS}
     Wait Until Element Is Visible         ${OFFER_CARD_TITLE_LOCATOR}
+    sleep  3s
     ${card_title_text}=    Get Text       ${OFFER_CARD_TITLE_LOCATOR}
     Should Be Equal As Strings            ${card_title_text}                 ${offer_name}
     # Wait Until Page Contains         ${offer_name}

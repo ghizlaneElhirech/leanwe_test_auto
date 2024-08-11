@@ -159,7 +159,7 @@ ${RESOURCE_IMPORT_ITEM}                    xpath=//body/div[@id='spark-app']/div
 ${UPLOAD_FILE_FIELD}                       xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${COLLABORATORS_TYPE}                      xpath=//body/div[@id='spark-app']/div[@id='app']/div[2]/div[1]/div[1]/div[1]
 ${RESOURCE_TYPE_FIELD}                     xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PATH_TO_COLLABORATORS_FILE}              C:/TESTS/LenweTests/leanwe-test-auto/LeanweTest/ressources/employees-auto.csv          #${CURDIR}/ressources//employees-auto.csv 
+${PATH_TO_COLLABORATORS_FILE}              employees-auto.csv          #${CURDIR}/ressources//employees-auto.csv 
 ${NAME_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${NAME_VALUE}                              Nom
 ${PRENOM_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]

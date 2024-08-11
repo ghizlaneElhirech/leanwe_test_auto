@@ -4,6 +4,7 @@ Library          SeleniumLibrary
 Library          Process
 Library          Collections
 Resource        ../ressources/helpers.resource
+Test Teardown      SeleniumLibrary.Close Browser  
 
 
 *** Test Cases ***
@@ -16,7 +17,7 @@ Import collaborators from a csv File
     UPLOAD FILE                             ${PATH_TO_COLLABORATORS_FILE}
     ASSOCIATION OF COLUMNS COLLABORATORS
     CLICK THE IMPORT BUTTON
-    WAIT FOR THE IMPORT PROCESS TO FINISH SUCCESFULLY 
+    WAIT FOR THE IMPORT PROCESS TO FINISH SUCCESSFULLY 
    
 
-*** Keywords ***
+

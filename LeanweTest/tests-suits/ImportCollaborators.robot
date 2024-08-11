@@ -3,12 +3,8 @@
 Library          SeleniumLibrary
 Library          Process
 Library          Collections
-<<<<<<< HEAD
 Resource        ../ressources/helpers.resource
 Test Teardown      SeleniumLibrary.Close Browser  
-=======
-Resource         ../ressources/helpers.resource
->>>>>>> a675dbe3e6592d8686da5d11783921b09a32f992
 
 
 *** Test Cases ***

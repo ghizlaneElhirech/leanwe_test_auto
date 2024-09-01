@@ -122,6 +122,32 @@ ${MIN_MONTHS}                             0
 ${MAX_MONTHS}                             33
 ${MAX_TJM}                                900
 ${OFFER_CARD_TITLE_LOCATOR}               xpath=//main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]/div[1]/span[1]
+
+# --------------------------------COLLABORATOR VARIABLES-----------------------------------------
+
+${COLLABORATOR_SIDEBAR_ITEM}                xpath=//div[contains(text(),'Collaborateurs')]
+${NEW_COLLABORATOR_BTN}                     xpath=//button/span/span[contains(text(), 'Nouveau collaborateur')]
+${COLLABORATOR_CREATE_BTN}                  xpath=//Button[@cy-data="addEmployee_btn"]
+${COLLABORATOR_FIRSTNAME}                   xpath=//input[@cy-data="firstName_field"]
+${COLLABORATOR_LASTNAME}                    xpath=//input[@cy-data="lastName_field"]
+${COLLABORATOR_POSITION}                    xpath=//input[@cy-data="position_field"]
+${COLLABORATOR_PHONE}                       xpath=//input[@cy-data="phone_field"]
+${COLLABORATOR_EMAIL}                       xpath=//input[@cy-data="email_field"]
+${COLLABORATOR_BUSINESS_UNIT}               xpath=//input[@cy-data="businessUnit_autocomplete"]
+${COLLABORATOR_BUSINESS_UNIT_OPTION}        xpath=//div[contains(text(),'Factory department')]
+${COLLABORATOR_MANAGER}                     xpath=//input[@cy-data="manager_select"]
+${COLLABORATOR_MANAGER_OPTION}              xpath=//div[contains(text(),'REDOUANE LABDOUI')]
+${COLLABORATOR_EXPERIENCE_LEVEL}            xpath=//input[@cy-data="experience_level_select"]
+${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}     xpath=//div[contains(text(),'Senior')]
+${COLLABORATOR_SALARY_BRUT}                 xpath=//input[@cy-data="salaryBrut"]
+${COLLABORATOR_SALARY_COEF}                 xpath=//input[@cy-data="salaryCoef_field"]
+${COLLABORATOR_CJM}                         xpath=//input[@cy-data="cjm_field"]
+${COLLABORATOR_TJM}                         xpath=//input[@cy-data="tjm_field"]
+${COLLABORATOR_CURRENCY}                    xpath=//input[@cy-data="currency_select"]
+${COLLABORATOR_CURRENCY_OPTION}             xpath=//div[contains(text(),'Euro (€)')]
+${COLLABORATOR_RTT}                         xpath=//input[@cy-data="rtt_field"]
+${COLLABORATOR_CP}                          xpath=//input[@cy-data="cp_field"]
+
 # --------------------------------Drag & Drop Applications------------------------------------
 
 # ${OFFER_APPLICANT_CANDIDATURE}             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]

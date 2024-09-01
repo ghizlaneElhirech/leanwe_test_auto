@@ -357,7 +357,7 @@
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
 <status status="PASS" start="2024-08-11T18:09:05.874574" elapsed="0.000000"/>
 </kw>
-<kw name="SEARSH FOR NEW OFFER" owner="helpers">
+<kw name="SEARCH FOR NEW OFFER" owner="helpers">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Nouvelle Offre</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>

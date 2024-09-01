@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.10.6 on win32)" generated="2024-09-01T13:09:31.197560" rpa="false" schemaversion="5">
+<suite id="s1" name="CreateCollaborator" source="C:\Users\makhe\Projects\leanwe-test-auto\LeanweTest\tests-suits\CreateCollaborator.robot">
+<test id="s1-t1" name="CREATE A NEW OFFER" line="12">
+<kw name="LOG IN AS SUPPORT" owner="helpers">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:31.927482" level="INFO">Opening browser 'chrome' to base url 'https://staging.leanwe.com'.</msg>
+<arg>${Leanwe_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-01T13:09:31.927482" elapsed="6.684562"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-01T13:09:38.613043" elapsed="0.401523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:39.015564" elapsed="0.796332"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:39.812458" elapsed="0.069967"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:39.883912" level="INFO">Typing text 'redouane@yopmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
+<arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
+<arg>redouane@yopmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:39.882425" elapsed="0.524016"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:40.407443" level="INFO">Typing text 'secret2023' into text field 'xpath=//input[@name="password"]'.</msg>
+<arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
+<arg>secret2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:40.406441" elapsed="0.308374"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:40.714815" level="INFO">Clicking element 'xpath://body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/button[1]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:40.714815" elapsed="0.128202"/>
+</kw>
+<status status="PASS" start="2024-09-01T13:09:31.926482" elapsed="8.917873"/>
+</kw>
+<kw name="SELECT COLLABORATOR FROM SIDEBAR" owner="helpers">
+<kw name="SELECT ITEM FROM SIDEBAR" owner="helpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${DASHBOARD_TITLE_XPATH}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-01T13:09:40.845359" elapsed="3.257606"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:44.130726" level="INFO">${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="106ba7c2582e03f5bb7ffcf2b956b8cd", element="f.CF05A2AECE5DB8CD4462A9BA17EE524C.d.EBED3F0EF34F8D21472A4C34CBB06D36.e.93")&gt;</msg>
+<var>${sidebar_element}</var>
+<arg>${sidebar_Xpath}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:44.103526" elapsed="0.027200"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:44.131729" level="INFO">Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="106ba7c2582e03f5bb7ffcf2b956b8cd", element="f.CF05A2AECE5DB8CD4462A9BA17EE524C.d.EBED3F0EF34F8D21472A4C34CBB06D36.e.93")&gt;'.</msg>
+<arg>${sidebar_element}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:44.131729" elapsed="0.397830"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${SIDEBAR_ITEM_TITLE}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-01T13:09:44.529559" elapsed="0.059461"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:44.592069" level="INFO">Clicking element 'xpath=//div[contains(text(),'Collaborateurs')]'.</msg>
+<arg>${SIDEBAR_ITEM_TITLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:44.590391" elapsed="0.367254"/>
+</kw>
+<return>
+<value>${sidebar_element}</value>
+<status status="PASS" start="2024-09-01T13:09:44.958212" elapsed="0.000000"/>
+</return>
+<arg>${COLLABORATOR_SIDEBAR_ITEM}</arg>
+<status status="PASS" start="2024-09-01T13:09:40.845359" elapsed="4.113691"/>
+</kw>
+<status status="PASS" start="2024-09-01T13:09:40.845359" elapsed="4.114244"/>
+</kw>
+<kw name="CLICK THE ADD NEW COLLABORATOR BUTTON" owner="helpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NEW_COLLABORATOR_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:44.961785" elapsed="0.265140"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:45.227925" level="INFO">Clicking element 'xpath=//button/span/span[contains(text(), 'Nouveau collaborateur')]'.</msg>
+<arg>${NEW_COLLABORATOR_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:45.226925" elapsed="0.283960"/>
+</kw>
+<status status="PASS" start="2024-09-01T13:09:44.960714" elapsed="0.550716"/>
+</kw>
+<kw name="FILL OUT THE COLLABORATOR CREATION FORM" owner="helpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COLLABORATOR_FIRSTNAME}</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:45.513632" elapsed="0.923935"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-09-01T13:09:46.438565" level="INFO">${current_datetime} = 20240901130946</msg>
+<var>${current_datetime}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-09-01T13:09:46.438565" elapsed="0.000997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:46.440704" level="INFO">Clicking element 'xpath=//input[@cy-data="firstName_field"]'.</msg>
+<arg>${COLLABORATOR_FIRSTNAME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:46.439562" elapsed="0.942418"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:47.382980" level="INFO">Typing text 'John' into text field 'xpath=//input[@cy-data="firstName_field"]'.</msg>
+<arg>${COLLABORATOR_FIRSTNAME}</arg>
+<arg>John</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:47.382980" elapsed="0.318052"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:47.702036" level="INFO">Typing text 'Doe' into text field 'xpath=//input[@cy-data="lastName_field"]'.</msg>
+<arg>${COLLABORATOR_LASTNAME}</arg>
+<arg>Doe</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:47.701032" elapsed="0.264523"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:47.967077" level="INFO">Typing text 'Software Engineer' into text field 'xpath=//input[@cy-data="position_field"]'.</msg>
+<arg>${COLLABORATOR_POSITION}</arg>
+<arg>Software Engineer</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:47.966555" elapsed="0.676308"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:48.645381" level="INFO">Typing text '634567890' into text field 'xpath=//input[@cy-data="phone_field"]'.</msg>
+<arg>${COLLABORATOR_PHONE}</arg>
+<arg>634567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:48.643859" elapsed="0.363426"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:49.008911" level="INFO">Typing text 'john.doe@example.com' into text field 'xpath=//input[@cy-data="email_field"]'.</msg>
+<arg>${COLLABORATOR_EMAIL}</arg>
+<arg>john.doe@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:49.008364" elapsed="0.655962"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:49.666323" level="INFO">Typing text 'Digitale' into text field 'xpath=//input[@cy-data="businessUnit_autocomplete"]'.</msg>
+<arg>${COLLABORATOR_BUSINESS_UNIT}</arg>
+<arg>Digitale</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:49.665334" elapsed="0.345738"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COLLABORATOR_BUSINESS_UNIT_OPTION}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:50.011072" elapsed="1.036591"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:51.048663" level="INFO">Clicking element 'xpath=//div[contains(text(),'Factory department')]'.</msg>
+<arg>${COLLABORATOR_BUSINESS_UNIT_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:51.048663" elapsed="0.254950"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:51.306441" level="INFO">Clicking element 'xpath=//input[@cy-data="manager_select"]'.</msg>
+<arg>${COLLABORATOR_MANAGER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:51.304805" elapsed="0.348383"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COLLABORATOR_MANAGER_OPTION}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:51.653188" elapsed="0.108803"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:51.762990" level="INFO">Clicking element 'xpath=//div[contains(text(),'REDOUANE LABDOUI')]'.</msg>
+<arg>${COLLABORATOR_MANAGER_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:51.762990" elapsed="0.216697"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:51.981697" level="INFO">Clicking element 'xpath=//input[@cy-data="experience_level_select"]'.</msg>
+<arg>${COLLABORATOR_EXPERIENCE_LEVEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:51.980703" elapsed="0.236850"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:52.217553" elapsed="0.115485"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:52.333038" level="INFO">Clicking element 'xpath=//div[contains(text(),'Senior')]'.</msg>
+<arg>${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:52.333038" elapsed="0.200901"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:52.536068" level="INFO">Typing text '60000' into text field 'xpath=//input[@cy-data="salaryBrut"]'.</msg>
+<arg>${COLLABORATOR_SALARY_BRUT}</arg>
+<arg>60000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:52.535067" elapsed="0.529521"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:53.066585" level="INFO">Typing text '1.2' into text field 'xpath=//input[@cy-data="salaryCoef_field"]'.</msg>
+<arg>${COLLABORATOR_SALARY_COEF}</arg>
+<arg>1.2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:53.065585" elapsed="0.558567"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:53.626198" level="INFO">Clicking element 'xpath=//input[@cy-data="currency_select"]'.</msg>
+<arg>${COLLABORATOR_CURRENCY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:53.625155" elapsed="0.252346"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COLLABORATOR_CURRENCY_OPTION}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-01T13:09:53.877894" elapsed="0.083701"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:53.963803" level="INFO">Clicking element 'xpath=//div[contains(text(),'Euro (€)')]'.</msg>
+<arg>${COLLABORATOR_CURRENCY_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:53.962595" elapsed="0.217952"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:54.181542" level="INFO">Typing text '12' into text field 'xpath=//input[@cy-data="rtt_field"]'.</msg>
+<arg>${COLLABORATOR_RTT}</arg>
+<arg>12</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:54.180547" elapsed="0.336369"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:54.518121" level="INFO">Typing text '25' into text field 'xpath=//input[@cy-data="cp_field"]'.</msg>
+<arg>${COLLABORATOR_CP}</arg>
+<arg>25</arg>
+<arg>timeout=4s</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:54.517955" elapsed="0.265158"/>
+</kw>
+<return>
+<status status="PASS" start="2024-09-01T13:09:54.783113" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-01T13:09:54.784112" level="INFO">${offer_name} = None</msg>
+<var>${offer_name}</var>
+<status status="PASS" start="2024-09-01T13:09:45.512986" elapsed="9.271126"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-01T13:09:54.786125" level="INFO">Created collaborator name: None</msg>
+<arg>Created collaborator name: ${offer_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-01T13:09:54.785109" elapsed="0.001016"/>
+</kw>
+<kw name="SUBMIT THE COLLABORATOR FORM" owner="helpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-01T13:09:54.789574" level="INFO">Clicking element 'xpath=//Button[@cy-data="addEmployee_btn"]'.</msg>
+<arg>${COLLABORATOR_CREATE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-01T13:09:54.789116" elapsed="0.195296"/>
+</kw>
+<status status="PASS" start="2024-09-01T13:09:54.788107" elapsed="0.196609"/>
+</kw>
+<status status="PASS" start="2024-09-01T13:09:31.925481" elapsed="23.060160"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-01T13:09:54.995081" elapsed="2.627609"/>
+</kw>
+<status status="PASS" start="2024-09-01T13:09:31.202730" elapsed="26.420562"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CreateCollaborator">CreateCollaborator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -147,7 +147,7 @@ ${COLLABORATOR_CURRENCY}                    xpath=//input[@cy-data="currency_sel
 ${COLLABORATOR_CURRENCY_OPTION}             xpath=//div[contains(text(),'Euro (€)')]
 ${COLLABORATOR_RTT}                         xpath=//input[@cy-data="rtt_field"]
 ${COLLABORATOR_CP}                          xpath=//input[@cy-data="cp_field"]
-
+${COLLABORATOR_SUCCESS_NOTIFICATION}        Collaborateur créé avec succès
 # --------------------------------Drag & Drop Applications------------------------------------
 
 # ${OFFER_APPLICANT_CANDIDATURE}             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]

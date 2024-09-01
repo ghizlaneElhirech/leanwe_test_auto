@@ -252,9 +252,9 @@ FILL OUT THE COLLABORATOR CREATION FORM
     Click Element                             ${COLLABORATOR_FIRSTNAME}             
     Input Text                                ${COLLABORATOR_FIRSTNAME}                    John   
     Input Text                                ${COLLABORATOR_LASTNAME}                     Doe   
-    Input Text                                ${COLLABORATOR_POSITION}                     Software Engineer
+    Input Text                                ${COLLABORATOR_POSITION}                     Software Engineer ${current_datetime}
     Input Text                                ${COLLABORATOR_PHONE}                        634567890
-    Input Text                                ${COLLABORATOR_EMAIL}                        john.doe@example.com
+    Input Text                                ${COLLABORATOR_EMAIL}                        john.doe${current_datetime}@example.com
     Input Text                                ${COLLABORATOR_BUSINESS_UNIT}                Digitale
     Wait Until Element Is Visible             ${COLLABORATOR_BUSINESS_UNIT_OPTION}         timeout=2s                            
     Click Element                             ${COLLABORATOR_BUSINESS_UNIT_OPTION}
@@ -264,17 +264,21 @@ FILL OUT THE COLLABORATOR CREATION FORM
     Click Element                             ${COLLABORATOR_EXPERIENCE_LEVEL}
     Wait Until Element Is Visible             ${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}      timeout=2s                            
     Click Element                             ${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}   
-    Input Text                                ${COLLABORATOR_SALARY_BRUT}                  60000
-    Input Text                                ${COLLABORATOR_SALARY_COEF}                  1.2
+    Input Text                                ${COLLABORATOR_SALARY_BRUT}                  12000
+    # Input Text                                ${COLLABORATOR_SALARY_COEF}                  1.2
     Click Element                             ${COLLABORATOR_CURRENCY}
     Wait Until Element Is Visible             ${COLLABORATOR_CURRENCY_OPTION}              timeout=2s                            
     Click Element                             ${COLLABORATOR_CURRENCY_OPTION}   
     Input Text                                ${COLLABORATOR_RTT}                          12
     Input Text                                ${COLLABORATOR_CP}                           25        timeout=4s
-    RETURN
+    RETURN                                    Software Engineer ${current_datetime}
 
 SUBMIT THE COLLABORATOR FORM 
     Click Element                             ${COLLABORATOR_CREATE_BTN}
+
+CHECK THE DISPLAY OF SUCCESS NOTIFICATION FOR COLLABORATOR CREATION
+    Wait Until Element Is Visible             ${SNACKBAR_SUCCESS} 
+    Element Should Contain                    ${SNACKBAR_SUCCESS}                ${COLLABORATOR_SUCCESS_NOTIFICATION}
 
 # ----------------------------------IMPORTCOLLABORATOR------------------------------------
 NAVIGATE TO RESOURCE IMPORT PAGE 

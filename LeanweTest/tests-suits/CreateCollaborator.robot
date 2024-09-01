@@ -13,10 +13,11 @@ CREATE A NEW COLLABORATOR
     LOG IN AS SUPPORT    
     SELECT COLLABORATOR FROM SIDEBAR 
     CLICK THE ADD NEW COLLABORATOR BUTTON
-    ${collaborator_name}=     FILL OUT THE COLLABORATOR CREATION FORM 
-    Set Global Variable    ${GLOBAL_OFFER_NAME}    ${offer_name}
-    Log    Created offer name: ${offer_name}
+    ${collaborator_job_post}=     FILL OUT THE COLLABORATOR CREATION FORM 
+    Set Global Variable    ${COLLABORATOR_SEARCH_VALUE}    ${collaborator_job_post}
+    Log    Created offer name: ${collaborator_job_post}
     SUBMIT THE COLLABORATOR FORM 
+    CHECK THE DISPLAY OF SUCCESS NOTIFICATION FOR COLLABORATOR CREATION
 
 # VERIFY THE OFFER EXISTENCE
 #     ${offer_name}=    Get Variable Value    ${GLOBAL_OFFER_NAME}

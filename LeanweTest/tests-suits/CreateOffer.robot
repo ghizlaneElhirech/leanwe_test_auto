@@ -1,7 +1,7 @@
 *** Settings ***
 Library            SeleniumLibrary
 Library            Collections
-Resource           ../ressources/helpers.resource
+Resource           ../ressources/HELPERS/offerTestHelpers.resource
 Suite Teardown        SeleniumLibrary.Close Browser
 
 

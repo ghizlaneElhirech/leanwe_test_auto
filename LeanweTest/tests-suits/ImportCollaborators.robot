@@ -3,7 +3,7 @@
 Library          SeleniumLibrary
 Library          Process
 Library          Collections
-Resource        ../ressources/helpers.resource
+Resource        ../ressources/HELPERS/importCollaboratorsHelpers.resource
 Test Teardown      SeleniumLibrary.Close Browser  
 
 

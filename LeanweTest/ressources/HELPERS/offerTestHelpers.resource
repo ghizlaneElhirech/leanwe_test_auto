@@ -10,7 +10,7 @@ Resource     GlobalHelpers.resource
 *** Keywords ***
 SELECT OFFER FROM SIDEBAR 
     SELECT ITEM FROM SIDEBAR                    ${OFFER_SIDEBAR_ITEM}
-CLICK THE ADD NEW BUTTON 
+CLICK THE ADD NEW OFFER BUTTON 
     Wait Until Element Is Visible             ${NEW_OFFER_BTN}
     Click Element                             ${NEW_OFFER_BTN}
 
@@ -91,6 +91,6 @@ Apply Filters And Verify Results
     Wait Until Element Is Visible         ${SELECTED_STATUS}   
     Click Element                         ${SELECTED_STATUS}
     Wait Until Element Is Visible         ${OFFER_CARD_TITLE_LOCATOR}
-    sleep  3s
+    sleep  4s
     ${card_title_text}=    Get Text       ${OFFER_CARD_TITLE_LOCATOR}
     Should Be Equal As Strings            ${card_title_text}                 ${offer_name}

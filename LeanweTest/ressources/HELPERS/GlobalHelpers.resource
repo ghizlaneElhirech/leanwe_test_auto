@@ -238,49 +238,6 @@ LOG IN AS COLLABORATOR
     input text                                ${LOGIN_PAGE_FORM_PASSWORD_INPUT}      ${PASSWORD}
     click element                             ${LOGIN_BUTTON}
 
-# --------------------------------------------COLLABORATORS---------------------------------
-SELECT COLLABORATOR FROM SIDEBAR 
-    SELECT ITEM FROM SIDEBAR                    ${COLLABORATOR_SIDEBAR_ITEM}
-
-CLICK THE ADD NEW COLLABORATOR BUTTON 
-    Wait Until Element Is Visible             ${NEW_COLLABORATOR_BTN}
-    Click Element                             ${NEW_COLLABORATOR_BTN}
-
-
-FILL OUT THE COLLABORATOR CREATION FORM 
-    Wait Until Element Is Visible             ${COLLABORATOR_FIRSTNAME}                    timeout=4s  
-    ${current_datetime}=    Get Current Date     result_format=%Y%m%d%H%M%S
-    Click Element                             ${COLLABORATOR_FIRSTNAME}             
-    Input Text                                ${COLLABORATOR_FIRSTNAME}                    John   
-    Input Text                                ${COLLABORATOR_LASTNAME}                     Doe   
-    Input Text                                ${COLLABORATOR_POSITION}                     Software Engineer ${current_datetime}
-    Input Text                                ${COLLABORATOR_PHONE}                        634567890
-    Input Text                                ${COLLABORATOR_EMAIL}                        john.doe${current_datetime}@example.com
-    Input Text                                ${COLLABORATOR_BUSINESS_UNIT}                Digitale
-    Wait Until Element Is Visible             ${COLLABORATOR_BUSINESS_UNIT_OPTION}         timeout=2s                            
-    Click Element                             ${COLLABORATOR_BUSINESS_UNIT_OPTION}
-    Click Element                             ${COLLABORATOR_MANAGER}
-    Wait Until Element Is Visible             ${COLLABORATOR_MANAGER_OPTION}               timeout=2s                            
-    Click Element                             ${COLLABORATOR_MANAGER_OPTION}   
-    Click Element                             ${COLLABORATOR_EXPERIENCE_LEVEL}
-    Wait Until Element Is Visible             ${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}      timeout=2s                            
-    Click Element                             ${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}   
-    Input Text                                ${COLLABORATOR_SALARY_BRUT}                  12000
-    # Input Text                                ${COLLABORATOR_SALARY_COEF}                  1.2
-    Click Element                             ${COLLABORATOR_CURRENCY}
-    Wait Until Element Is Visible             ${COLLABORATOR_CURRENCY_OPTION}              timeout=2s                            
-    Click Element                             ${COLLABORATOR_CURRENCY_OPTION}   
-    Input Text                                ${COLLABORATOR_RTT}                          12
-    Input Text                                ${COLLABORATOR_CP}                           25        timeout=4s
-    RETURN                                    Software Engineer ${current_datetime}
-
-SUBMIT THE COLLABORATOR FORM 
-    Click Element                             ${COLLABORATOR_CREATE_BTN}
-
-CHECK THE DISPLAY OF SUCCESS NOTIFICATION FOR COLLABORATOR CREATION
-    Wait Until Element Is Visible             ${SNACKBAR_SUCCESS} 
-    Element Should Contain                    ${SNACKBAR_SUCCESS}                ${COLLABORATOR_SUCCESS_NOTIFICATION}
-
 # ----------------------------------IMPORTCOLLABORATOR------------------------------------
 NAVIGATE TO RESOURCE IMPORT PAGE 
     Wait Until Element Is Visible             ${sidebar_Xpath}
@@ -329,18 +286,7 @@ ASSOCIATION OF COLUMNS SUBCONTRACTORS
     MAPPING FUNCTION                ${IBAN_FIELD}                               ${IBAN_VALUE}
     MAPPING FUNCTION                ${CONTACT_FIELD}                            ${CONTACT_VALUE}
 
-ASSOCIATION OF COLUMNS COLLABORATORS
-    MAPPING FUNCTION                ${NAME_FIELD}                               ${NAME_VALUE}
-    MAPPING FUNCTION                ${PRENOM_FIELD}                             ${PRENOM_VALUE}
-    MAPPING FUNCTION                ${POST_TITLE_FIELD}                         ${POST_TITLE_VALUE}
-    MAPPING FUNCTION                ${TYPE_FIELD}                               ${TYPE_VALUE}
-    MAPPING FUNCTION                ${EMAIL_FIELD}                              ${EMAIL_VALUE} 
-    MAPPING FUNCTION                ${TJM}                                      ${TJM_VALUE} 
-    MAPPING FUNCTION                ${PHONE_FIELD}                              ${PHONE_VALUE}
-    MAPPING FUNCTION                ${ADRESSE_FIELD}                            ${ADRESSE_VALUE}
-    MAPPING FUNCTION                ${COUNTRY_FIELD}                            ${COUNTRY_VALUE}
-    MAPPING FUNCTION                ${CITY_FIELD}                               ${CITY_VALUE}
-    MAPPING FUNCTION                ${REFERENCE_FIELD}                          ${REFERENCE_VALUE}
+
 
 ASSOCIATION OF COLUMNS CLIENTS
     MAPPING FUNCTION                ${CLIENT_REFERENCE_FIELD}                   ${CLIENT_REFERENCE_VALUE}
@@ -523,27 +469,27 @@ Authenticate User
     Should Be Equal As Strings  ${response.status_code}  200
     ${token}=  Set Variable  ${response.json()['token']}
     Set Global Variable  ${TOKEN}  ${token}
-Clean Up Imported Data
-    [Documentation]  This keyword deletes previously imported collaborator data
-    ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
-    ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}?search=${UNIQUE_PREFIX}
-    ${response}=  GET  ${url}  headers=${headers}
-    Log  ${response.status_code}
-    Log  ${response.text}
-    Should Be Equal As Strings  ${response.status_code}  200
-    ${collaborators}=  Evaluate  [item for item in $response.json()['data']['data']]  json
-    FOR  ${collaborator}  IN  @{collaborators}
-        ${collaborator_id}=  Set Variable  ${collaborator['uuid']}
-        DELETE Collaborator  ${collaborator_id}
-    END
+# Clean Up Imported Data
+#     [Documentation]  This keyword deletes previously imported collaborator data
+#     ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
+#     ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}?search=${UNIQUE_PREFIX}
+#     ${response}=  GET  ${url}  headers=${headers}
+#     Log  ${response.status_code}
+#     Log  ${response.text}
+#     Should Be Equal As Strings  ${response.status_code}  200
+#     ${collaborators}=  Evaluate  [item for item in $response.json()['data']['data']]  json
+#     FOR  ${collaborator}  IN  @{collaborators}
+#         ${collaborator_id}=  Set Variable  ${collaborator['uuid']}
+#         DELETE Collaborator  ${collaborator_id}
+#     END
 
-DELETE Collaborator
-    [Arguments]  ${collaborator_id}
-    ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
-    ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}/${collaborator_id}/for_tests
-    ${response}=  DELETE  ${url}  headers=${headers}
-    Log  ${response.status_code}
-    Log  ${response.text}
-    Should Be Equal As Strings  ${response.status_code}  201
+# DELETE Collaborator
+#     [Arguments]  ${collaborator_id}
+#     ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
+#     ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}/${collaborator_id}/for_tests
+#     ${response}=  DELETE  ${url}  headers=${headers}
+#     Log  ${response.status_code}
+#     Log  ${response.text}
+#     Should Be Equal As Strings  ${response.status_code}  201
     
                       

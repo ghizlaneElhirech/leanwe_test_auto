@@ -123,31 +123,6 @@ ${MAX_MONTHS}                             33
 ${MAX_TJM}                                900
 ${OFFER_CARD_TITLE_LOCATOR}               xpath=//main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]/div[1]/span[1]
 
-# --------------------------------COLLABORATOR VARIABLES-----------------------------------------
-
-${COLLABORATOR_SIDEBAR_ITEM}                xpath=//div[contains(text(),'Collaborateurs')]
-${NEW_COLLABORATOR_BTN}                     xpath=//button/span/span[contains(text(), 'Nouveau collaborateur')]
-${COLLABORATOR_CREATE_BTN}                  xpath=//Button[@cy-data="addEmployee_btn"]
-${COLLABORATOR_FIRSTNAME}                   xpath=//input[@cy-data="firstName_field"]
-${COLLABORATOR_LASTNAME}                    xpath=//input[@cy-data="lastName_field"]
-${COLLABORATOR_POSITION}                    xpath=//input[@cy-data="position_field"]
-${COLLABORATOR_PHONE}                       xpath=//input[@cy-data="phone_field"]
-${COLLABORATOR_EMAIL}                       xpath=//input[@cy-data="email_field"]
-${COLLABORATOR_BUSINESS_UNIT}               xpath=//input[@cy-data="businessUnit_autocomplete"]
-${COLLABORATOR_BUSINESS_UNIT_OPTION}        xpath=//div[contains(text(),'Factory department')]
-${COLLABORATOR_MANAGER}                     xpath=//input[@cy-data="manager_select"]
-${COLLABORATOR_MANAGER_OPTION}              xpath=//div[contains(text(),'REDOUANE LABDOUI')]
-${COLLABORATOR_EXPERIENCE_LEVEL}            xpath=//input[@cy-data="experience_level_select"]
-${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}     xpath=//div[contains(text(),'Senior')]
-${COLLABORATOR_SALARY_BRUT}                 xpath=//input[@cy-data="salaryBrut"]
-${COLLABORATOR_SALARY_COEF}                 xpath=//input[@cy-data="salaryCoef_field"]
-${COLLABORATOR_CJM}                         xpath=//input[@cy-data="cjm_field"]
-${COLLABORATOR_TJM}                         xpath=//input[@cy-data="tjm_field"]
-${COLLABORATOR_CURRENCY}                    xpath=//input[@cy-data="currency_select"]
-${COLLABORATOR_CURRENCY_OPTION}             xpath=//div[contains(text(),'Euro (€)')]
-${COLLABORATOR_RTT}                         xpath=//input[@cy-data="rtt_field"]
-${COLLABORATOR_CP}                          xpath=//input[@cy-data="cp_field"]
-${COLLABORATOR_SUCCESS_NOTIFICATION}        Collaborateur créé avec succès
 # --------------------------------Drag & Drop Applications------------------------------------
 
 # ${OFFER_APPLICANT_CANDIDATURE}             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]
@@ -183,46 +158,45 @@ ${timesheet_day_14}                        xpath=//tbody/tr[1]/td[15e]/div[1]
 # --------------------------------------Resource Import/collab--------------------------------------
 ${RESOURCE_IMPORT_ITEM}                    xpath=//body/div[@id='spark-app']/div[@id='app']/div[1]/div[1]/div[2]/div[1]/aside[1]/div[2]/div[1]/a[2]/div[2]
 ${UPLOAD_FILE_FIELD}                       xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${COLLABORATORS_TYPE}                      xpath=//body/div[@id='spark-app']/div[@id='app']/div[2]/div[1]/div[1]/div[1]
 ${RESOURCE_TYPE_FIELD}                     xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PATH_TO_COLLABORATORS_FILE}              ${CURDIR}/employees-auto.csv          #${CURDIR}/ressources//employees-auto.csv 
-${NAME_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${NAME_VALUE}                              Nom
-${PRENOM_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PRENOM_VALUE}                            Prenom
-${POST_TITLE_FIELD}                        xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${POST_TITLE_VALUE}                        Post
-${TYPE_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${TYPE_VALUE}                              Type
-${EMAIL_FIELD}                             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${EMAIL_VALUE}                             Email
-${TJM}                                     xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${TJM_VALUE}                               tarif journalier moyen
-${PHONE_FIELD}                             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[7]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PHONE_VALUE}                             phone
-${CJM_FIELD}                               xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[8]/div[2]/div[1]/div[1]/div[1]/div[1]
-${RTT_FIELD}                               xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[9]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CP_FIELD}                                xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[10]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${ADRESSE_FIELD}                           xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[13]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${ADRESSE_VALUE}                           adresse
-${COUNTRY_FIELD}                           xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[14]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${COUNTRY_VALUE}                           Pays
-${CITY_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[15]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CITY_VALUE}                              Ville
-${REFERENCE_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[19]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${REFERENCE_VALUE}                         Reference
-${IMPORT_BUTTON}                           xpath=//button[@cy-data="nextStep_btn"]
-${IMPORT_SUCESS_NOTIFICATION}              Importation terminée.
 ${API_URL}                                 https://staging-api.leanwe.com/login  # Replace with your actual API endpoint
-${BASE_URL}                                https://staging-api.leanwe.com/api/v1/esns/d11d8e1d-5874-4eda-9f6e-05eefddd09b7
-${AUTH_TOKEN}                              your-auth-token  # Replace with the actual token if needed
-${UNIQUE_DOMAIN}                           guerrillamail.com  # unique domain
-${UNIQUE_Prefix}                           Importeed
-${AUTH_ENDPOINT}                           /login                  # Replace with your authentication endpoint
+${IMPORT_BUTTON}                           xpath=//button[@cy-data="nextStep_btn"]
 ${EMAIL-token}                             redouane@yopmail.com  
 ${PASSWORD-token}                          secret2023       
-${TOKEN}                                   None
-${EMPLOYEES_ENDPOINT}                     /employees
+
+# ${PATH_TO_COLLABORATORS_FILE}              ${CURDIR}/employees-auto.csv          #${CURDIR}/ressources//employees-auto.csv 
+# ${NAME_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${NAME_VALUE}                              Nom
+# ${PRENOM_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${PRENOM_VALUE}                            Prenom
+# ${POST_TITLE_FIELD}                        xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${POST_TITLE_VALUE}                        Post
+# ${TYPE_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${TYPE_VALUE}                              Type
+# ${EMAIL_FIELD}                             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${EMAIL_VALUE}                             Email
+# ${TJM}                                     xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${TJM_VALUE}                               tarif journalier moyen
+# ${PHONE_FIELD}                             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[7]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${PHONE_VALUE}                             phone
+# ${CJM_FIELD}                               xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[8]/div[2]/div[1]/div[1]/div[1]/div[1]
+# ${RTT_FIELD}                               xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[9]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${CP_FIELD}                                xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[10]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${ADRESSE_FIELD}                           xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[13]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${ADRESSE_VALUE}                           adresse
+# ${COUNTRY_FIELD}                           xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[14]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${COUNTRY_VALUE}                           Pays
+# ${CITY_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[15]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${CITY_VALUE}                              Ville
+# ${REFERENCE_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[19]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${REFERENCE_VALUE}                         Reference
+# ${IMPORT_BUTTON}                           xpath=//button[@cy-data="nextStep_btn"]
+# ${IMPORT_SUCESS_NOTIFICATION}              Importation terminée.
+# ${BASE_URL}                                https://staging-api.leanwe.com/api/v1/esns/d11d8e1d-5874-4eda-9f6e-05eefddd09b7
+# ${AUTH_TOKEN}                              your-auth-token  # Replace with the actual token if needed
+# ${UNIQUE_DOMAIN}                           guerrillamail.com  # unique domain
+# ${UNIQUE_Prefix}                           Importeed
+# ${AUTH_ENDPOINT}                           /login                  # Replace with your authentication endpoint
 
 # --------------------------------------------------Resource Import/subcontractors--------------------------
 

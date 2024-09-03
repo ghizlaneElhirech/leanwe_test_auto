@@ -1,7 +1,7 @@
 *** Settings ***
 Library               SeleniumLibrary
 Library               Collections
-Resource              ../ressources/helpers.resource
+Resource              ../ressources/HELPERS/collaboratorsTestHelpers.resource
 Suite Teardown        SeleniumLibrary.Close Browser
 
 
@@ -18,6 +18,7 @@ CREATE A NEW COLLABORATOR
     Log    Created offer name: ${collaborator_job_post}
     SUBMIT THE COLLABORATOR FORM 
     CHECK THE DISPLAY OF SUCCESS NOTIFICATION FOR COLLABORATOR CREATION
+    Sleep    6s
 
 # VERIFY THE OFFER EXISTENCE
 #     ${offer_name}=    Get Variable Value    ${GLOBAL_OFFER_NAME}

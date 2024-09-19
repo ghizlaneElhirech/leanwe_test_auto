@@ -36,19 +36,19 @@ ${OFFER_COMPANY_TEXT_AREA}                xpath=(//div[@data-placeholder="Insér
 ${OFFER_COMPANY_TEXT}                     This company is created to try out an automated script made qith robot framework
 ${OFFER_DESCRIPTION_TEXT_AREA}            xpath=(//div[@data-placeholder="Insérer du texte ici"])[2]
 ${OFFER_DESCRIPTION}                      This Job post is created to test the offers section in the plateform and check out if the offers are created as expected
-${OFFER_SEARCH_BAR}                       xpath=//input[@placeholder = "Rechercher..."]
+${OFFER_SEARCH_BAR}                       xpath=//input[@placeholder = "Rechercher"]
 # ${OFFER_CARD_TITLE}                       xpath=//span[contains(text(),${CREATED_OFFER_NAME})]
 ${OFFER_SUCESS_NOTIFICATION}              Offre créée avec succès
 ${OFFER_CREATE_BTN}                       xpath=//Button[@cy-data="createOffer_btn"]
 ${GLOBAL_OFFER_NAME}  NONE
             #    ------------------Filters-------------------
-${OFFER_MIN_TJM_FILTER}                   xpath=//label[text()= 'Min TJM']/following-sibling::input
-${OFFER_MAX_TJM_FILTER}                   xpath=//label[text()= 'Max TJM']/following-sibling::input
-${OFFER_MIN_MONTH_FILTER}                 xpath=//label[text()= 'Min Mois']/following-sibling::input
-${OFFER_MAX_MONTH_FILTER}                 xpath=//label[text()= 'Max Mois']/following-sibling::input
-${OFFER_COUNTRY_FILTER}                   xpath=//input[@placeholder="Pays"]
-${OFFER_CITY_FILTER}                      xpath=//input[@placeholder="Ville"]
-${OFFER_STATUS_FILTER}                    xpath=//input[@placeholder="Statut"]
+${OFFER_MIN_TJM_FILTER}                   xpath=//input[@id='min_tjm']
+${OFFER_MAX_TJM_FILTER}                   xpath=//input[@id='max_tjm']
+${OFFER_MIN_MONTH_FILTER}                 xpath=//input[@id='min_month']
+${OFFER_MAX_MONTH_FILTER}                 xpath=//input[@id='max_month']
+${OFFER_COUNTRY_FILTER}                   xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/input[1]
+${OFFER_CITY_FILTER}                      xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/input[1]
+${OFFER_STATUS_FILTER}                    xpath=//input[@cy-data="offerStatus_select"]
 ${SELECTED_STATUS}                        xpath=//div/div[contains(text(),"Brouillon")]
 ${ARROW_BACK_OFFER}                       xpath=//main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/header[1]/div[1]/button[1]/span[1]/i[1]
 ${MIN-TJM-ID}                             min_tjm

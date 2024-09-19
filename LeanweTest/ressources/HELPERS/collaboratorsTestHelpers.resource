@@ -26,6 +26,7 @@ FILL OUT THE COLLABORATOR CREATION FORM
     Input Text                                ${COLLABORATOR_PHONE}                        634567890
     Input Text                                ${COLLABORATOR_EMAIL}                        john.doe${current_datetime}@example.com
     Input Text                                ${COLLABORATOR_BUSINESS_UNIT}                Digitale
+    Scroll The Hieght of scroll
     Wait Until Element Is Visible             ${COLLABORATOR_BUSINESS_UNIT_OPTION}         timeout=2s                            
     Click Element                             ${COLLABORATOR_BUSINESS_UNIT_OPTION}
     Click Element                             ${COLLABORATOR_MANAGER}

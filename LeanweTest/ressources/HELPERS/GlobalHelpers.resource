@@ -238,7 +238,7 @@ LOG IN AS COLLABORATOR
     input text                                ${LOGIN_PAGE_FORM_PASSWORD_INPUT}      ${PASSWORD}
     click element                             ${LOGIN_BUTTON}
 
-# ----------------------------------IMPORTCOLLABORATOR------------------------------------
+# ----------------------------------IMPORTressource------------------------------------
 NAVIGATE TO RESOURCE IMPORT PAGE 
     Wait Until Element Is Visible             ${sidebar_Xpath}
     ${sidebar_element}  Get WebElement        ${sidebar_Xpath}
@@ -269,24 +269,7 @@ UPLOAD FILE
 MAPPING FUNCTION
     [Arguments]                             ${FIELD}                            ${CSV_TITLE}
     Input Text                              ${FIELD}                            ${CSV_TITLE}
-ASSOCIATION OF COLUMNS SUBCONTRACTORS 
-    MAPPING FUNCTION                ${SIREN_FIELD}                              ${SIREN_VALUE}
-    MAPPING FUNCTION                ${COMPANY_NAME_FIELD}                       ${COMPANY_NAME_VALUE}
-    MAPPING FUNCTION                ${LEGAL_FORM_FIELD}                         ${LEGAL_FORM_VALUE}
-    MAPPING FUNCTION                ${ADDRESS_FIELD}                            ${ADDRESS_VALUE}
-    MAPPING FUNCTION                ${ZIP_CODE_FIELD}                           ${ZIP_CODE_VALUE} 
-    MAPPING FUNCTION                ${CITY_NAME_FIELD}                          ${CITY_NAME_VALUE} 
-    MAPPING FUNCTION                ${RCS_PLACE_FIELD}                          ${RCS_PLACE_VALUE}
-    MAPPING FUNCTION                ${RCS_NUMBER_FIELD}                         ${RCS_NUMBER_VALUE}
-    MAPPING FUNCTION                ${REPRESENTATIVE_FIELD}                     ${REPRESENTATIVE_VALUE}
-    MAPPING FUNCTION                ${FONCTION_FIELD}                           ${FONCTION_VALUE}
-    MAPPING FUNCTION                ${CAPITAL_FIELD}                            ${CAPITAL_VALUE}
-    MAPPING FUNCTION                ${BANK_ACCOUNT_FIELD}                       ${BANK_ACCOUNT_VALUE}
-    MAPPING FUNCTION                ${BIC_FIELD}                                ${BIC_VALUE}
-    MAPPING FUNCTION                ${IBAN_FIELD}                               ${IBAN_VALUE}
-    MAPPING FUNCTION                ${CONTACT_FIELD}                            ${CONTACT_VALUE}
-
-
+    
 
 ASSOCIATION OF COLUMNS CLIENTS
     MAPPING FUNCTION                ${CLIENT_REFERENCE_FIELD}                   ${CLIENT_REFERENCE_VALUE}
@@ -325,11 +308,11 @@ ASSOCIATION OF COLUMNS PROJECTS
     MAPPING FUNCTION                ${PROJECT_REFERENCE_FIELD}                   ${PROJECT_REFERENCE_VALUE}
     MAPPING FUNCTION                ${PROJ_CLIENT_REFERENCE_FIELD}               ${PROJ_CLIENT_REFERENCE_VALUE}
 
-ASSOCIATION OF COLUMNS PRODUCTS
-    MAPPING FUNCTION                ${PRODUCT_TITLE_FIELD}                        ${PRODUCT_TITLE_VALUE} 
-    MAPPING FUNCTION                ${PRODUCT_REFERENCE_FIELD}                    ${PRODUCT_REFERENCE_VALUE}
-    MAPPING FUNCTION                ${PRODUCT_DESCRIPTION_FIELD}                  ${PRODUCT_DESCRIPTION_VALUE}
-    MAPPING FUNCTION                ${PRODUCT_AMOUNT_FIELD}                       ${PRODUCT_AMOUNT_VALUE}
+# ASSOCIATION OF COLUMNS PRODUCTS
+#     MAPPING FUNCTION                ${PRODUCT_TITLE_FIELD}                        ${PRODUCT_TITLE_VALUE} 
+#     MAPPING FUNCTION                ${PRODUCT_REFERENCE_FIELD}                    ${PRODUCT_REFERENCE_VALUE}
+#     MAPPING FUNCTION                ${PRODUCT_DESCRIPTION_FIELD}                  ${PRODUCT_DESCRIPTION_VALUE}
+#     MAPPING FUNCTION                ${PRODUCT_AMOUNT_FIELD}                       ${PRODUCT_AMOUNT_VALUE}
 
 ASSOCIATION OF COLUMNS PRESTATIONS
     MAPPING FUNCTION                ${PRESTATION_TITLE}                           ${PRESTATION_TITLE_VALUE}
@@ -377,85 +360,85 @@ SELECT ITEM FROM SIDEBAR
     Wait Until Page Contains Element          ${SIDEBAR_ITEM_TITLE}                  timeout=2s
     click Element                             ${SIDEBAR_ITEM_TITLE}
     RETURN                                    ${sidebar_element}
-SELECT PURCHASE ITEM FROM SIDEBAR
-    ${sidebar_element}=    SELECT ITEM FROM SIDEBAR                  ${GLOBAL_PURCHASE_ITEM} 
-    Wait Until Element Is Visible             ${PURCHASE_SIDEBAR_ITEM}
-    Click Element                             ${PURCHASE_SIDEBAR_ITEM}
-    Mouse Out                                 ${sidebar_element}
-    # Wait Until Page Contains Element          xpath=//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/header[1]/div[1]/div[1]/span[1]
+# SELECT PURCHASE ITEM FROM SIDEBAR
+#     ${sidebar_element}=    SELECT ITEM FROM SIDEBAR                  ${GLOBAL_PURCHASE_ITEM} 
+#     Wait Until Element Is Visible             ${PURCHASE_SIDEBAR_ITEM}
+#     Click Element                             ${PURCHASE_SIDEBAR_ITEM}
+#     Mouse Out                                 ${sidebar_element}
+#     # Wait Until Page Contains Element          xpath=//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/header[1]/div[1]/div[1]/span[1]
  
-FILL OUT THE PURCHASE CREATION FORM    
-    ${current_datetime}=    Get Current Date     result_format=%Y%m%d%H%M%S
-    ${FULL_PURCHASE_TITLE}=    Set Variable       ${PURCHASE_TITLE}_${current_datetime} 
-    Wait Until Element Is Visible            ${PURCHASE_NEW_BUTTON}                        
-    Click Element                            ${PURCHASE_NEW_BUTTON}
-    Wait Until Element Is Visible            ${PURCHASE_TITLE_FIELD}
-    Wait Until Element Is Enabled            ${PURCHASE_TITLE_FIELD}                       
-    Wait Until Keyword Succeeds     5     5         Input Text                               ${PURCHASE_TITLE_FIELD}                       ${FULL_PURCHASE_TITLE}
-    Click Element                            ${PURCHASE_PAYMENT_MODE}                  
-    Wait Until Element Is Visible            ${CHECQUE_PAYMENT_MODE}  
-    Click Element                            ${CHECQUE_PAYMENT_MODE}   
-    Wait Until Element Is Visible            ${PURCHASE_PAYMENT_TYPE}
-    Click Element                            ${PURCHASE_PAYMENT_TYPE}
-    Wait Until Element Is Visible            ${PURCHASE_SEMESTER_TYPE}
-    Click Element                            ${PURCHASE_SEMESTER_TYPE}
-    Input Text                               ${PURCHASE_CLIENT_COMPANY}                     ${SELECTED_CLIENT_COMPANY}
-    Sleep    2s 
-    Press Keys          none                     ARROW_DOWN
-    Press Keys          none                      ENTER  
-    Wait Until Element Is Enabled            ${PURCHASE_BUSINESS_UNIT}  
-    Input Text                               ${PURCHASE_BUSINESS_UNIT}                      ${SELECTED_BU}  
-    Sleep    2s 
-    Press Keys          none                 ARROW_DOWN
-    Press Keys          none                 ENTER    
-    Wait Until Element Is Enabled            ${PURCHASE_CATEGORY_FIELD}        
-    Input Text                               ${PURCHASE_CATEGORY_FIELD}                     ${SELECTED_CATEGORY} 
-    Sleep    2s  
-    Press Keys          none                     ARROW_DOWN
-    Press Keys          none                     ENTER 
-    Wait Until Element Is Visible            ${PURCHASE_START_DATE} 
-    Click Element                            ${PURCHASE_START_DATE} 
-    Wait Until Element Is Visible            ${CHOSEN_START_DATE}
-    Click Element                            ${CHOSEN_START_DATE}
-    Wait Until Element Is Visible            ${PURCHASE_END_DATE} 
-    Click Element                            ${PURCHASE_END_DATE} 
-    Wait Until Element Is Visible            ${CHOSEN_END_DATE}
-    Click Element                            ${CHOSEN_END_DATE}
-    Input Text                               ${PURCHASE_PRETAX_AMOUNT}                       ${PURCHASE_TARIF}
-    Input Text                               ${PURCHASE_TAX_AMOUNT}                          ${PURCHASE_TVA}
-    Wait Until Element Is Visible            ${PURCHASE_ADD_BUTTON}
-    Click Element                            ${PURCHASE_ADD_BUTTON}
-    Wait Until Page Contains                 La facture fournisseur a été créée avec succès   timeout=10s
-    RETURN                                   ${FULL_PURCHASE_TITLE}    
+# FILL OUT THE PURCHASE CREATION FORM    
+#     ${current_datetime}=    Get Current Date     result_format=%Y%m%d%H%M%S
+#     ${FULL_PURCHASE_TITLE}=    Set Variable       ${PURCHASE_TITLE}_${current_datetime} 
+#     Wait Until Element Is Visible            ${PURCHASE_NEW_BUTTON}                        
+#     Click Element                            ${PURCHASE_NEW_BUTTON}
+#     Wait Until Element Is Visible            ${PURCHASE_TITLE_FIELD}
+#     Wait Until Element Is Enabled            ${PURCHASE_TITLE_FIELD}                       
+#     Wait Until Keyword Succeeds     5     5         Input Text                               ${PURCHASE_TITLE_FIELD}                       ${FULL_PURCHASE_TITLE}
+#     Click Element                            ${PURCHASE_PAYMENT_MODE}                  
+#     Wait Until Element Is Visible            ${CHECQUE_PAYMENT_MODE}  
+#     Click Element                            ${CHECQUE_PAYMENT_MODE}   
+#     Wait Until Element Is Visible            ${PURCHASE_PAYMENT_TYPE}
+#     Click Element                            ${PURCHASE_PAYMENT_TYPE}
+#     Wait Until Element Is Visible            ${PURCHASE_SEMESTER_TYPE}
+#     Click Element                            ${PURCHASE_SEMESTER_TYPE}
+#     Input Text                               ${PURCHASE_CLIENT_COMPANY}                     ${SELECTED_CLIENT_COMPANY}
+#     Sleep    2s 
+#     Press Keys          none                     ARROW_DOWN
+#     Press Keys          none                      ENTER  
+#     Wait Until Element Is Enabled            ${PURCHASE_BUSINESS_UNIT}  
+#     Input Text                               ${PURCHASE_BUSINESS_UNIT}                      ${SELECTED_BU}  
+#     Sleep    2s 
+#     Press Keys          none                 ARROW_DOWN
+#     Press Keys          none                 ENTER    
+#     Wait Until Element Is Enabled            ${PURCHASE_CATEGORY_FIELD}        
+#     Input Text                               ${PURCHASE_CATEGORY_FIELD}                     ${SELECTED_CATEGORY} 
+#     Sleep    2s  
+#     Press Keys          none                     ARROW_DOWN
+#     Press Keys          none                     ENTER 
+#     Wait Until Element Is Visible            ${PURCHASE_START_DATE} 
+#     Click Element                            ${PURCHASE_START_DATE} 
+#     Wait Until Element Is Visible            ${CHOSEN_START_DATE}
+#     Click Element                            ${CHOSEN_START_DATE}
+#     Wait Until Element Is Visible            ${PURCHASE_END_DATE} 
+#     Click Element                            ${PURCHASE_END_DATE} 
+#     Wait Until Element Is Visible            ${CHOSEN_END_DATE}
+#     Click Element                            ${CHOSEN_END_DATE}
+#     Input Text                               ${PURCHASE_PRETAX_AMOUNT}                       ${PURCHASE_TARIF}
+#     Input Text                               ${PURCHASE_TAX_AMOUNT}                          ${PURCHASE_TVA}
+#     Wait Until Element Is Visible            ${PURCHASE_ADD_BUTTON}
+#     Click Element                            ${PURCHASE_ADD_BUTTON}
+#     Wait Until Page Contains                 La facture fournisseur a été créée avec succès   timeout=10s
+#     RETURN                                   ${FULL_PURCHASE_TITLE}    
 
-Get Dynamic Purchase Card Title Locator
-    [Arguments]    ${purchase_title}
-    ${locator}=    Set Variable    xpath=//span[contains(text(),"${purchase_title}")]
-    RETURN         ${locator}
-SEARCH FOR A PURCHASE
-    [Arguments]                               ${searched_purchase} 
-    Wait Until Page Contains                  Nouvelle facture fournisseur
-    Wait Until Element Is Visible             ${PURCHASE_SEARCH_BAR}            timeout=15s
-    ${dynamic_locator}=    Get Dynamic Purchase Card Title Locator              ${searched_purchase} 
-    Input Text                                ${PURCHASE_SEARCH_BAR}            ${searched_purchase}  
-    Wait Until Element Is Visible             ${dynamic_locator} 
-    Log    my title: ${searched_purchase}    
+# Get Dynamic Purchase Card Title Locator
+#     [Arguments]    ${purchase_title}
+#     ${locator}=    Set Variable    xpath=//span[contains(text(),"${purchase_title}")]
+#     RETURN         ${locator}
+# SEARCH FOR A PURCHASE
+#     [Arguments]                               ${searched_purchase} 
+#     Wait Until Page Contains                  Nouvelle facture fournisseur
+#     Wait Until Element Is Visible             ${PURCHASE_SEARCH_BAR}            timeout=15s
+#     ${dynamic_locator}=    Get Dynamic Purchase Card Title Locator              ${searched_purchase} 
+#     Input Text                                ${PURCHASE_SEARCH_BAR}            ${searched_purchase}  
+#     Wait Until Element Is Visible             ${dynamic_locator} 
+#     Log    my title: ${searched_purchase}    
 
 SELECT FILTER FROM A LIST 
     [Arguments]                           ${FILTER_FILED}         ${SELECTED_FILTER}
     Click Element                         ${FILTER_FILED} 
     Wait Until Element Is Visible         ${SELECTED_FILTER}
     Click Element                         ${SELECTED_FILTER}
-APPLY FILTERS IN PURCHASE PAGE
-    [Arguments]                           ${purchase_name}
-    SELECT FILTER FROM A LIST             ${PURCHASE_START_DATE_FILTER}          ${CHOSEN_START_DATE}
-    SELECT FILTER FROM A LIST             ${PURCHASE_END_DATE_FILTER}            ${CHOSEN_END_DATE}
-    SELECT FILTER FROM A LIST             ${PURCHASE_STATUS_FILTER}              ${PURCHASE_FNP_STATUS}
-    SELECT FILTER FROM A LIST             ${PURCHASE_TYPE_FILTER}                ${PURCHASE_CHOSEN_TYPE_FILTER}
-    SELECT FILTER FROM A LIST             ${PURCHASE_CATEGORY_FILTER}            ${PURCHASE_CATEGORY_CHOSEN_FILTER}
-    Wait Until Element Is Visible         ${PURCHASE_CARD_TITLE_LOCATOR}
-    ${card_title_text}=    Get Text       ${PURCHASE_CARD_TITLE_LOCATOR}
-    Should Be Equal As Strings            ${card_title_text}                 ${purchase_name} 
+# APPLY FILTERS IN PURCHASE PAGE
+#     [Arguments]                           ${purchase_name}
+#     SELECT FILTER FROM A LIST             ${PURCHASE_START_DATE_FILTER}          ${CHOSEN_START_DATE}
+#     SELECT FILTER FROM A LIST             ${PURCHASE_END_DATE_FILTER}            ${CHOSEN_END_DATE}
+#     SELECT FILTER FROM A LIST             ${PURCHASE_STATUS_FILTER}              ${PURCHASE_FNP_STATUS}
+#     SELECT FILTER FROM A LIST             ${PURCHASE_TYPE_FILTER}                ${PURCHASE_CHOSEN_TYPE_FILTER}
+#     SELECT FILTER FROM A LIST             ${PURCHASE_CATEGORY_FILTER}            ${PURCHASE_CATEGORY_CHOSEN_FILTER}
+#     Wait Until Element Is Visible         ${PURCHASE_CARD_TITLE_LOCATOR}
+#     ${card_title_text}=    Get Text       ${PURCHASE_CARD_TITLE_LOCATOR}
+#     Should Be Equal As Strings            ${card_title_text}                 ${purchase_name} 
 
 # ----------------------------CLEAN UP DATA
 

@@ -163,6 +163,7 @@ ${API_URL}                                 https://staging-api.leanwe.com/login 
 ${IMPORT_BUTTON}                           xpath=//button[@cy-data="nextStep_btn"]
 ${EMAIL-token}                             redouane@yopmail.com  
 ${PASSWORD-token}                          secret2023       
+${BASE_URL}                                https://staging-api.leanwe.com/api/v1/esns/d11d8e1d-5874-4eda-9f6e-05eefddd09b7
 
 # ${PATH_TO_COLLABORATORS_FILE}              ${CURDIR}/employees-auto.csv          #${CURDIR}/ressources//employees-auto.csv 
 # ${NAME_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
@@ -200,39 +201,39 @@ ${PASSWORD-token}                          secret2023
 
 # --------------------------------------------------Resource Import/subcontractors--------------------------
 
-${SUBCONTRACTORS_TYPE}                    xpath=//div[contains(text(), "Sous-traitants")]
-${RESOURCE_NAME_FIELD}                    xpath=//input[@placeholder="Nom de resource"]
-${PATH_TO_SUBCONTRACTORS_FILE}            C:/Users/SanaaBOULLOUZ/Documents/subcontractors.CSV
-${SIREN_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${SIREN_VALUE}                            siren
-${COMPANY_NAME_FIELD}                     xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${COMPANY_NAME_VALUE}                     raison
-${LEGAL_FORM_FIELD}                       xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${LEGAL_FORM_VALUE}                       legal_form
-${ADDRESS_FIELD}                          xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${ADDRESS_VALUE}                          address
-${ZIP_CODE_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${ZIP_CODE_VALUE}                         zip_code
-${CITY_NAME_FIELD}                        xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CITY_NAME_VALUE}                        ville
-${RCS_PLACE_FIELD}                        xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[7]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${RCS_PLACE_VALUE}                        rcs
-${RCS_NUMBER_FIELD}                       xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[8]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${RCS_NUMBER_VALUE}                       rcs_number
-${REPRESENTATIVE_FIELD}                   xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[9]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${REPRESENTATIVE_VALUE}                   representative
-${FONCTION_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[10]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${FONCTION_VALUE}                         fonction
-${CAPITAL_FIELD}                          xpath=//div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[11]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CAPITAL_VALUE}                          capital
-${BANK_ACCOUNT_FIELD}                     xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[12]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${BANK_ACCOUNT_VALUE}                     bank
-${BIC_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[13]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${BIC_VALUE}                              bic
-${IBAN_FIELD}                             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[14]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${IBAN_VALUE}                             iban
-${CONTACT_FIELD}                          xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[15]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CONTACT_VALUE}                          contacts
+# ${SUBCONTRACTORS_TYPE}                    xpath=//div[contains(text(), "Sous-traitants")]
+# ${RESOURCE_NAME_FIELD}                    xpath=//input[@placeholder="Nom de resource"]
+# ${PATH_TO_SUBCONTRACTORS_FILE}            C:/Users/SanaaBOULLOUZ/Documents/subcontractors.CSV
+# ${SIREN_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${SIREN_VALUE}                            siren
+# ${COMPANY_NAME_FIELD}                     xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${COMPANY_NAME_VALUE}                     raison
+# ${LEGAL_FORM_FIELD}                       xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${LEGAL_FORM_VALUE}                       legal_form
+# ${ADDRESS_FIELD}                          xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${ADDRESS_VALUE}                          address
+# ${ZIP_CODE_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${ZIP_CODE_VALUE}                         zip_code
+# ${CITY_NAME_FIELD}                        xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${CITY_NAME_VALUE}                        ville
+# ${RCS_PLACE_FIELD}                        xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[7]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${RCS_PLACE_VALUE}                        rcs
+# ${RCS_NUMBER_FIELD}                       xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[8]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${RCS_NUMBER_VALUE}                       rcs_number
+# ${REPRESENTATIVE_FIELD}                   xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[9]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${REPRESENTATIVE_VALUE}                   representative
+# ${FONCTION_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[10]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${FONCTION_VALUE}                         fonction
+# ${CAPITAL_FIELD}                          xpath=//div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[11]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${CAPITAL_VALUE}                          capital
+# ${BANK_ACCOUNT_FIELD}                     xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[12]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${BANK_ACCOUNT_VALUE}                     bank
+# ${BIC_FIELD}                              xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[13]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${BIC_VALUE}                              bic
+# ${IBAN_FIELD}                             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[14]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${IBAN_VALUE}                             iban
+# ${CONTACT_FIELD}                          xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[15]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${CONTACT_VALUE}                          contacts
 
 # ------------------------------------------------ClientsImport---------------------------------------------------------------------
 ${CLIENT_TYPE}                            xpath=//div/div/div[contains(text(), "Clients")]
@@ -310,17 +311,17 @@ ${PROJ_CLIENT_REFERENCE_VALUE}            reference_id
 
 # ------------------------------------------PRODUCTS IMPORT---------------------------------------------------------------------
 
-${PRODUCT_TYPE}                           xpath=//div/div/div[contains(text(), "Produits")]
-${PRODUCT_RESOURCE_NAME_FIELD}            xpath=//input[@placeholder="Nom de resource"]
-${PATH_TO_PRODUCTS_CSV_FILE}              C:/Users/SanaaBOULLOUZ/Documents/Products_auto.csv
-${PRODUCT_TITLE_FIELD}                    xpath=//form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PRODUCT_TITLE_VALUE}                    Title
-${PRODUCT_REFERENCE_FIELD}                xpath=//form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PRODUCT_REFERENCE_VALUE}                reference
-${PRODUCT_DESCRIPTION_FIELD}              xpath=//form[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PRODUCT_DESCRIPTION_VALUE}              description
-${PRODUCT_AMOUNT_FIELD}                   xpath=//form[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PRODUCT_AMOUNT_VALUE}                   amount
+# ${PRODUCT_TYPE}                           xpath=//div/div/div[contains(text(), "Produits")]
+# ${PRODUCT_RESOURCE_NAME_FIELD}            xpath=//input[@placeholder="Nom de resource"]
+# ${PATH_TO_PRODUCTS_CSV_FILE}              C:/Users/SanaaBOULLOUZ/Documents/Products_auto.csv
+# ${PRODUCT_TITLE_FIELD}                    xpath=//form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${PRODUCT_TITLE_VALUE}                    Title
+# ${PRODUCT_REFERENCE_FIELD}                xpath=//form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${PRODUCT_REFERENCE_VALUE}                reference
+# ${PRODUCT_DESCRIPTION_FIELD}              xpath=//form[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${PRODUCT_DESCRIPTION_VALUE}              description
+# ${PRODUCT_AMOUNT_FIELD}                   xpath=//form[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
+# ${PRODUCT_AMOUNT_VALUE}                   amount
 
 # -------------------------------------PRESTATIONS IMPORT-----------------------------------------------------------------------
 ${PRESTATION_TYPE}                        xpath=//div/div/div[contains(text(), "Préstations")]
@@ -371,40 +372,6 @@ ${SALE_END_DATE}                         xpath=//form[1]/div[12]/div[2]/div[1]/d
 ${SALE_END_DATE_VALUE}                   end_date
 
 # ---------------------------------------------------Purchase--------------------------------------------------------
-${GLOBAL_PURCHASE_ITEM}                   xpath=(//div[contains(text(),"Achats")])[1]
-${PURCHASE_SIDEBAR_ITEM}                  xpath=(//div[contains(text(),"Mes Achats")])[1]
-${PURCHASE_NEW_BUTTON}                    xpath=//button[@cy-data="createNew_btn"]
-${PURCHASE_TITLE_FIELD}                   xpath=//input[@cy-data="purchase_invoice_title_field"]
-${PURCHASE_PAYMENT_MODE}                  xpath=//form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CHECQUE_PAYMENT_MODE}                   xpath=//div/div[contains(text(),"Chèque")]
-${ESPECE_PAYMENT_MODE}                    xpath=//div/div[contains(text(),"Espèces")]
-${PURCHASE_PAYMENT_TYPE}                  xpath=//form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PURCHASE_SEMESTER_TYPE}                 xpath=//div/div[contains(text(),"Semestriel")]
-${PURCHASE_CLIENT_COMPANY}                xpath=//Input[@cy-data="client_autocomplete"]
-${SELECTED_CLIENT_COMPANY}                 CSF
-${PURCHASE_BUSINESS_UNIT}                 xpath=//Input[@cy-data="businessUnit_autocomplete"]
-${SELECTED_BU}                            digitale
-${PURCHASE_CATEGORY_FIELD}                xpath=//form[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/input[1]
-${SELECTED_CATEGORY}                      Exemple
-${PURCHASE_START_DATE}                    xpath=//form[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CHOSEN_START_DATE}                      xpath=(//table[1]/tbody[1]/tr[1]/td[2]/button[1])[1]
-${PURCHASE_END_DATE}                      xpath=//form[1]/div[1]/div[8]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CHOSEN_END_DATE}                        xpath=(//table[1]/tbody[1]/tr[5]/td[4]/button[1])[2]
-${PURCHASE_PRETAX_AMOUNT}                 xpath=//form[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PURCHASE_TARIF}                         700
-${PURCHASE_TAX_AMOUNT}                    xpath=//form[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PURCHASE_TVA}                           20
-${PURCHASE_ADD_BUTTON}                    xpath=//Button[@cy-data="submitSale_btn"]
-${PURCHASE_SEARCH_BAR}                    xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PURCHASE_START_DATE_FILTER}             xpath=//input[@placeholder="Date début"]
-${PURCHASE_END_DATE_FILTER}               xpath=//input[@placeholder="Date fin"]
-${PURCHASE_STATUS_FILTER}                 xpath=//input[@placeholder="Statut"]
-${PURCHASE_FNP_STATUS}                    xpath=//body[1]/div[1]/div[2]/div[5]/div[1]/div[1]/div[1]
-${PURCHASE_TYPE_FILTER}                   xpath=//input[@placeholder="Type"]
-${PURCHASE_CHOSEN_TYPE_FILTER}            xpath=//body[1]/div[1]/div[2]/div[6]/div[1]/div[3]/div[1]/div[1]
-${PURCHASE_CATEGORY_FILTER}               xpath=//input[@placeholder="Catégorie"]
-${PURCHASE_CATEGORY_CHOSEN_FILTER}        xpath=//div[contains(text(),"Exemple")]
-${PURCHASE_TITLE}                         PURCHASE_AUTO
-${PURCHASE_CARD_TITLE_LOCATOR}            xpath=//main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]/div[1]/span[1]
+
 
 

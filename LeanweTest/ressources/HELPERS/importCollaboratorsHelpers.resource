@@ -25,7 +25,7 @@ ASSOCIATION OF COLUMNS COLLABORATORS
 Clean Up Imported Data
     [Documentation]  This keyword deletes previously imported collaborator data
     ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
-    ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}?search=${UNIQUE_PREFIX}
+    ${url}=  Set Variable  ${BASE_URL}${EMPLOYEES_ENDPOINT}?search=${UNIQUE_DOMAIN}
     ${response}=  GET  ${url}  headers=${headers}
     Log  ${response.status_code}
     Log  ${response.text}

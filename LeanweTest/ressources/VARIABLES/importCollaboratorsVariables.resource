@@ -29,7 +29,7 @@ ${REFERENCE_FIELD}                         xpath=//main[1]/div[1]/div[1]/div[1]/
 ${REFERENCE_VALUE}                         Reference
 ${IMPORT_SUCESS_NOTIFICATION}              Importation terminée.
 ${API_URL}                                 https://staging-api.leanwe.com/login  # Replace with your actual API endpoint
-${BASE_URL}                                https://staging-api.leanwe.com/api/v1/esns/d11d8e1d-5874-4eda-9f6e-05eefddd09b7
+# ${BASE_URL}                                https://staging-api.leanwe.com/api/v1/esns/d11d8e1d-5874-4eda-9f6e-05eefddd09b7
 ${AUTH_TOKEN}                              your-auth-token  # Replace with the actual token if needed
 ${UNIQUE_DOMAIN}                           guerrillamail.com  # unique domain
 ${UNIQUE_Prefix}                           Importeed

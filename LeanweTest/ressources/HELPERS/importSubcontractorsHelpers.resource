@@ -30,24 +30,26 @@ ASSOCIATION OF COLUMNS SUBCONTRACTORS
 
 
 Clean Up Imported Data
-    [Documentation]  This keyword deletes previously imported collaborator data
+    [Documentation]  This keyword deletes previously imported subcontractor data
     ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
-    ${url}=  Set Variable  ${BASE_URL}$${SUBCONTRACTOR_ENDPOINT}?search=${UNIQUE_PREFIX}
+    ${url}=  Set Variable  ${BASE_URL}${SUBCONTRACTOR_ENDPOINT}?page=1&keyword="${UNIQUE_PREFIX}"
     ${response}=  GET  ${url}  headers=${headers}
-    Log  ${response.status_code}
-    Log  ${response.text}
     Should Be Equal As Strings  ${response.status_code}  200
+    Log    ${response.text}
+    Log    ${response.json()['data']['data']}
     ${subcontractors}=  Evaluate  [item for item in $response.json()['data']['data']]  json
+    
+    Log  ${subcontractors}
     FOR  ${subcontractor}  IN  @{subcontractors}
         ${subcontractor_id}=  Set Variable  ${subcontractor['uuid']}
-        DELETE Collaborator  ${subcontractor_id}
+        DELETE SUBCONTRACTOR  ${subcontractor_id}
     END
 
-DELETE Collaborator
+DELETE SUBCONTRACTOR
     [Arguments]  ${subcontractor_id}
     ${headers}=  Create Dictionary  Authorization=Bearer ${TOKEN}
-    ${url}=  Set Variable  ${BASE_URL}${SUBCONTRACTOR_ENDPOINT}/${subcontractor_id}/for_tests
+    ${url}=  Set Variable  ${BASE_URL}${SUBCONTRACTOR_ENDPOINT}/${subcontractor_id}
     ${response}=  DELETE  ${url}  headers=${headers}
-    Log  ${response.status_code}
+    Log  ${url}
     Log  ${response.text}
     Should Be Equal As Strings  ${response.status_code}  201

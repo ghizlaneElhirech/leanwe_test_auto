@@ -1,7 +1,7 @@
 *** Variables ***
 ${SUBCONTRACTORS_TYPE}                    xpath=//div[contains(text(), "Sous-traitants")]
 ${RESOURCE_NAME_FIELD}                    xpath=//input[@placeholder="Nom de resource"]
-${PATH_TO_SUBCONTRACTORS_FILE}            C:/Users/SanaaBOULLOUZ/Documents/subcontractors.CSV
+${PATH_TO_SUBCONTRACTORS_FILE}            ${CURDIR}/subcontractors.CSV
 ${SIREN_FIELD}                            xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${SIREN_VALUE}                            siren
 ${COMPANY_NAME_FIELD}                     xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]

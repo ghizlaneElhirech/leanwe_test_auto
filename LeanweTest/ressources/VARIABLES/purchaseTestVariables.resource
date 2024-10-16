@@ -16,7 +16,7 @@ ${SELECTED_BU}                            digitale
 ${PURCHASE_CATEGORY_FIELD}                xpath=//form[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${SELECTED_CATEGORY}                      Exemple
 ${PURCHASE_START_DATE}                    xpath=//form[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${CHOSEN_START_DATE}                      xpath=(//table[1]/tbody[1]/tr[1]/td[2]/button[1])[1]
+${CHOSEN_START_DATE}                      xpath=(//table[1]/tbody[1]/tr[2]/td[2]/button[1])[1]
 ${PURCHASE_END_DATE}                      xpath=//form[1]/div[1]/div[8]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${CHOSEN_END_DATE}                        xpath=//body[1]/div[1]/div[2]/div[6]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[6]/button[1]/div[1]
 ${PURCHASE_PRETAX_AMOUNT}                 xpath=//form[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[1]/input[1]

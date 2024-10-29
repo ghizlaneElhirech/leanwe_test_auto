@@ -3,7 +3,7 @@ ${OFFER_SIDEBAR_ITEM}                     xpath=//div[contains(text(),'Offres')]
 ${NEW_OFFER_BTN}                          xpath=//button/span/span[contains(text(), 'Nouvelle Offre')]
 ${OFFER_ADD_MODAL_TITLE}                  xpath=//div/span[contains(text(), 'Créer une offre')]
 # ${OFFER_TITLE_FIELD}                      xpath=//Input[@cy-data="title_field"]
-${OFFER_TITLE_FIELD}                      xpath=//label[contains(text(), 'Titre')]/following-sibling::INPUT
+${OFFER_TITLE_FIELD}                      xpath=//input[@cy-data="title_field"]
 ${OFFER_NAME}                             TEST_AUTO_OFFRE
 ${OFFER_COUNTRY_FIELD}                    xpath=//Input[@cy-data="country_field"]
 ${OFFRE_COUNTRY}                          France
@@ -11,9 +11,9 @@ ${OFFER_CITY_FIELD}                       xpath=//Input[@cy-data="city_field"]
 ${OFFRE_CITY}                             PARIS
 ${MANAGER_SELECT_FIELD}                   xpath=//Input[@cy-data="manager_select"]
 ${MANAGER_SELECTED_OPTION}                xpath=//div[contains(text(),'Veronica Dixon')]
-${OFFER_START_DATE}                       xpath=//label[contains(text(),"Date début")]/following-sibling::Input
-${OFFER_START_DATE_DAY}                   xpath=//tbody/tr[2]/td[2]/button[1]/div[1]
-${OFFER_END_DATE}                         xpath=//label[text()='Date fin']/following-sibling::input
+${OFFER_START_DATE}                       xpath=//form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+${OFFER_START_DATE_DAY}                   xpath=//table[1]/tbody[1]/tr[2]/td[3]/button[1]
+${OFFER_END_DATE}                         xpath=//form[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${OFFER_END_DATE_DAY}                     xpath=(//table[1]/tbody[1]/tr[5]/td[1]/button[1])[2]
 ${OFFER_DURATION_FIELD}                   xpath=//Input[@cy-data="duration_field"]
 ${OFFER_DURATION_UNIT}                    xpath=//Input[@cy-data="durationUnit_select"]

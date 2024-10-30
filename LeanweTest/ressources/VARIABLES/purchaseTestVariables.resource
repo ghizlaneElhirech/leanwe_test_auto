@@ -35,3 +35,5 @@ ${PURCHASE_CATEGORY_FILTER}               xpath=//main[1]/div[1]/div[1]/div[1]/d
 ${PURCHASE_CATEGORY_CHOSEN_FILTER}        xpath=//div[contains(text(),"Exemple")]
 ${PURCHASE_TITLE}                         PURCHASE_AUTO
 ${PURCHASE_CARD_TITLE_LOCATOR}            xpath=//main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]/div[1]/span[1]
+${CHOSEN_YEAR_DATE}                       xpath=//body[1]/div[1]/div[2]/div[3]/div[1]/div[6]/div[1]/div[1]
+${CHOSEN_MONTH_FILTER}                    xpath=//body[1]/div[1]/div[2]/div[4]/div[1]/div[10]/div[1]

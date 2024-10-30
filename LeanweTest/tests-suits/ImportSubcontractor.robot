@@ -7,8 +7,7 @@ Resource        ../ressources/HELPERS/importSubcontractorsHelpers.resource
 Test Teardown      SeleniumLibrary.Close Browser
 
 *** Test Cases ***
-Import Subcontractors from a csv File
-    
+Import Subcontractors from a csv File 
     Authenticate User
     CLEAN UP IMPORTED DATA
     LOG IN AS SUPPORT

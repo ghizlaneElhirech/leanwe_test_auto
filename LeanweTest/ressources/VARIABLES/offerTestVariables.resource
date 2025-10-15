@@ -10,7 +10,7 @@ ${OFFRE_COUNTRY}                          France
 ${OFFER_CITY_FIELD}                       xpath=//Input[@cy-data="city_field"]
 ${OFFRE_CITY}                             PARIS
 ${MANAGER_SELECT_FIELD}                   xpath=//Input[@cy-data="manager_select"]
-${MANAGER_SELECTED_OPTION}                xpath=//div[contains(text(),'Veronica Dixon')]
+${MANAGER_SELECTED_OPTION}                xpath=//div[contains(text(),'John Doe')]
 ${OFFER_START_DATE}                       xpath=//form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${OFFER_START_DATE_DAY}                   xpath=//table[1]/tbody[1]/tr[2]/td[3]/button[1]
 ${OFFER_END_DATE}                         xpath=//form[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
@@ -48,7 +48,7 @@ ${OFFER_MIN_MONTH_FILTER}                 xpath=//input[@id='min_month']
 ${OFFER_MAX_MONTH_FILTER}                 xpath=//input[@id='max_month']
 ${OFFER_COUNTRY_FILTER}                   xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${OFFER_CITY_FILTER}                      xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/input[1]
-${OFFER_STATUS_FILTER}                    xpath=//input[@cy-data="offerStatus_select"]
+${OFFER_STATUS_FILTER}                    xpath=//Input[@cy-data="offer-status-select"]
 ${SELECTED_STATUS}                        xpath=//div/div[contains(text(),"Brouillon")]
 ${ARROW_BACK_OFFER}                       xpath=//main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/header[1]/div[1]/button[1]/span[1]/i[1]
 ${MIN-TJM-ID}                             min_tjm

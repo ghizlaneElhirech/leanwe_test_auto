@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.0.1 (Python 3.10.6 on win32)" name="Generator">
+<meta content="Robot Framework 7.2.2 (Python 3.13.2 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1252,58 +1252,48 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0) {
+        if (total == 0)
             return [0.0, 0.0, 0.0];
-        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1
+            pass = 0.1;
         if (fail > 0 && fail < 0.1)
-            fail = 0.1
+            fail = 0.1;
         if (skip > 0 && skip < 0.1)
-            skip = 0.1
+            skip = 0.1;
         if (pass > 99.95 && pass < 100)
-            pass = 99.9
+            pass = 99.9;
         if (fail > 99.95 && fail < 100)
-            fail = 99.9
+            fail = 99.9;
         if (skip > 99.95 && skip < 100)
-            skip = 99.9
-        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
+            skip = 99.9;
+        return [round1(pass), round1(skip), round1(fail)];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1
+            num1 = 1.0;
         if (num2 > 0 && num2 < 1)
-            num2 = 1
+            num2 = 1.0;
         if (num3 > 0 && num3 < 1)
-            num3 = 1
+            num3 = 1.0;
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 > num2 && num1 > num3)
-                num1 -= 0.1;
-            else if (num2 > num1 && num2 > num3)
-                num2 -= 0.1;
-            else if (num3 > num1 && num3 > num2)
-                num3 -= 0.1;
-            else if (num1 > num3 && num1 == num2) {
-                num1 -= 0.1;
-                num2 -= 0.1;
-            }
-            else if (num1 > num2 && num1 == num3) {
-                num1 -= 0.1;
-                num3 -= 0.1;
-            }
-            else if (num2 > num1 && num2 == num3) {
-                num2 -= 0.1;
-                num3 -= 0.1;
-            }
+            if (num1 >= num2 && num1 >= num3)
+                num1 = round1(num1 - 0.1);
+            else if (num2 >= num1 && num2 >= num3)
+                num2 = round1(num2 - 0.1);
+            else
+                num3 = round1(num3 - 0.1);
         }
-        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
+        return [num1, num2, num3];
+    }
+    function round1(num) {
+        return Math.round(num*10) / 10;
     }
     return {
         Statistics: Statistics
@@ -1522,7 +1512,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -2080,3 +2070,385 @@ storage = function () {
 <script type="text/javascript">
 window.output = {};
 </script>
+<script type="text/javascript">
+window.output["suite"] = [1,2,3,0,[],[0,0,16542],[],[[4,0,0,[],[0,794,15496,5],[[0,6,7,0,0,8,0,0,[1,795,5449],[[0,9,10,0,11,12,0,0,[1,797,2895],[[798,2,13],[1232,3,15]]],[0,16,10,0,17,0,0,0,[1,3692,162],[]],[0,18,10,0,19,20,0,0,[1,3854,728],[]],[0,18,10,0,19,21,0,0,[1,4583,43],[]],[0,22,10,0,23,24,0,0,[1,4626,712],[[4627,2,25]]],[0,22,10,0,23,26,0,0,[1,5339,577],[[5342,2,27]]],[0,28,10,0,29,30,0,0,[1,5917,326],[[5918,2,31]]]]],[0,32,0,0,0,0,0,0,[1,6245,4303],[[0,33,10,0,34,35,0,0,[1,6246,2122],[]],[0,36,10,0,37,38,39,0,[1,8369,46],[[8415,2,40]]],[0,41,10,0,42,39,0,0,[1,8416,376],[[8416,2,43]]],[0,44,10,0,45,46,0,0,[1,8792,37],[]],[0,28,10,0,29,47,0,0,[1,8830,379],[[8830,2,48]]],[0,18,10,0,19,49,0,0,[1,9209,83],[]],[0,28,10,0,29,49,0,0,[1,9293,455],[[9295,2,50]]],[0,51,10,0,52,39,0,0,[1,9751,797],[[9752,2,53]]]]],[0,18,10,0,19,54,0,0,[0,10549,5557],[[16058,2,55],[16059,5,5]]],[0,56,0,0,0,0,0,0,[3,16127,5],[]],[0,57,0,0,0,0,0,0,[3,16208,0],[]],[0,58,0,0,0,0,0,0,[3,16247,0],[]]]]],[],[1,0,1,0]];
+</script>
+<script type="text/javascript">
+window.output["strings"] = [];
+</script>
+<script type="text/javascript">
+window.output["strings"] = window.output["strings"].concat(["*","*Timesheets Report","*C:\\Users\\KhalilBENHADHSALAH\\Downloads\\Test 1\\leanwe-test-auto\\LeanweTest\\tests-suits\\Timesheets_Report.robot","*Timesheets_Report.robot","*FILL IN A TIMESHEET","*Element 'xpath=//button/span/span[contains(text(), 'nouvelle feuille de temps')]' not visible after 5 seconds.","*LOG IN AS COLLABORATOR","*helpers","*${Leanwe_URL}    ${BROWSER}    ${LOGIN_EMAIL}    ${Password}","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${URL}    ${BROWSER_NAME}","*Opening browser 'chrome' to base url '<a href=\"https://staging.leanwe.com\">https://staging.leanwe.com\x3c/a>'.","*s1-t1-k1-k1","eNpVj7EOgkAQRH9lSjXmIhEVtDI2lhaUNsCtsgncmbtV9O9dQzRYbDfz3mzREOom+I5s4AcF6EX2DpNkmZqFWed5ZrJsCktCtZAFO5z2xRGl4LA991QNxXgeYww9CR1fG4HzgkolvruVwlVL6FkaiIp/zKE6dq/UvVmkuclW0x3qewjkpH3N/8eOckmSgiMCqagjZ5V68eFL/gRnc0QPlk+stA+OGhGvI1qdMewZqL8PnVWehNcbxqFiRw==","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${LOGIN_PAGE_FORM_USERNAME_INPUT}","*${LOGIN_PAGE_FORM_PASSWORD_INPUT}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${LOGIN_PAGE_FORM_USERNAME_INPUT}    ${USERNAME}","*Typing text 'salim.jaabiri@yopmail.com' into text field 'xpath=//input[@name=\"email\"]'.","*${LOGIN_PAGE_FORM_PASSWORD_INPUT}    ${PASSWORD}","*Typing text 'secret2023' into text field 'xpath=//input[@name=\"password\"]'.","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${LOGIN_BUTTON}","*Clicking element '<a href=\"xpath://span[contains(text(),'Se\">xpath://span[contains(text(),'Se\x3c/a> connecter')]'.","*NAVIGATE TO TIMESHEET PAGE","*Wait Until Page Contains","*<p>Waits until <code>text\x3c/code> appears on the current page.\x3c/p>","*Tableau de Bord","*Get WebElement","*<p>Returns the first WebElement matching the given <code>locator\x3c/code>.\x3c/p>","*${sidebar_Xpath}","*${sidebar_element}","*${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=\"5142db29faa484941d04bc80a6e5d68c\", element=\"f.481F9512202DCA58DEE3AC037F38C227.d.574AE4055FE755F0DE2E35708AAFB6AF.e.81\")&gt;","*Mouse Over","*<p>Simulates hovering the mouse over the element <code>locator\x3c/code>.\x3c/p>","*Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session=\"5142db29faa484941d04bc80a6e5d68c\", element=\"f.481F9512202DCA58DEE3AC037F38C227.d.574AE4055FE755F0DE2E35708AAFB6AF.e.81\")&gt;'.","*Wait Until Page Contains Element","*<p>Waits until the element <code>locator\x3c/code> appears on the current page.\x3c/p>","*${CRA_SIDEBAR_ITEM}    timeout=2s","*${CRA_SIDEBAR_ITEM}","*Clicking element 'xpath=//div[contains(text(),'CRA et Frais')]'.","*${TIMESHEET_SIDEBAR_ITEM}","*Clicking element 'xpath=//div[contains(text(),'Mes temps')]'.","*Mouse Out","*<p>Simulates moving the mouse away from the element <code>locator\x3c/code>.\x3c/p>","*Simulating Mouse Out on element '&lt;selenium.webdriver.remote.webelement.WebElement (session=\"5142db29faa484941d04bc80a6e5d68c\", element=\"f.481F9512202DCA58DEE3AC037F38C227.d.574AE4055FE755F0DE2E35708AAFB6AF.e.81\")&gt;'.","*${NEW_TIMESHEET_BTN}","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-307.png\"><img src=\"selenium-screenshot-307.png\" width=\"800px\">\x3c/a>","*SELECT THE TIMESHEET MONTH","*ACCESS TIMESHEETS PAGE AND ADD NEW LINE","*FILL OUT THE TIMESHEET FORM"]);
+</script>
+<script type="text/javascript">
+window.output["stats"] = [[{"elapsed":"00:00:15","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:17","fail":1,"id":"s1","label":"Timesheets Report","name":"Timesheets Report","pass":0,"skip":0}]];
+</script>
+<script type="text/javascript">
+window.output["errors"] = [[1232,3,15,14]];
+</script>
+<script type="text/javascript">
+window.output["baseMillis"] = 1753965187474;
+</script>
+<script type="text/javascript">
+window.output["generated"] = 19434;
+</script>
+<script type="text/javascript">
+window.output["expand_keywords"] = null;
+</script>
+<script type="text/javascript">
+window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
+</script>
+<title></title>
+</head>
+<body data-theme="dark">
+<div id="javascript-disabled">
+  <h1>Opening Robot Framework log failed</h1>
+  <ul>
+    <li>Verify that you have <b>JavaScript enabled</b> in your browser.</li>
+    <li>Make sure you are using a <b>modern enough browser</b>. If using Internet Explorer, version 11 is required.</li>
+    <li>Check are there messages in your browser's <b>JavaScript error log</b>. Please report the problem if you suspect you have encountered a bug.</li>
+  </ul>
+</div>
+<script type="text/javascript">removeJavaScriptDisabledWarning();</script>
+<div id="header"></div>
+<div id="statistics-container"></div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    storage.init();
+    theme.init(storage);
+    try {
+        var topsuite = window.testdata.suite();
+    } catch (error) {
+        addJavaScriptDisabledWarning(error);
+        return;
+    }
+    initLayout(topsuite.name, 'Log');
+    theme.reflectPreference();
+    addStatistics();
+    addErrors();
+    addExecutionLog(topsuite);
+    addLogLevelSelector(window.settings['minLevel'], window.settings['defaultLevel']);
+    if (window.location.hash) {
+        makeElementVisible(window.location.hash.substring(1));
+    } else {
+        expandSuite(topsuite);
+    }
+    setTimeout(function () { loadAndExpandElementIds(window.output['expand_keywords']); }, 100);
+});
+
+function addLogLevelSelector(minLevel, defaultLevel) {
+    var controller = LogLevelController(minLevel, defaultLevel);
+    if (controller.showLogLevelSelector()) {
+        var selector = $.tmpl('logLevelSelectorTemplate', controller);
+        selector.find('select').val(controller.defaultLogLevel());
+        selector.appendTo($('#top-right-header'));
+        $('#report-or-log-link').find('a').css({'border-bottom-left-radius': '0'});
+        setMessageVisibility(controller.defaultLogLevel());
+    }
+}
+
+function addErrors() {
+    var errors = window.testdata.errorIterator();
+    if (errors.hasNext()) {
+        $.tmpl('errorHeaderTemplate').appendTo($('body'));
+        drawErrorsRecursively(errors, $('#errors'));
+    }
+}
+
+function drawErrorsRecursively(errors, target) {
+    var elements = popFromIterator(errors, 10);
+    $.tmpl('errorTemplate', elements).appendTo(target);
+    if (errors.hasNext())
+        setTimeout(function () { drawErrorsRecursively(errors, target); }, 0);
+    else {
+        // Errors may have moved scroll position. Resetting location re-scrolls.
+        if (window.location.hash)
+            window.location.replace(window.location.hash);
+    }
+}
+
+function popFromIterator(iterator, upTo) {
+    var result = [];
+    while (iterator.hasNext() > 0 && result.length < upTo)
+        result.push(iterator.next());
+    return result;
+}
+
+function makeElementVisible(id) {
+    window.testdata.ensureLoaded(id, function (ids) {
+        util.map(ids, expandElementWithId);
+        if (ids.length) {
+            expandFailed(window.testdata.findLoaded(util.last(ids)));
+            window.location.hash = id;
+            document.getElementById(id).scrollIntoView();
+        }
+    });
+}
+
+function addExecutionLog(main) {
+    $('body').append($(testOrTask('<h2>{Test} Execution Log</h2>')),
+                     $.tmpl('suiteTemplate', main));
+}
+</script>
+
+<script type="text/x-jquery-tmpl" id="totalStatisticsRowTemplate">
+  <tr class="row-${$item.index}">
+    <td class="stats-col-name">
+      <div class="stat-name">
+        <span>{{html label}}</span>
+      </div>
+    </td>
+    {{tmpl($data) 'statColumnsTemplate'}}
+  </tr>
+</script>
+
+<script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
+  <tr class="row-${$item.index}">
+    <td class="stats-col-name" title="${doc}">
+      <div class="stat-name">
+        <span>{{html label}}</span>
+        {{if info}}(${info}){{/if}}
+      </div>
+      <div class="tag-links">
+        {{each links}}
+        <span>[<a href="{{html $value.url}}" title="{{html $value.url}}">{{html $value.title}}</a>]</span>
+        {{/each}}
+      </div>
+    </td>
+    {{tmpl($data) 'statColumnsTemplate'}}
+  </tr>
+</script>
+
+<script type="text/x-jquery-tmpl" id="suiteStatisticsRowTemplate">
+  <tr onclick="makeElementVisible('${id}')" class="row-${$item.index}">
+    <td class="stats-col-name" title="{{html label}}">
+      <div class="stat-name">
+        <a href="#${id}"><span class="parent-name">{{html formatParentName}}</span>{{html name}}</a>
+      </div>
+    </td>
+    {{tmpl($data) 'statColumnsTemplate'}}
+  </tr>
+</script>
+
+<script type="text/x-jquery-tmpl" id="errorHeaderTemplate">
+  <h2>{{= testOrTask('{Test}')}} Execution Errors</h2>
+  <table id="errors"></table>
+</script>
+
+<script type="text/x-jquery-tmpl" id="errorTemplate">
+  <tr id="${id}" class="message-row">
+    <td class="error-time">
+      {{if link}}
+      <a onclick="makeElementVisible('${link}')" href="#${link}" title="Link to details">${date} ${time}</a>
+      {{else}}
+      ${date} ${time}
+      {{/if}}
+    </td>
+    <td class="${level.toLowerCase()} level"><span class="label ${level.toLowerCase()}">${level}</span></td>
+    <td class="message">{{html text}}</td>
+    <td class="select-message" onclick="javascript:selectMessage('${id}')" title="Select message text">
+      <div></div>
+    </td>
+  </tr>
+</script>
+
+<script type="text/x-jquery-tmpl" id="suiteTemplate">
+  <div id="${id}" class="suite">
+    <div class="element-header closed" onclick="toggleSuite('${id}')">
+      <div class="element-header-left" title="SUITE  {{html name}}  [${status}]">
+        <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
+        <span class="label ${status.toLowerCase()}">SUITE</span>
+        <span class="name">{{html name}}</span>
+      </div>
+      <div class="element-header-right" onclick="stopPropagation(event)" title="">
+        <a class="expand" title="Expand all" href="javascript:expandAll('${id}')"></a>
+        <a class="collapse" title="Collapse all" href="javascript:collapseAll('${id}')"></a>
+        <a class="link" title="Link to this suite" href="#${id}" onclick="makeElementVisible('${id}')"></a>
+      </div>
+      <div class="element-header-toggle" title="Toggle visibility"></div>
+    </div>
+    <div class="children">
+      <table class="metadata">
+        <tr>
+          <th>Full Name:</th>
+          <td>{{html fullName}}</td>
+        </tr>
+        {{if doc()}}
+        <tr>
+          <th>Documentation:</th>
+          <td class="doc">{{html doc()}}</td>
+        </tr>
+        {{/if}}
+        {{each metadata}}
+        <tr>
+          <th>{{html $value[0]}}:</th>
+          <td class="doc">{{html $value[1]}}</td>
+        </tr>
+        {{/each}}
+        {{if source}}
+        <tr>
+          <th>Source:</th>
+          {{if relativeSource}}
+          <td><a href="${relativeSource}">{{html source}}</a></td>
+          {{else}}
+          <td>{{html source}}</td>
+          {{/if}}
+        </tr>
+        {{/if}}
+        <tr>
+          <th>Start / End / Elapsed:</th>
+          <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
+        </tr>
+        <tr>
+          <th>Status:</th>
+          <td>{{tmpl($data) 'suiteStatusMessageTemplate'}}</td>
+        </tr>
+        {{if message()}}
+        <tr>
+          <th>Message:</th>
+          <td class="message">{{html message()}}</td>
+        </tr>
+        {{/if}}
+      </table>
+    </div>
+  </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="testTemplate">
+  <div id="${id}" class="test">
+    <div class="element-header closed" onclick="toggleTest('${id}')">
+      <div class="element-header-left" title="{{= testOrTask('{TEST}')}}  {{html name}}  [${status}]">
+        <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
+        <span class="label ${status.toLowerCase()}">{{= testOrTask('{TEST}')}}</span>
+        <span class="name">{{html name}}</span>
+      </div>
+      <div class="element-header-right" onclick="stopPropagation(event)" title="">
+        <a class="expand" title="Expand all" href="javascript:expandAll('${id}')"></a>
+        <a class="collapse" title="Collapse all" href="javascript:collapseAll('${id}')"></a>
+        <a class="link" title="Link to this {{= testOrTask('{test}')}}" href="#${id}" onclick="makeElementVisible('${id}')"></a>
+      </div>
+      <div class="element-header-toggle" title="Toggle visibility"></div>
+    </div>
+    <div class="children">
+      <table class="metadata">
+        <tr>
+          <th>Full Name:</th>
+          <td>{{html fullName}}</td>
+        </tr>
+        {{if doc()}}
+        <tr>
+          <th>Documentation:</th>
+          <td class="doc">{{html doc()}}</td>
+        </tr>
+        {{/if}}
+        {{if tags.length}}
+        <tr>
+          <th>Tags:</th>
+          <td>{{html tags.join(', ')}}</td>
+        </tr>
+        {{/if}}
+        {{if timeout}}
+        <tr>
+          <th>Timeout:</th>
+          <td>{{html timeout}}</td>
+        </tr>
+        {{/if}}
+        <tr>
+          <th>Start / End / Elapsed:</th>
+          <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
+        </tr>
+        <tr>
+          <th>Status:</th>
+          <td><span class="label ${status.toLowerCase()}">${status}</span></td>
+        </tr>
+        {{if message()}}
+        <tr>
+          <th>Message:</th>
+          <td class="message">{{html message()}}</td>
+        </tr>
+        {{/if}}
+      </table>
+    </div>
+  </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="keywordTemplate">
+  <div id="${id}" class="keyword">
+    <div class="element-header closed" onclick="toggleKeyword('${id}')">
+      <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
+        <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
+        <span class="label ${status.toLowerCase()}">${type}</span>
+        <span class="assign">{{html assign}}</span>
+        <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
+        &nbsp;
+        <span class="arg">{{html arguments}}</span>
+      </div>
+      <div class="element-header-right" onclick="stopPropagation(event)">
+        <a class="expand" title="Expand all" href="javascript:expandAll('${id}')"></a>
+        <a class="collapse" title="Collapse all" href="javascript:collapseAll('${id}')"></a>
+        <a class="link" title="Link to this item" href="#${id}" onclick="makeElementVisible('${id}')"></a>
+      </div>
+      <div class="element-header-toggle" title="Toggle visibility"></div>
+    </div>
+    <div class="children">
+      <table class="metadata keyword-metadata">
+        {{if doc()}}
+        <tr>
+          <th>Documentation:</th>
+          <td class="doc">{{html doc()}}</td>
+        </tr>
+        {{/if}}
+        {{if tags}}
+        <tr>
+          <th>Tags:</th>
+          <td>{{html tags}}</td>
+        </tr>
+        {{/if}}
+        {{if timeout}}
+        <tr>
+          <th>Timeout:</th>
+          <td>{{html timeout}}</td>
+        </tr>
+        {{/if}}
+        <tr>
+          <th>Start / End / Elapsed:</th>
+          <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
+        </tr>
+        {{if message()}}
+        <tr>
+          <th>Message:</th>
+          <td class="message">{{html message()}}</td>
+        </tr>
+        {{/if}}
+      </table>
+    </div>
+  </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="messageTemplate">
+  <table id="${id}" class="messages ${level.toLowerCase()}-message">
+    <tr class="message-row">
+      <td class="time">${time}</td>
+      <td class="${level.toLowerCase()} level"><span class="label ${level.toLowerCase()}">${level}</span></td>
+      <td class="message">{{html text}}</td>
+      <td class="select-message" onclick="javascript:selectMessage('${id}')" title="Select message text">
+        <div></div>
+      </td>
+    </tr>
+  </table>
+</script>
+
+<script type="text/x-jquery-tmpl" id="logLevelSelectorTemplate">
+  <div id="log-level-selector">
+  Log level:
+    <select onchange="logLevelSelected(this.options[selectedIndex].value)">
+      <option value="3">WARN</option>
+      <option value="2">INFO</option>
+      <option value="1">DEBUG</option>
+      {{if showTrace()}}<option value="0">TRACE</option>{{/if}}
+    </select>
+  </div>
+</script>
+
+</body>
+</html>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-10-06T17:38:32.550072" rpa="false" schemaversion="5">
+<suite id="s1" name="CreatePurchase" source="c:\Users\HP\Downloads\wetransfer_test-1_2025-07-31_1245\Test 1\leanwe-test-auto\LeanweTest\tests-suits\CreatePurchase.robot">
+<test id="s1-t1" name="CREATE A NEW PURCHASE" line="10">
+<kw name="LOG IN AS SUPPORT" owner="GlobalHelpers">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:33.407627" level="INFO">Opening browser 'chrome' to base url 'https://staging.leanwe.com'.</msg>
+<arg>${Leanwe_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-06T17:38:33.406581" elapsed="2.263988"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-06T17:38:35.671569" elapsed="0.030000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T17:38:35.702585" elapsed="0.875107"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T17:38:36.577692" elapsed="0.023001"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:36.600693" level="INFO">Typing text 'redouane@yopmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
+<arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
+<arg>redouane@yopmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:36.600693" elapsed="0.275037"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:36.876734" level="INFO">Typing text 'secret2023' into text field 'xpath=//input[@name="password"]'.</msg>
+<arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
+<arg>secret2023</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:36.876734" elapsed="0.141398"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:37.019131" level="INFO">Clicking element 'xpath://body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/button[1]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:37.018132" elapsed="0.092379"/>
+</kw>
+<status status="PASS" start="2025-10-06T17:38:33.405576" elapsed="3.704935"/>
+</kw>
+<kw name="SELECT PURCHASE ITEM FROM SIDEBAR" owner="purchaseTestHelpers">
+<kw name="SELECT ITEM FROM SIDEBAR" owner="GlobalHelpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${DASHBOARD_TITLE_XPATH}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T17:38:37.112510" elapsed="2.861794"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:39.990302" level="INFO">${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="699b6fba9cc520282cd606887341ab6f", element="f.B0055B717BF02ECAF0C11AB740600F6A.d.0A05192E1691C661E62B20C540A5CC75.e.72")&gt;</msg>
+<var>${sidebar_element}</var>
+<arg>${sidebar_Xpath}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:39.975307" elapsed="0.014995"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:39.990302" level="INFO">Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="699b6fba9cc520282cd606887341ab6f", element="f.B0055B717BF02ECAF0C11AB740600F6A.d.0A05192E1691C661E62B20C540A5CC75.e.72")&gt;'.</msg>
+<arg>${sidebar_element}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:39.990302" elapsed="0.372812"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${SIDEBAR_ITEM_TITLE}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T17:38:40.364116" elapsed="0.013997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:40.379155" level="INFO">Clicking element 'xpath=(//div[contains(text(),"Achats")])[1]'.</msg>
+<arg>${SIDEBAR_ITEM_TITLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:40.379155" elapsed="0.128579"/>
+</kw>
+<return>
+<value>${sidebar_element}</value>
+<status status="PASS" start="2025-10-06T17:38:40.507734" elapsed="0.000000"/>
+</return>
+<msg time="2025-10-06T17:38:40.508735" level="INFO">${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="699b6fba9cc520282cd606887341ab6f", element="f.B0055B717BF02ECAF0C11AB740600F6A.d.0A05192E1691C661E62B20C540A5CC75.e.72")&gt;</msg>
+<var>${sidebar_element}</var>
+<arg>${GLOBAL_PURCHASE_ITEM}</arg>
+<status status="PASS" start="2025-10-06T17:38:37.112510" elapsed="3.396225"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE_SIDEBAR_ITEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T17:38:40.509752" elapsed="0.254577"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:40.765328" level="INFO">Clicking element 'xpath=(//div[contains(text(),"Mes Achats")])[1]'.</msg>
+<arg>${PURCHASE_SIDEBAR_ITEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:40.765328" elapsed="0.094234"/>
+</kw>
+<kw name="Mouse Out" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:40.859562" level="INFO">Simulating Mouse Out on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="699b6fba9cc520282cd606887341ab6f", element="f.B0055B717BF02ECAF0C11AB740600F6A.d.0A05192E1691C661E62B20C540A5CC75.e.72")&gt;'.</msg>
+<arg>${sidebar_element}</arg>
+<doc>Simulates moving the mouse away from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:40.859562" elapsed="0.562900"/>
+</kw>
+<status status="PASS" start="2025-10-06T17:38:37.111517" elapsed="4.310945"/>
+</kw>
+<kw name="FILL OUT THE PURCHASE CREATION FORM" owner="purchaseTestHelpers">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-06T17:38:41.424463" level="INFO">${current_datetime} = 20251006173841</msg>
+<var>${current_datetime}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-06T17:38:41.424463" elapsed="0.001001"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-06T17:38:41.425464" level="INFO">${FULL_PURCHASE_TITLE} = PURCHASE_AUTO_20251006173841</msg>
+<var>${FULL_PURCHASE_TITLE}</var>
+<arg>${PURCHASE_TITLE}_${current_datetime}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-06T17:38:41.425464" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE_NEW_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T17:38:41.425464" elapsed="0.025679"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:41.451143" level="INFO">Clicking element 'xpath=//button[@cy-data="createNew_btn"]'.</msg>
+<arg>${PURCHASE_NEW_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:41.451143" elapsed="0.087230"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE_TITLE_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T17:38:41.538373" elapsed="0.422305"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${PURCHASE_TITLE_FIELD}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-06T17:38:41.961663" elapsed="0.025997"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:41.989660" level="INFO">Typing text 'PURCHASE_AUTO_20251006173841' into text field 'xpath=//input[@cy-data="purchase_invoice_title_field"]'.</msg>
+<msg time="2025-10-06T17:38:42.244389" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-213.png"&gt;&lt;img src="selenium-screenshot-213.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-06T17:38:42.244389" level="FAIL">InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a4de9f25+80677]
+	GetHandleVerifier [0x0x7ff6a4de9f80+80768]
+	(No symbol) [0x0x7ff6a4b902bf]
+	(No symbol) [0x0x7ff6a4b97e0a]
+	(No symbol) [0x0x7ff6a4b9af1f]
+	(No symbol) [0x0x7ff6a4b9afdf]
+	(No symbol) [0x0x7ff6a4bde75b]
+	(No symbol) [0x0x7ff6a4c1150a]
+	(No symbol) [0x0x7ff6a4bdb216]
+	(No symbol) [0x0x7ff6a4c11720]
+	(No symbol) [0x0x7ff6a4c399c0]
+	(No symbol) [0x0x7ff6a4c112e3]
+	(No symbol) [0x0x7ff6a4bd9770]
+	(No symbol) [0x0x7ff6a4bda5a3]
+	GetHandleVerifier [0x0x7ff6a50c817d+3087741]
+	GetHandleVerifier [0x0x7ff6a50c223a+3063354]
+	GetHandleVerifier [0x0x7ff6a50e32c5+3198661]
+	GetHandleVerifier [0x0x7ff6a4e0412e+187694]
+	GetHandleVerifier [0x0x7ff6a4e0b20f+216591]
+	GetHandleVerifier [0x0x7ff6a4df2ee4+117476]
+	GetHandleVerifier [0x0x7ff6a4df309f+117919]
+	GetHandleVerifier [0x0x7ff6a4dd91a8+11688]
+	BaseThreadInitThunk [0x0x7ffaa6087374+20]
+	RtlUserThreadStart [0x0x7ffaa6cfcc91+33]
+</msg>
+<arg>${PURCHASE_TITLE_FIELD}</arg>
+<arg>${FULL_PURCHASE_TITLE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-10-06T17:38:41.988661" elapsed="0.262729">InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a4de9f25+80677]
+	GetHandleVerifier [0x0x7ff6a4de9f80+80768]
+	(No symbol) [0x0x7ff6a4b902bf]
+	(No symbol) [0x0x7ff6a4b97e0a]
+	(No symbol) [0x0x7ff6a4b9af1f]
+	(No symbol) [0x0x7ff6a4b9afdf]
+	(No symbol) [0x0x7ff6a4bde75b]
+	(No symbol) [0x0x7ff6a4c1150a]
+	(No symbol) [0x0x7ff6a4bdb216]
+	(No symbol) [0x0x7ff6a4c11720]
+	(No symbol) [0x0x7ff6a4c399c0]
+	(No symbol) [0x0x7ff6a4c112e3]
+	(No symbol) [0x0x7ff6a4bd9770]
+	(No symbol) [0x0x7ff6a4bda5a3]
+	GetHandleVerifier [0x0x7ff6a50c817d+3087741]
+	GetHandleVerifier [0x0x7ff6a50c223a+3063354]
+	GetHandleVerifier [0x0x7ff6a50e32c5+3198661]
+	GetHandleVerifier [0x0x7ff6a4e0412e+187694]
+	GetHandleVerifier [0x0x7ff6a4e0b20f+216591]
+	GetHandleVerifier [0x0x7ff6a4df2ee4+117476]
+	GetHandleVerifier [0x0x7ff6a4df309f+117919]
+	GetHandleVerifier [0x0x7ff6a4dd91a8+11688]
+	BaseThreadInitThunk [0x0x7ffaa6087374+20]
+	RtlUserThreadStart [0x0x7ffaa6cfcc91+33]
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:47.252297" level="INFO">Typing text 'PURCHASE_AUTO_20251006173841' into text field 'xpath=//input[@cy-data="purchase_invoice_title_field"]'.</msg>
+<arg>${PURCHASE_TITLE_FIELD}</arg>
+<arg>${FULL_PURCHASE_TITLE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:47.252297" elapsed="0.466477"/>
+</kw>
+<arg>5</arg>
+<arg>5</arg>
+<arg>Input Text</arg>
+<arg>${PURCHASE_TITLE_FIELD}</arg>
+<arg>${FULL_PURCHASE_TITLE}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-06T17:38:41.988661" elapsed="5.731097"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:47.719758" level="INFO">Clicking element 'xpath=//input[@cy-data="purchase_invoice_number_field"]'.</msg>
+<arg>${PURCHASE_INVOICE_NUMBER_FIELD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:47.719758" elapsed="0.086276"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:47.806034" level="INFO">Typing text 'INV-12453352' into text field 'xpath=//input[@cy-data="purchase_invoice_number_field"]'.</msg>
+<arg>${PURCHASE_INVOICE_NUMBER_FIELD}</arg>
+<arg>${PURCHASE_INVOICE_NUMBER_VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:47.806034" elapsed="0.209002"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:48.016062" level="INFO">Clicking element 'xpath=/html/body/div/div[2]/div[3]/div/div/div[2]/form/div/div[3]/div/div[1]/div[1]/div[1]/div[1]/input'.</msg>
+<arg>${PURCHASE_PAYMENT_MODE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:48.015036" elapsed="0.209139"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:48.225174" level="INFO">Clicking element 'xpath=//div/div[contains(text(),"Espèces")]'.</msg>
+<arg>${ESPECE_PAYMENT_MODE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:48.224175" elapsed="0.131122"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE_PAYMENT_TYPE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T17:38:48.355297" elapsed="0.023339"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:48.380643" level="INFO">Clicking element 'xpath=//form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]'.</msg>
+<arg>${PURCHASE_PAYMENT_TYPE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T17:38:48.379639" elapsed="0.091043"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-10-06T17:38:53.697146" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-214.png"&gt;&lt;img src="selenium-screenshot-214.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-06T17:38:53.697146" level="FAIL">Element 'xpath=//div[contains(text(),'Unitaire')]' not visible after 5 seconds.</msg>
+<arg>${PURCHASE_SEMESTER_TYPE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-10-06T17:38:48.471724" elapsed="5.229423">Element 'xpath=//div[contains(text(),'Unitaire')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${PURCHASE_SEMESTER_TYPE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.701147" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PURCHASE_CLIENT_COMPANY}</arg>
+<arg>${SELECTED_CLIENT_COMPANY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.701147" elapsed="0.000999"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.702146" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>none</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.702146" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>none</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.703206" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${PURCHASE_BUSINESS_UNIT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.703206" elapsed="0.000951"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PURCHASE_BUSINESS_UNIT}</arg>
+<arg>${SELECTED_BU}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.704157" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.704157" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>none</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.705144" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>none</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.705144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${PURCHASE_CATEGORY_FIELD}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.705144" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PURCHASE_CATEGORY_FIELD}</arg>
+<arg>${SELECTED_CATEGORY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.705144" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.706144" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>none</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.706144" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>none</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.706144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE_START_DATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.706144" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${PURCHASE_START_DATE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.707144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHOSEN_START_DATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.707144" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${CHOSEN_START_DATE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.707144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE_END_DATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.707144" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${PURCHASE_END_DATE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.708144" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.708144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${CHOSEN_END_DATE}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.708144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHOSEN_END_DATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.708144" elapsed="0.001000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${CHOSEN_END_DATE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.709144" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PURCHASE_PRETAX_AMOUNT}</arg>
+<arg>${PURCHASE_TARIF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.709144" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PURCHASE_TAX_AMOUNT}</arg>
+<arg>${PURCHASE_TVA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.709144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE_ADD_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.709144" elapsed="0.001000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${PURCHASE_ADD_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.710144" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>La facture fournisseur a été créée avec succès</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.710144" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${FULL_PURCHASE_TITLE}</value>
+<status status="NOT RUN" start="2025-10-06T17:38:53.710144" elapsed="0.000000"/>
+</return>
+<var>${purchase_name}</var>
+<status status="FAIL" start="2025-10-06T17:38:41.423464" elapsed="12.286680">Element 'xpath=//div[contains(text(),'Unitaire')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${GLOBAL_PURCHASE_NAME}</arg>
+<arg>${purchase_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2025-10-06T17:38:53.712146" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-10-06T17:38:33.404596" elapsed="20.308551">Element 'xpath=//div[contains(text(),'Unitaire')]' not visible after 5 seconds.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-06T17:38:53.715148" elapsed="2.276838"/>
+</kw>
+<status status="FAIL" start="2025-10-06T17:38:32.555071" elapsed="23.437937"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="CreatePurchase">CreatePurchase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,320 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.10.6 on win32)" generated="2024-09-01T19:28:09.850048" rpa="false" schemaversion="5">
-<suite id="s1" name="CreateCollaborator" source="C:\Users\makhe\Projects\leanwe-test-auto\LeanweTest\tests-suits\CreateCollaborator.robot">
-<test id="s1-t1" name="CREATE A NEW COLLABORATOR" line="12">
-<kw name="LOG IN AS SUPPORT" owner="helpers">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-07-31T14:33:07.471738" rpa="false" schemaversion="5">
+<suite id="s1" name="Timesheets Report" source="C:\Users\KhalilBENHADHSALAH\Downloads\Test 1\leanwe-test-auto\LeanweTest\tests-suits\Timesheets_Report.robot">
+<test id="s1-t1" name="FILL IN A TIMESHEET" line="11">
+<kw name="LOG IN AS COLLABORATOR" owner="helpers">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:10.404741" level="INFO">Opening browser 'chrome' to base url 'https://staging.leanwe.com'.</msg>
-<arg>${Leanwe_URL}</arg>
-<arg>${BROWSER}</arg>
+<msg time="2025-07-31T14:33:08.271543" level="INFO">Opening browser 'chrome' to base url 'https://staging.leanwe.com'.</msg>
+<msg time="2025-07-31T14:33:08.706049" level="WARN">The chromedriver version (134.0.6998.88) detected in PATH at C:\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.85); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER_NAME}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-01T19:28:10.404741" elapsed="3.372212"/>
+<status status="PASS" start="2025-07-31T14:33:08.271059" elapsed="2.894748"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-01T19:28:13.777470" elapsed="0.421245"/>
+<status status="PASS" start="2025-07-31T14:33:11.166218" elapsed="0.161795"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:14.199692" elapsed="1.240276"/>
+<status status="PASS" start="2025-07-31T14:33:11.328431" elapsed="0.727757"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:15.449997" elapsed="0.045256"/>
+<status status="PASS" start="2025-07-31T14:33:12.056666" elapsed="0.043425"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:15.499794" level="INFO">Typing text 'redouane@yopmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
+<msg time="2025-07-31T14:33:12.100666" level="INFO">Typing text 'salim.jaabiri@yopmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
 <arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
-<arg>redouane@yopmail.com</arg>
+<arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:15.495253" elapsed="0.534544"/>
+<status status="PASS" start="2025-07-31T14:33:12.100343" elapsed="0.711646"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:16.029797" level="INFO">Typing text 'secret2023' into text field 'xpath=//input[@name="password"]'.</msg>
+<msg time="2025-07-31T14:33:12.816039" level="INFO">Typing text 'secret2023' into text field 'xpath=//input[@name="password"]'.</msg>
 <arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
-<arg>secret2023</arg>
+<arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:16.029797" elapsed="0.269746"/>
+<status status="PASS" start="2025-07-31T14:33:12.813469" elapsed="0.577097"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:16.300079" level="INFO">Clicking element 'xpath://body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/button[1]'.</msg>
+<msg time="2025-07-31T14:33:13.392075" level="INFO">Clicking element 'xpath://span[contains(text(),'Se connecter')]'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:16.300079" elapsed="0.142917"/>
+<status status="PASS" start="2025-07-31T14:33:13.391256" elapsed="0.325731"/>
 </kw>
-<status status="PASS" start="2024-09-01T19:28:10.404741" elapsed="6.038255"/>
+<arg>${Leanwe_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-07-31T14:33:08.269246" elapsed="5.448622"/>
 </kw>
-<kw name="SELECT COLLABORATOR FROM SIDEBAR" owner="helpers">
-<kw name="SELECT ITEM FROM SIDEBAR" owner="helpers">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${DASHBOARD_TITLE_XPATH}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-01T19:28:16.442996" elapsed="3.177019"/>
+<kw name="NAVIGATE TO TIMESHEET PAGE">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tableau de Bord</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-31T14:33:13.719909" elapsed="2.122394"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:19.659920" level="INFO">${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2dbfab014558f3d2f9af31a1b3e97a21", element="f.4ED0E6217B0468AE0BEF5C8EB8FA6E3D.d.3EA7FBD6FB6EAE196AEAC43235C27DDB.e.92")&gt;</msg>
+<msg time="2025-07-31T14:33:15.889172" level="INFO">${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5142db29faa484941d04bc80a6e5d68c", element="f.481F9512202DCA58DEE3AC037F38C227.d.574AE4055FE755F0DE2E35708AAFB6AF.e.81")&gt;</msg>
 <var>${sidebar_element}</var>
 <arg>${sidebar_Xpath}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:19.625047" elapsed="0.034873"/>
+<status status="PASS" start="2025-07-31T14:33:15.842835" elapsed="0.046444"/>
 </kw>
 <kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:19.660903" level="INFO">Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2dbfab014558f3d2f9af31a1b3e97a21", element="f.4ED0E6217B0468AE0BEF5C8EB8FA6E3D.d.3EA7FBD6FB6EAE196AEAC43235C27DDB.e.92")&gt;'.</msg>
+<msg time="2025-07-31T14:33:15.890391" level="INFO">Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5142db29faa484941d04bc80a6e5d68c", element="f.481F9512202DCA58DEE3AC037F38C227.d.574AE4055FE755F0DE2E35708AAFB6AF.e.81")&gt;'.</msg>
 <arg>${sidebar_element}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:19.659920" elapsed="0.407123"/>
+<status status="PASS" start="2025-07-31T14:33:15.889726" elapsed="0.375828"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${SIDEBAR_ITEM_TITLE}</arg>
+<arg>${CRA_SIDEBAR_ITEM}</arg>
 <arg>timeout=2s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-01T19:28:20.067043" elapsed="0.028191"/>
+<status status="PASS" start="2025-07-31T14:33:16.266370" elapsed="0.036588"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:20.095234" level="INFO">Clicking element 'xpath=//div[contains(text(),'Collaborateurs')]'.</msg>
-<arg>${SIDEBAR_ITEM_TITLE}</arg>
+<msg time="2025-07-31T14:33:16.304168" level="INFO">Clicking element 'xpath=//div[contains(text(),'CRA et Frais')]'.</msg>
+<arg>${CRA_SIDEBAR_ITEM}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:20.095234" elapsed="0.129470"/>
-</kw>
-<return>
-<value>${sidebar_element}</value>
-<status status="PASS" start="2024-09-01T19:28:20.224704" elapsed="0.000000"/>
-</return>
-<arg>${COLLABORATOR_SIDEBAR_ITEM}</arg>
-<status status="PASS" start="2024-09-01T19:28:16.442996" elapsed="3.786775"/>
-</kw>
-<status status="PASS" start="2024-09-01T19:28:16.442996" elapsed="3.786775"/>
-</kw>
-<kw name="CLICK THE ADD NEW COLLABORATOR BUTTON" owner="helpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${NEW_COLLABORATOR_BTN}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:20.229771" elapsed="0.290258"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:20.520029" level="INFO">Clicking element 'xpath=//button/span/span[contains(text(), 'Nouveau collaborateur')]'.</msg>
-<arg>${NEW_COLLABORATOR_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:20.520029" elapsed="0.277316"/>
-</kw>
-<status status="PASS" start="2024-09-01T19:28:20.229771" elapsed="0.567574"/>
-</kw>
-<kw name="FILL OUT THE COLLABORATOR CREATION FORM" owner="helpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${COLLABORATOR_FIRSTNAME}</arg>
-<arg>timeout=4s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:20.799892" elapsed="1.464421"/>
-</kw>
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-09-01T19:28:22.264313" level="INFO">${current_datetime} = 20240901192822</msg>
-<var>${current_datetime}</var>
-<arg>result_format=%Y%m%d%H%M%S</arg>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-09-01T19:28:22.264313" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:22.264313" level="INFO">Clicking element 'xpath=//input[@cy-data="firstName_field"]'.</msg>
-<arg>${COLLABORATOR_FIRSTNAME}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:22.264313" elapsed="0.118754"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:22.384775" level="INFO">Typing text 'John' into text field 'xpath=//input[@cy-data="firstName_field"]'.</msg>
-<arg>${COLLABORATOR_FIRSTNAME}</arg>
-<arg>John</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:22.384775" elapsed="0.269587"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:22.654362" level="INFO">Typing text 'Doe' into text field 'xpath=//input[@cy-data="lastName_field"]'.</msg>
-<arg>${COLLABORATOR_LASTNAME}</arg>
-<arg>Doe</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:22.654362" elapsed="0.329275"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:22.986854" level="INFO">Typing text 'Software Engineer 20240901192822' into text field 'xpath=//input[@cy-data="position_field"]'.</msg>
-<arg>${COLLABORATOR_POSITION}</arg>
-<arg>Software Engineer ${current_datetime}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:22.985863" elapsed="0.898977"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:23.888845" level="INFO">Typing text '634567890' into text field 'xpath=//input[@cy-data="phone_field"]'.</msg>
-<arg>${COLLABORATOR_PHONE}</arg>
-<arg>634567890</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:23.885840" elapsed="0.454181"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:24.340021" level="INFO">Typing text 'john.doe20240901192822@example.com' into text field 'xpath=//input[@cy-data="email_field"]'.</msg>
-<arg>${COLLABORATOR_EMAIL}</arg>
-<arg>john.doe${current_datetime}@example.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:24.340021" elapsed="0.747067"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:25.088093" level="INFO">Typing text 'Digitale' into text field 'xpath=//input[@cy-data="businessUnit_autocomplete"]'.</msg>
-<arg>${COLLABORATOR_BUSINESS_UNIT}</arg>
-<arg>Digitale</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:25.087088" elapsed="0.292800"/>
+<status status="PASS" start="2025-07-31T14:33:16.303556" elapsed="0.378519"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${COLLABORATOR_BUSINESS_UNIT_OPTION}</arg>
-<arg>timeout=2s</arg>
+<arg>${TIMESHEET_SIDEBAR_ITEM}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:25.379888" elapsed="1.085764"/>
+<status status="PASS" start="2025-07-31T14:33:16.682856" elapsed="0.083475"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:26.466728" level="INFO">Clicking element 'xpath=//div[contains(text(),'Factory department')]'.</msg>
-<arg>${COLLABORATOR_BUSINESS_UNIT_OPTION}</arg>
+<msg time="2025-07-31T14:33:16.768559" level="INFO">Clicking element 'xpath=//div[contains(text(),'Mes temps')]'.</msg>
+<arg>${TIMESHEET_SIDEBAR_ITEM}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:26.466193" elapsed="0.207830"/>
+<status status="PASS" start="2025-07-31T14:33:16.767257" elapsed="0.455090"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:26.679018" level="INFO">Clicking element 'xpath=//input[@cy-data="manager_select"]'.</msg>
-<arg>${COLLABORATOR_MANAGER}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:26.676043" elapsed="0.301986"/>
+<kw name="Mouse Out" owner="SeleniumLibrary">
+<msg time="2025-07-31T14:33:17.226256" level="INFO">Simulating Mouse Out on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5142db29faa484941d04bc80a6e5d68c", element="f.481F9512202DCA58DEE3AC037F38C227.d.574AE4055FE755F0DE2E35708AAFB6AF.e.81")&gt;'.</msg>
+<arg>${sidebar_element}</arg>
+<doc>Simulates moving the mouse away from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-31T14:33:17.224915" elapsed="0.796659"/>
+</kw>
+<status status="PASS" start="2025-07-31T14:33:13.718994" elapsed="4.302983"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${COLLABORATOR_MANAGER_OPTION}</arg>
-<arg>timeout=2s</arg>
+<msg time="2025-07-31T14:33:23.532118" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-307.png"&gt;&lt;img src="selenium-screenshot-307.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-31T14:33:23.532616" level="FAIL">Element 'xpath=//button/span/span[contains(text(), 'nouvelle feuille de temps')]' not visible after 5 seconds.</msg>
+<arg>${NEW_TIMESHEET_BTN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:26.979708" elapsed="0.080287"/>
+<status status="FAIL" start="2025-07-31T14:33:18.022946" elapsed="5.556822">Element 'xpath=//button/span/span[contains(text(), 'nouvelle feuille de temps')]' not visible after 5 seconds.</status>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:27.059995" level="INFO">Clicking element 'xpath=//div[contains(text(),'REDOUANE LABDOUI')]'.</msg>
-<arg>${COLLABORATOR_MANAGER_OPTION}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:27.059995" elapsed="0.120076"/>
+<kw name="SELECT THE TIMESHEET MONTH">
+<status status="NOT RUN" start="2025-07-31T14:33:23.600938" elapsed="0.005328"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:27.180071" level="INFO">Clicking element 'xpath=//input[@cy-data="experience_level_select"]'.</msg>
-<arg>${COLLABORATOR_EXPERIENCE_LEVEL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:27.180071" elapsed="0.239813"/>
+<kw name="ACCESS TIMESHEETS PAGE AND ADD NEW LINE">
+<status status="NOT RUN" start="2025-07-31T14:33:23.682241" elapsed="0.000162"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}</arg>
-<arg>timeout=2s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:27.423005" elapsed="0.077137"/>
+<kw name="FILL OUT THE TIMESHEET FORM">
+<status status="NOT RUN" start="2025-07-31T14:33:23.721424" elapsed="0.000178"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:27.500142" level="INFO">Clicking element 'xpath=//div[contains(text(),'Senior')]'.</msg>
-<arg>${COLLABORATOR_EXPERIENCE_LEVEL_OPTION}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:27.500142" elapsed="0.149809"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:27.649951" level="INFO">Typing text '12000' into text field 'xpath=//input[@cy-data="salaryBrut"]'.</msg>
-<arg>${COLLABORATOR_SALARY_BRUT}</arg>
-<arg>12000</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:27.649951" elapsed="0.441837"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:28.092783" level="INFO">Clicking element 'xpath=//input[@cy-data="currency_select"]'.</msg>
-<arg>${COLLABORATOR_CURRENCY}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:28.092783" elapsed="0.187175"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${COLLABORATOR_CURRENCY_OPTION}</arg>
-<arg>timeout=2s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:28.279958" elapsed="0.115045"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:28.395003" level="INFO">Clicking element 'xpath=//div[contains(text(),'Euro (€)')]'.</msg>
-<arg>${COLLABORATOR_CURRENCY_OPTION}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:28.395003" elapsed="0.234872"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:28.629875" level="INFO">Typing text '12' into text field 'xpath=//input[@cy-data="rtt_field"]'.</msg>
-<arg>${COLLABORATOR_RTT}</arg>
-<arg>12</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:28.629875" elapsed="0.233835"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:28.863710" level="INFO">Typing text '25' into text field 'xpath=//input[@cy-data="cp_field"]'.</msg>
-<arg>${COLLABORATOR_CP}</arg>
-<arg>25</arg>
-<arg>timeout=4s</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:28.863710" elapsed="0.291111"/>
-</kw>
-<return>
-<value>Software Engineer ${current_datetime}</value>
-<status status="PASS" start="2024-09-01T19:28:29.155823" elapsed="0.000000"/>
-</return>
-<msg time="2024-09-01T19:28:29.156828" level="INFO">${collaborator_job_post} = Software Engineer 20240901192822</msg>
-<var>${collaborator_job_post}</var>
-<status status="PASS" start="2024-09-01T19:28:20.797345" elapsed="8.359483"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-09-01T19:28:29.167376" level="INFO">${COLLABORATOR_SEARCH_VALUE} = Software Engineer 20240901192822</msg>
-<arg>${COLLABORATOR_SEARCH_VALUE}</arg>
-<arg>${collaborator_job_post}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-09-01T19:28:29.158825" elapsed="0.008551"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-09-01T19:28:29.169377" level="INFO">Created offer name: Software Engineer 20240901192822</msg>
-<arg>Created offer name: ${collaborator_job_post}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-01T19:28:29.168383" elapsed="0.000994"/>
-</kw>
-<kw name="SUBMIT THE COLLABORATOR FORM" owner="helpers">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:29.171380" level="INFO">Clicking element 'xpath=//Button[@cy-data="addEmployee_btn"]'.</msg>
-<arg>${COLLABORATOR_CREATE_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-01T19:28:29.170377" elapsed="0.203254"/>
-</kw>
-<status status="PASS" start="2024-09-01T19:28:29.170377" elapsed="0.203254"/>
-</kw>
-<kw name="CHECK THE DISPLAY OF SUCCESS NOTIFICATION FOR COLLABORATOR CREATION" owner="helpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SNACKBAR_SUCCESS}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-01T19:28:29.380173" elapsed="2.530276"/>
-</kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-01T19:28:31.965881" level="INFO">Element 'xpath=//div[contains(@class, "v-snack__wrapper")]' contains text 'Collaborateur créé avec succès'.</msg>
-<arg>${SNACKBAR_SUCCESS}</arg>
-<arg>${COLLABORATOR_SUCCESS_NOTIFICATION}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2024-09-01T19:28:31.910449" elapsed="0.055432"/>
-</kw>
-<status status="PASS" start="2024-09-01T19:28:29.380173" elapsed="2.585708"/>
-</kw>
-<status status="PASS" start="2024-09-01T19:28:10.404741" elapsed="21.562142"/>
+<status status="FAIL" start="2025-07-31T14:33:08.268160" elapsed="15.496070">Element 'xpath=//button/span/span[contains(text(), 'nouvelle feuille de temps')]' not visible after 5 seconds.</status>
 </test>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-01T19:28:31.968929" elapsed="2.800944"/>
-</kw>
-<status status="PASS" start="2024-09-01T19:28:09.850048" elapsed="24.919825"/>
+<status status="FAIL" start="2025-07-31T14:33:07.474435" elapsed="16.542212"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="CreateCollaborator">CreateCollaborator</stat>
+<stat name="Timesheets Report" id="s1" pass="0" fail="1" skip="0">Timesheets Report</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-07-31T14:33:08.706049" level="WARN">The chromedriver version (134.0.6998.88) detected in PATH at C:\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.85); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

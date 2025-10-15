@@ -9,6 +9,11 @@ Resource     GlobalHelpers.resource
 
 
 *** Keywords ***
+MAPPING FUNCTION
+    [Arguments]    ${FIELD}    ${CSV_TITLE} 
+    Click Element    ${FIELD}
+    Click Element    ${CSV_TITLE}
+    Sleep   2s
 ASSOCIATION OF COLUMNS PRODUCTS
     MAPPING FUNCTION                ${PRODUCT_TITLE_FIELD}                        ${PRODUCT_TITLE_VALUE} 
     MAPPING FUNCTION                ${PRODUCT_REFERENCE_FIELD}                    ${PRODUCT_REFERENCE_VALUE}
@@ -38,3 +43,8 @@ DELETE PRODUCT
     Log  ${response.status_code}
     Log  ${response.text}
     Should Be Equal As Strings  ${response.status_code}  204
+
+WAIT FOR THE IMPORT PROCESS TO FINISH SUCCESSFULLY 
+    Sleep    5s
+    Wait Until Element Is Visible    ${SNACKBAR_SUCCESS}   
+    Element Should Contain                     ${SNACKBAR_SUCCESS}                       ${IMPORT_SUCESS_NOTIFICATION}

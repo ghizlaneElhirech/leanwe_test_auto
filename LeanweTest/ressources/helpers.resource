@@ -5,6 +5,7 @@ Library    DateTime
 Library           OperatingSystem
 Library    String
 Library    XML
+Library    Process
 Resource     VARIABLES.resource
 
 
@@ -222,21 +223,28 @@ UPLOAD FILE
     [Arguments]                             ${FILE_NAME}
     Choose File                             ${UPLOAD_FILE_FIELD}                ${FILE_NAME}
 
+
+    
 MAPPING FUNCTION
-    [Arguments]                             ${FIELD}                            ${CSV_TITLE}
-    Input Text                              ${FIELD}                            ${CSV_TITLE}
-ASSOCIATION OF COLUMNS COLLABORATORS 
-    MAPPING FUNCTION                ${NAME_FIELD}                               ${NAME_VALUE}
-    MAPPING FUNCTION                ${PRENOM_FIELD}                             ${PRENOM_VALUE}
-    MAPPING FUNCTION                ${POST_TITLE_FIELD}                         ${POST_TITLE_VALUE}
-    MAPPING FUNCTION                ${TYPE_FIELD}                               ${TYPE_VALUE}
-    MAPPING FUNCTION                ${EMAIL_FIELD}                              ${EMAIL_VALUE} 
-    MAPPING FUNCTION                ${TJM}                                      ${TJM_VALUE} 
-    MAPPING FUNCTION                ${PHONE_FIELD}                              ${PHONE_VALUE}
-    MAPPING FUNCTION                ${ADRESSE_FIELD}                            ${ADRESSE_VALUE}
-    MAPPING FUNCTION                ${COUNTRY_FIELD}                            ${COUNTRY_VALUE}
-    MAPPING FUNCTION                ${CITY_FIELD}                               ${CITY_VALUE}
-    MAPPING FUNCTION                ${REFERENCE_FIELD}                          ${REFERENCE_VALUE}
+    [Arguments]    ${FIELD}    ${CSV_TITLE}
+    Wait Until Element Is Visible ${FIELD} 
+    Click Element    ${FIELD}
+    Wait Until Element Is Visible  ${CSV_TITLE}
+    Click Element    ${CSV_TITLE}
+    Sleep   2s
+ASSOCIATION OF COLUMNS COLLABORATORS  
+    MAPPING FUNCTION    ${NAME_FIELD}        ${NAME_VALUE} 
+    MAPPING FUNCTION    ${PRENOM_FIELD}      ${PRENOM_VALUE}
+    MAPPING FUNCTION    ${POST_TITLE_FIELD}  ${POST_TITLE_VALUE}
+    MAPPING FUNCTION    ${TYPE_FIELD}        ${TYPE_VALUE}
+    MAPPING FUNCTION    ${EMAIL_FIELD}       ${EMAIL_VALUE}
+    MAPPING FUNCTION    ${TJM}               ${TJM_VALUE}
+    MAPPING FUNCTION    ${PHONE_FIELD}       ${PHONE_VALUE}
+    MAPPING FUNCTION    ${ADRESSE_FIELD}     ${ADRESSE_VALUE}
+    MAPPING FUNCTION    ${COUNTRY_FIELD}     ${COUNTRY_VALUE}
+    MAPPING FUNCTION    ${CITY_FIELD}        ${CITY_VALUE}
+    MAPPING FUNCTION    ${REFERENCE_FIELD}   ${REFERENCE_VALUE}
+         
 CLICK THE IMPORT BUTTON 
     Wait Until Element Is Visible             ${IMPORT_BUTTON}
     Click Element                             ${IMPORT_BUTTON}   
@@ -262,17 +270,18 @@ Create a New Contract Model
     Click Element                ${New_Contract_Model_Button}
     Sleep    3s
     ${current_datetime}=    Get Current Date    result_format=${date_format}
-    ${ModelContracttitle}=    Set Variable    Model_De_Test_Khalil-${current_datetime}
+    ${ModelContracttitle}=    Set Variable    MTest-${current_datetime}
     Input Text    xpath=//input[@placeholder='Saisir un nom' and @type='text']   text= ${ModelContracttitle}
     Click Element    xpath=//span[contains(text(), 'Créer')]
     Sleep    5s
     Page Should Contain  ${ModelContracttitle}
-    [Return]    ${ModelContracttitle}    
+    RETURN    ${ModelContracttitle}    
 
 Search Contract Model
     [Arguments]    ${ModelContracttitle}
-    Input Text    xpath=//input[@type='text' and @placeholder="Rechercher"]   text= ${ModelContracttitle}
+    Input Text    xpath=//input[@type='text' and @placeholder="Rechercher"]   text=${ModelContracttitle}
     ##Click Element    xpath=//body/div[@id='spark-app']/div[@id='app']/div[2]/div[1]/div[3]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]
+    Sleep    5s
     ${ResearchResult}=    Get Text    xpath=//*[@id="scrolling-container"]/div/div/a/div/div[1]/div[2]/span/span/span
     Log To Console    ${ResearchResult}
     Log To Console    ${ModelContracttitle}
@@ -304,7 +313,7 @@ Create a new Subcontactor
     Input Text    ${SUBCONTRACTOR_Contact_Email}    text=khalil_test@yopmail.com
     Click Button    ${SUBCONTRACTOR_Sauvgarde_Button}
     Sleep    5s 
-    [Return]    ${PO_String}
+    RETURN    ${PO_String}
     Log To Console    ${PO_String}
 
 Search new Subcontractor
@@ -407,11 +416,27 @@ Create new internal command
     Sleep    3s
     Input Text    ${inputs1[1]}    text=test-${Al_String}
     Input Text    ${inputs1[2]}    text=500
-    Input Text    ${inputs1[3]}    text=500
+    Click Element    ${COMMANDE_TVA}
+    Click Element    xpath=//div[contains(text(),'20%')]
     Sleep    3s
     Click Element    ${COMMANDE_ADDBUTTON}                
     Sleep    5s
 
+Filter Internal commande
+    Click Element    xpath=//div[@class='v-input field-search-layout search-bar-filter v-input--hide-details theme--light v-text-field v-text-field--is-booted v-select']
+    Click Element    xpath=//div[contains(text(),'Régie')]
+    Sleep    5s
+    Element Should Not Contain    xpath=//div[@class='row mb-12 m-1']//div[1]//a[1]//div[1]//div[2]//div[2]//span[1]//span[1]//span[1]    text=Forfaitaires
+    Sleep    3s
+    Click Button    xpath=//button[contains(text(),'clear')]
+    Sleep    4s
+#    Click Element    xpath=//html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/main[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+#    Click Element    xpath=//div[contains(text(),'Forfaitaires')]
+#    Sleep    3s
+#    Element Should Not Contain    xpath=//div[@class='row mb-12 m-1']//div[1]//a[1]//div[1]//div[2]//div[2]//span[1]//span[1]//span[1]    text=Régie
+#    Sleep    3s
+#    Click Button    xpath=//button[contains(text(),'clear')]
+#    Sleep    3s
 
 Create New Client
     LOG IN AS SUPPORT
@@ -459,10 +484,13 @@ Create New Client
     Input Text    ${CLIENT_ADD1_REG}    text=1 avenue de paris
     Execute JavaScript    document.querySelector('[cy-data="submitClient_btn"]').click()
     Sleep    3s
-    [Return]    ${PO_String}
-    Log To Console    ${PO_String}
+    RETURN    ${PO_String}
+    Log To Console    ${PO_String} 
 
 #Search Client By Name
+
+Export Client
+    Click Element    xpath=//button[@cy-data="createNew_btn" and contains(., 'Exporter')]
 
 
 #############################################
@@ -479,7 +507,7 @@ Create New Bank Transfers
     Click Element                             ${AddNew_Virement-bancaire}
     Sleep    3s
     Click Element    ${Facture_a_regler}
-    Input Text    ${Text_Facture_a_regler}    text=test_aiu
+    Input Text    ${Text_Facture_a_regler}    text=csfi - csfi
     Sleep    3s
     Click Element    ${Validation_facture}
     Sleep    3s
@@ -533,7 +561,7 @@ Create new Facture groupe
 
     Click Element    xpath=//*[@cy-data='client_autocomplete']
     Sleep    4s
-    Click Element    xpath=//div[contains(text(),'ALLIANZ')]
+    Click Element    xpath=//div[contains(text(),'Société de dév')]
     Sleep    3s
     Click Element    xpath=//input[@cy-data="invoices_multiselect"]
     Sleep    3s
@@ -542,7 +570,7 @@ Create new Facture groupe
     Sleep    1s
     Click Element    ${checkboxs[1]}
     Sleep    1s
-    Click Button  xpath=//*[@cy-data='submitInvoice_btn']
+    Click Button  xpath=//*[@cy-data="merge-invoices-btn"]
     Sleep    3s
 
 
@@ -595,24 +623,20 @@ Create New Mission
     Sleep    3s
     Click Element    ${Clients_Mission}     
     Sleep    4s
-    Wait Until Element Is Visible    xpath=//div[contains(text(),'LACOSTE')]
-    Execute JavaScript    var element = document.evaluate("//div[@class='w-100 d-flex flex-column col']//div[contains(text(),'LACOSTE')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if (element) { element.click(); }
+    Wait Until Element Is Visible    xpath=//div[contains(text(),'ALTAVIA OYEZ')]
+    Execute JavaScript    var element = document.evaluate("//div[@class='w-100 d-flex flex-column col']//div[contains(text(),'ALTAVIA OYEZ')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if (element) { element.click(); }
     Sleep    3s
     Click Element    ${Projets_Mission}
     Sleep    4s
-    Click Element    xpath=//div[contains(text(),'Lacoste_project')]
+    Click Element    xpath=//div[contains(text(),'PJT-01')]
     Sleep    3s
     Click Element    ${Commandes_Mission}
     Sleep    4s
-    Click Element    xpath=//div[contains(text(),'cmd-item1')]
+    Click Element    xpath=//div[contains(text(),'commande_check')]
     Sleep    3s
     Click Element    ${Prestations_Mission}
     Sleep    4s
-    Click Element    xpath=//div[contains(text(),'UX')]
-    Sleep    3s
-    Click Element    ${Commercial_Mission}
-    Sleep    4s
-    Click Element    xpath=//div[contains(text(),'Hadry GASSAMA')]
+    Click Element    xpath=//div[contains(text(),'prestation 2 tjr')]
     Sleep    3s
     Click Element    ${Creer_Mission}  
 
@@ -676,42 +700,217 @@ Create new client command
     Sleep    2s
     ${Commande_ANumber}    Generate Random String    6    0123456789
     ${Al_String}    Generate Random String    3    ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    Input Text    ${COMMANDE_NUMBER}    text=${Commande_ANumber}
+    Input Text    ${COMMANDE_NUMBERC}    text=${Commande_ANumber}
     Sleep    2s
-    Click Element    ${COMMANDE_TYPE}
+    Click Element    ${COMMANDE_TYPEC}
     Click Element    xpath=//div[contains(text(),'Forfaitaire')]
  # Première méthode - Via update:model
-    Wait Until Element Is Visible    xpath=//*[@cy-data='startDate_date']    timeout=10s
+    Wait Until Element Is Visible    xpath=//*[@cy-data="sale-start-date"]    timeout=10s
     ${js1}=    Catenate    SEPARATOR=\n
-    ...    const datePicker = document.querySelector('[cy-data="startDate_date"]').__vue__;
+    ...    const datePicker = document.querySelector('[cy-data="sale-start-date"]').__vue__;
     ...    datePicker.$emit('update:model', '2025-11-01');
     Execute JavaScript    ${js1}
     Sleep    2s
 
     # Troisième méthode - Update complet
     ${js3}=    Catenate    SEPARATOR=\n
-    ...    const datePicker = document.querySelector('[cy-data="endDate_date"]').__vue__;
+    ...    const datePicker = document.querySelector('[cy-data="sale-end-date"]').__vue__;
     ...    datePicker.$emit('update:model', '2025-12-30');
     Execute JavaScript    ${js3}
     Sleep    2s
 
     # Si besoin de vérifier que la valeur a bien été mise à jour
     ${js_verify}=    Catenate    SEPARATOR=\n
-    ...    return document.querySelector('[cy-data="startDate_date"] input').value;
+    ...    return document.querySelector('[cy-data="sale-start-date"] input').value;
     ${value}=    Execute JavaScript    ${js_verify}
     Should Be Equal    ${value}    2025-11-01
 
     sleep    3s
-    Click Element    ${COMMANDE_CLIENT1}
+    Click Element    ${COMMANDE_CLIENT1C}
     Sleep    4s
     Click Element    xpath=//div[contains(text(),'LACOSTE')]
     Sleep    3s
     Input Text    xpath=//div[@class='col col-6']//label[contains(text(), 'Titre')]/ancestor::div[@class='col col-6']//input    text=${Al_String}
     Input Text    xpath=//div[@class='col col-6']//label[contains(text(), 'Montant HT')]/ancestor::div[@class='col col-6']//input    text=500
-    Input Text    xpath=//div[@class='col col-6']//label[contains(text(), 'TVA')]/ancestor::div[@class='col col-6']//input    text=500
+    Click Element    ${COMMANDE_TVA1C}
+    Click Element    xpath=//div[contains(text(),'20%')]
     Sleep    3s
-    Click Element    ${COMMANDE_ADDBUTTON}                
+    Click Element    ${COMMANDE_ADDBUTTONC}                
     Sleep    5s
+
+#########Profile################
+#Documents#
+Go To Profile Page
+    Sleep    5s
+#  Wait Until Page Contains Element          ${DASHBOARD_TITLE_XPATH}         timeout=5s
+    ${sidebar_element}  Get WebElement        ${sidebar_Xpath}
+    Mouse Over                                ${sidebar_element}
+    Wait Until Page Contains Element          ${ACESS_Profil}                  timeout=2s
+    click Element                             ${ACESS_Profil} 
+    Sleep    7s
+   # Wait Until Page Contains Element    xpath=//div[contains(text(), "Détails mon profil")]
+
+Open Documents Tab
+    Click Element    xpath=//a[contains(text(), "Documents")]
+    Sleep    3s
+#    Scroll Down
+    #Execute JavaScript    document.querySelector('.scroll-container').scrollDown = 1000
+    Wait Until Page Contains Element    xpath=//span[contains(text(), "Ajouter Document")]
+
+Click Add Document
+    Click Element    xpath=//span[contains(text(), "Ajouter Document")]
+    Wait Until Element Is Visible    xpath=//span[contains(text(), "Ajouter")]
+
+Fill Document Form
+    Click Element    xpath=//input[@placeholder="Type de document"]
+    Click Element    xpath=//div[contains(text(), "${TYPE_DOCUMENT}")]
+    Input Text       xpath=//input[@placeholder="Nom"]    ${NOM_DOCUMENT}
+    Choose File      xpath=//input[@type="file"]          ${FICHIER_UPLOAD}
+    Sleep    5s
+
+Submit Document Form
+    Wait Until Element Is Visible        xpath=//button[.//span[normalize-space(text())="Ajouter"]]    timeout=10s
+    Click Element                        xpath=//button[.//span[normalize-space(text())="Ajouter"]]
+    Wait Until Page Contains    ${NOM_DOCUMENT}
+
+Verify Document In List
+    Page Should Contain Element    xpath=//div[contains(text(), "${NOM_DOCUMENT}")]
+    Sleep    5s
+
+Go back to main page
+    Go To    https://staging.leanwe.com/dashboard        
+
+Click Edit On First Document
+    Click Element    xpath=(//button[contains(@class,"rounded-circle")])[1]
+    Sleep            1s
+    Wait Until Element Is Visible    xpath=//div[contains(@class,"v-list-item") and contains(., "Modifier")]    timeout=5s
+    Click Element                    xpath=//div[contains(@class,"v-list-item") and contains(., "Modifier")]
+
+Modify Document Fields
+    Click Element    xpath=//div[@aria-haspopup="listbox"]
+    Click Element    xpath=//div[contains(text(), "${NOUVEAU_TYPE}")]
+    Clear Element Text    xpath=//label[contains(text(), "Nom")]/following::input[@type="text"]
+    Input Text           xpath=//label[contains(text(), "Nom")]/following::input[@type="text"]    ${NOUVEAU_NOM}
+
+Submit Document Update
+    Click Button    xpath=//div[contains(@class, "modal-action")]//span[contains(text(), "Modifier")]/ancestor::button
+    Wait Until Page Contains    ${NOUVEAU_NOM}
+
+Verify Document Updated
+    Page Should Contain Element    xpath=//div[contains(text(), "${NOUVEAU_NOM}")]
+
+Click Delete On First Document
+    Click Element    xpath=(//button[contains(@class,"rounded-circle")])[1]
+    Sleep            1s
+    Wait Until Element Is Visible    xpath=//div[contains(@class,"v-list-item") and contains(., "Supprimer")]    timeout=5s
+    Click Element                    xpath=//div[contains(@class,"v-list-item") and contains(., "Supprimer")]
+
+Confirm Document Deletion
+    Click Button    xpath=//div[contains(@class, "modal-action")]//span[contains(text(), "Supprimer")]/ancestor::button
+
+Verify Document Removed
+    Page Should Not Contain    ${DOCUMENT_A_SUPPRIMER}
+
+Click on the attached file button of the document
+    Click Element    xpath=//button[contains(@class, "btn-attachment") and contains(., "1 Fichier")]
+
+Verify that the download button is visible
+    Wait Until Element Is Visible    xpath=//button[contains(@class, "download") and @type="submit"]
+
+Click on the download button
+    Click Element    xpath=//button[contains(@class, "download") and @type="submit"]//span
+    Sleep    2s
+
+Click on the delete button
+    Click Element    xpath=//button[contains(@class, "remove") and @type="submit"]//span
+    Sleep    2s    
+
+Close the attached files popup
+    Wait Until Element Is Not Visible    xpath=//div[contains(@class, "v-overlay__scrim")]    timeout=10s
+    Click Element    xpath=//div[@class='v-dialog v-dialog--active']//i[@class='v-icon notranslate material-icons theme--light'][normalize-space()='close']
+
+Go To Contracts Tab
+    Click Element    xpath=//a[contains(text(), "Contrats")]
+    Sleep    3s
+
+Verify At Least One Contract Listed
+    Wait Until Element Is Visible    xpath=//div[contains(@class, 'contract-card')]
+
+Verify First Contract Contains Reference Type And Dates
+    Element Should Contain    xpath=(//div[contains(@class, 'contract-card')])[1]    Référence
+    Element Should Contain    xpath=(//div[contains(@class, 'contract-card')])[1]    Type
+    Element Should Contain    xpath=(//div[contains(@class, 'contract-card')])[1]    Date de début
+    Element Should Contain    xpath=(//div[contains(@class, 'contract-card')])[1]    Date de fin  
+
+Click Modify Button
+    Click Button    xpath=//button[@class='mr-2 v-btn v-btn--has-bg theme--light v-size--default']
+    Sleep    7s
+    
+Update Profile Fields
+    
+    Click Element     xpath=//input[@cy-data="birth_place_field"]
+    Press Keys        xpath=//input[@cy-data="birth_place_field"]    CTRL+A
+    Execute JavaScript    var field = document.querySelector('[cy-data="birth_place_field"]'); field.value = ''; field.dispatchEvent(new Event('input')); field.dispatchEvent(new Event('change'));
+    Sleep    1s
+    Click Element     xpath=//input[@cy-data="nationality_field"]
+    Press Keys        xpath=//input[@cy-data="nationality_field"]    CTRL+A
+    Execute JavaScript    var field = document.querySelector('[cy-data="nationality_field"]'); field.value = ''; field.dispatchEvent(new Event('input')); field.dispatchEvent(new Event('change'));
+    Sleep    1s
+    Click Element     xpath=//input[@cy-data="personal_phone_field"]
+    Press Keys        xpath=//input[@cy-data="personal_phone_field"]    CTRL+A
+    Execute JavaScript    var field = document.querySelector('[cy-data="personal_phone_field"]'); field.value = ''; field.dispatchEvent(new Event('input')); field.dispatchEvent(new Event('change'));
+    Sleep    3s
+    Click Element     xpath=//input[@cy-data="address_field"]
+    Press Keys        xpath=//input[@cy-data="address_field"]    CTRL+A
+    Execute JavaScript    var field = document.querySelector('[cy-data="address_field"]'); field.value = ''; field.dispatchEvent(new Event('input')); field.dispatchEvent(new Event('change'));
+    Sleep    2s
+    Click Element     xpath=//input[@cy-data="city_field"]
+    Press Keys        xpath=//input[@cy-data="city_field"]    CTRL+A
+    Execute JavaScript    var field = document.querySelector('[cy-data="city_field"]'); field.value = ''; field.dispatchEvent(new Event('input')); field.dispatchEvent(new Event('change'));
+    Sleep    1s
+    Click Element     xpath=//input[@cy-data="postcode_field"]
+    Press Keys        xpath=//input[@cy-data="postcode_field"]    CTRL+A
+    Execute JavaScript    var field = document.querySelector('[cy-data="postcode_field"]'); field.value = ''; field.dispatchEvent(new Event('input')); field.dispatchEvent(new Event('change'));
+    Sleep    5s
+    Input Text    xpath=//input[@cy-data="birth_place_field"]    ${BIRTH_PLACE}
+    Input Text    xpath=//input[@cy-data="city_field"]    ${CITY}
+    Input Text    xpath=//input[@cy-data="address_field"]    ${ADDRESS}
+    Input Text    xpath=//input[@cy-data="nationality_field"]    ${NATIONALITY}
+    Input Text    xpath=//input[@cy-data="postcode_field"]    ${POSTAL_CODE}
+    Input Text    xpath=//input[@cy-data="personal_phone_field"]    ${PHONE_NUMBER}
+
+
+#    Execute JavaScript    document.querySelector('[cy-data="birth_place_field"]').value = "${BIRTH_PLACE}"
+#    Execute JavaScript    document.querySelector('[cy-data="city_field"]').value = "${CITY}"
+#    Execute JavaScript    document.querySelector('[cy-data="address_field"]').value = "${ADDRESS}"
+#    Execute JavaScript    document.querySelector('[cy-data="nationality_field"]').value = "${NATIONALITY}"
+#    Execute JavaScript    document.querySelector('[cy-data="postcode_field"]').value = "${POSTAL_CODE}"
+#    Execute JavaScript    document.querySelector('[cy-data="personal_phone_field"]').value = "${PHONE_NUMBER}"
+    Sleep    3s
+
+Save Profile Changes
+    Click Button    xpath=//Button[@cy-data="updateEmployee_btn"]
+    Wait Until Element Is Visible    xpath=//button[@class='mr-2 v-btn v-btn--has-bg theme--light v-size--default']   15s
+
+Expand Personal Information Section
+    Click Button    xpath=//button[contains(., "Informations personnelles")]
+    Sleep    1s
+
+Compare Displayed Profile Data
+    ${UI_BIRTH_PLACE}=    Get Text    xpath=//span[text()="Lieu de Naissance"]/following-sibling::span
+    ${UI_CITY}=           Get Text    xpath=//span[text()="Ville"]/following-sibling::span
+    ${UI_ADDRESS}=        Get Text    xpath=//span[text()="Adresse"]/following-sibling::span
+    ${UI_NATIONALITY}=    Get Text    xpath=//span[text()="Nationalité"]/following-sibling::span
+    ${UI_POSTAL_CODE}=    Get Text    xpath=//span[text()="Code Postal"]/following-sibling::span
+#    ${UI_PHONE}=     Get Text    xpath=//span[text()="Téléphone"]/following-sibling::span
+
+    Should Be Equal    ${UI_BIRTH_PLACE}    ${BIRTH_PLACE}
+    Should Be Equal    ${UI_CITY}           ${CITY}
+    Should Be Equal    ${UI_ADDRESS}        ${ADDRESS}
+    Should Be Equal    ${UI_NATIONALITY}    ${NATIONALITY}
+    Should Be Equal    ${UI_POSTAL_CODE}    ${POSTAL_CODE}
+#    Should Be Equal    ${UI_PHONE}     ${PHONE_NUMBER}
+
 
     
 

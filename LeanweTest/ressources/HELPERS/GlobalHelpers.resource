@@ -341,12 +341,12 @@ CLICK THE IMPORT BUTTON
     Wait Until Element Is Visible             ${IMPORT_BUTTON}
     Click Element                             ${IMPORT_BUTTON}   
 
-WAIT FOR THE IMPORT PROCESS TO FINISH SUCCESSFULLY 
-    Wait Until Page Contains                   Processus en cours 
-    Wait Until Keyword Succeeds   7      7     Page Should Contain               Aucun processus d'importation n'est actuellement en cours.
-    Wait Until Keyword Succeeds   7      7     Wait Until Page Contains             Importation terminée.  
-    # Element Should Contain                     ${SNACKBAR_SUCCESS}                       ${IMPORT_SUCESS_NOTIFICATION}
-    Wait Until Keyword Succeeds   7      7     Page Should Contain               Aucun processus d'importation n'est actuellement en cours.
+# WAIT FOR THE IMPORT PROCESS TO FINISH SUCCESSFULLY 
+#     Wait Until Page Contains                   Processus en cours 
+#     Wait Until Keyword Succeeds   7      7     Page Should Contain               Aucun processus d'importation n'est actuellement en cours.
+#     Wait Until Keyword Succeeds   7      7     Wait Until Page Contains             Importation terminée.  
+#     # Element Should Contain                     ${SNACKBAR_SUCCESS}                       ${IMPORT_SUCESS_NOTIFICATION}
+#     Wait Until Keyword Succeeds   7      7     Page Should Contain               Aucun processus d'importation n'est actuellement en cours.
 
 
 

@@ -32,10 +32,10 @@ ${CHARGE_TYPE_SELECT}                    xpath=//input[@cy-data="chargeType_sele
 ${DAILY_HOUR_OPTION}                     xpath=//div[contains(text(),'Jour/Homme')]
 ${CODE_FIELD}                            xpath=//input[@cy-data="code_field"]
 ${SELECTE_CLIENT_AUTOCOMPLETE}           xpath=//input[@cy-data="client_autocomplete"]
-${START_DATE_PICKER}                     xpath=//label[text()='Date début']/following-sibling::input
+${START_DATE_PICKER}                     xpath=//div[@cy-data="startDate_date"]//input
 ${START_DATE_DAY}                        xpath=//tbody/tr[2]/td[3]/button[1]/div[1]
-${END_DATE_PICKER}                       xpath=//label[text()='Date fin']/following-sibling::input
-${END_DATE_DAY}                          xpath=(//tbody[1]/tr[5]/td[7]/button[1]/div[1])[2]
+${END_DATE_PICKER}                       xpath=//div[@cy-data="endDate_date"]//input
+${END_DATE_DAY}                          xpath=//tbody/tr[2]/td[3]/button[1]/div[1]
 ${ADD_PROJECT_BUTTON}                    xpath=//button//span[contains(text(), 'Ajouter')]
 ${SUCCESS_NOTIF_PROJECT}                 le projet a bien été enregistré
 ${PROJECT_SEARCH_BAR}                    xpath=//input[@placeholder="Titre du projet/Client"]
@@ -93,7 +93,7 @@ ${OFFER_TITLE_FIELD}                      xpath=//label[contains(text(), 'Titre'
 ${OFFER_COUNTRY_FIELD}                    xpath=//Input[@cy-data="country_field"]
 ${OFFER_CITY_FIELD}                       xpath=//Input[@cy-data="city_field"]
 ${MANAGER_SELECT_FIELD}                   xpath=//Input[@cy-data="manager_select"]
-${MANAGER_SELECTED_OPTION}                xpath=//div[contains(text(),'wahid Brahim')]
+${MANAGER_SELECTED_OPTION}                xpath=//div[contains(text(),'John Doe')]
 ${OFFER_START_DATE}                       xpath=//label[contains(text(),"Date début")]/following-sibling::Input
 ${OFFER_START_DATE_DAY}                   xpath=//tbody/tr[2]/td[2]/button[1]/div[1]
 ${OFFER_END_DATE}                         xpath=//label[text()='Date fin']/following-sibling::input
@@ -197,7 +197,7 @@ ${COMMANDE_CLIENT1}    xpath=//input[@cy-data="client_autocomplete"]
 ${COMMANDE_CLIENT2}    xpath=//input[@cy-data="type_select"]
 ${COMMANDE_TITLE}    xpath=//label[contains(text(),'Titre')]/input[@cy-data="title_field"] 
 ${COMMANDE_HT}    xpath=//label[contains(text(),'HT')]/input[@cy-data="title_field"]
-${COMMANDE_TVA}    xpath=//label[contains(text(),'TVA')]/input[@cy-data="title_field"]
+${COMMANDE_TVA}    xpath=//input[@cy-data="tva-select"]
 ${COMMANDE_TTC}    xpath=//label[contains(text(),'TTC')]/input[@cy-data="title_field"] 
 ${COMMANDE_ADDBUTTON}    xpath=//button[@cy-data="submitSale_btn"]
 
@@ -205,17 +205,17 @@ ${COMMANDE_ADDBUTTON}    xpath=//button[@cy-data="submitSale_btn"]
 ${ACESS_COMMANDS}            xpath=//div[contains(text(),'Commandes')]
 ${ACESS_CLIENT-COMMANDS}            xpath=//div[contains(text(),'Commandes Client')]
 ${NEW_CLIENT-COMMANDS}    xpath=//span[contains(text(),'Nouvelle commande')]
-${COMMANDE_NUMBER}    xpath=//input[@cy-data="title_field"]
-${COMMANDE_TYPE}    xpath=//Input[@cy-data="type_select"]
-${COMMANDE_STARTDATE}    xpath=//div[@cy-data="startDate_date"]
-${COMMANDE_ENDDATE}    xpath=//div[@cy-data="endDate_date"]//input
-${COMMANDE_CLIENT1}    xpath=//input[@cy-data="client_autocomplete"]
-${COMMANDE_CLIENT2}    xpath=//input[@cy-data="type_select"]
-${COMMANDE_TITLE1}    xpath=//label[contains(text(),'Titre')]/input
-${COMMANDE_HT1}    xpath=//label[contains(text(),'HT')]/input
-${COMMANDE_TVA1}    xpath=//label[contains(text(),'TVA')]/input
-${COMMANDE_TTC}    xpath=//label[contains(text(),'TTC')]/input 
-${COMMANDE_ADDBUTTON}    xpath=//button[@cy-data="submitSale_btn"]
+${COMMANDE_NUMBERC}    xpath=//input[@cy-data="order-number-field"]
+${COMMANDE_TYPEC}    xpath=//Input[@cy-data="sale-type-select"]
+${COMMANDE_STARTDATEC}    xpath=//div[@cy-data="sale-start-date"]
+${COMMANDE_ENDDATEC}    xpath=//div[@cy-data="sale-end-date"]//input
+${COMMANDE_CLIENT1C}    xpath=//input[@cy-data="client_autocomplete"]
+${COMMANDE_CLIENT2C}    xpath=//input[@cy-data="type_select"]
+${COMMANDE_TITLE1C}    xpath=//label[contains(text(),'Titre')]/input
+${COMMANDE_HT1C}    xpath=//label[contains(text(),'HT')]/input
+${COMMANDE_TVA1C}    xpath=//input[@cy-data="item-tax-amount-field"]
+${COMMANDE_TTCC}    xpath=//label[contains(text(),'TTC')]/input 
+${COMMANDE_ADDBUTTONC}    xpath=//button[@cy-data="save-client-sale-btn"]
 
 
 
@@ -267,7 +267,7 @@ ${Facture_CLIENT1}    xpath=//input[@cy-data="client_autocomplete"]
 ${Facture_CLIENT2}    xpath=//i[contains(text(),'arrow_drop_down')]
 ${Ajouter-GroupeFacture}    xpath=//Button[@cy-data="submitInvoice_btn"]
 ${DOWNLOAD_DIR}    C:\Users\Ben Hadj Salah\Desktop\Crown  # Chemin du répertoire de téléchargement
-${EXPORT_BUTTON_XPATH}    //button[@cy-data="createNew_btn"]
+${EXPORT_BUTTON_XPATH}    //button[@cy-data="createNew_btn" and contains(., 'Exporter')]
 ${EXPECTED_FILE_NAME}    client_invoice.xlsx  # Nom du fichier attendu
 
 
@@ -298,6 +298,26 @@ ${Mission_ClientF}    xpath=//input[@cy-data="client_autocomplete"]
 ${Mission_CommercialF}    xpath=//label[contains(text(),"Commercial")]/following-sibling::Input
 ${Mission_Statut}    xpath=//input[@cy-data="status_filter"]
 ${RESULTS_M}    xpath=//input[@cy-data="mission_card"]
+
+
+#-------------Profile-------------------#
+###PROFIL###
+${BIRTH_PLACE}       Lyon
+${CITY}              Lyon
+${ADDRESS}           42 Rue de la République
+${NATIONALITY}       Française
+${POSTAL_CODE}       69000
+${PHONE_NUMBER}    189898989
+#-----------Documents-------------------#
+
+${ACESS_Profil}    xpath=//div[contains(text(),'Mon profil')]
+${NOM_DOCUMENT}     TEST AUTO DOC
+${FICHIER_UPLOAD}   ${CURDIR}/test_pdf.pdf
+${TYPE_DOCUMENT}    Passeport
+${NOUVEAU_TYPE}    Autre
+${NOUVEAU_NOM}     DOCUMENT MODIFIÉ TEST AUTO
+${DOCUMENT_A_SUPPRIMER}=    Get Text    xpath=(//div[contains(@class,"document-name")])[1]
+
 
 
 

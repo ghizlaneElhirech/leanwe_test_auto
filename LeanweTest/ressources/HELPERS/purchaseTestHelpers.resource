@@ -3,7 +3,6 @@ Library      SeleniumLibrary
 Library      RequestsLibrary 
 Library      Collections
 Library      DateTime
-Resource     ../VARIABLES/GlobalVariables.resource
 Resource     ../VARIABLES/purchaseTestVariables.resource
 Resource     GlobalHelpers.resource
 
@@ -21,20 +20,22 @@ FILL OUT THE PURCHASE CREATION FORM
     ${FULL_PURCHASE_TITLE}=    Set Variable       ${PURCHASE_TITLE}_${current_datetime} 
     Wait Until Element Is Visible            ${PURCHASE_NEW_BUTTON}                        
     Click Element                            ${PURCHASE_NEW_BUTTON}
-    Wait Until Element Is Visible            ${PURCHASE_TITLE_FIELD}
-    Wait Until Element Is Enabled            ${PURCHASE_TITLE_FIELD}                       
+    Wait Until Element Is Visible            ${PURCHASE_TITLE_FIELD}                     
     Wait Until Keyword Succeeds     5     5         Input Text                               ${PURCHASE_TITLE_FIELD}                       ${FULL_PURCHASE_TITLE}
+    Click Element                            ${PURCHASE_INVOICE_NUMBER_FIELD}
+    Input Text                               ${PURCHASE_INVOICE_NUMBER_FIELD}    ${PURCHASE_INVOICE_NUMBER_VALUE}
     Click Element                            ${PURCHASE_PAYMENT_MODE}                  
-    Wait Until Element Is Visible            ${CHECQUE_PAYMENT_MODE}  
-    Click Element                            ${CHECQUE_PAYMENT_MODE}   
+    Wait Until Element Is Visible            ${ESPECE_PAYMENT_MODE}
+    Click Element                            ${ESPECE_PAYMENT_MODE}
     Wait Until Element Is Visible            ${PURCHASE_PAYMENT_TYPE}
     Click Element                            ${PURCHASE_PAYMENT_TYPE}
     Wait Until Element Is Visible            ${PURCHASE_SEMESTER_TYPE}
     Click Element                            ${PURCHASE_SEMESTER_TYPE}
-    Input Text                               ${PURCHASE_CLIENT_COMPANY}                     ${SELECTED_CLIENT_COMPANY}
-    Sleep    2s 
-    Press Keys          none                     ARROW_DOWN
-    Press Keys          none                      ENTER  
+    Input Text                               ${PURCHASE_CLIENT_COMPANY}     ${SELECTED_CLIENT_COMPANY}
+    Sleep        5s
+    Press Keys        none       ARROW_DOWN            
+    Press Keys        none       ENTER   
+    Press Keys                                none                                     TAB
     Wait Until Element Is Enabled            ${PURCHASE_BUSINESS_UNIT}  
     Input Text                               ${PURCHASE_BUSINESS_UNIT}                      ${SELECTED_BU}  
     Sleep    2s 
@@ -55,8 +56,14 @@ FILL OUT THE PURCHASE CREATION FORM
     Wait Until Element Is Enabled            ${CHOSEN_END_DATE}
     Wait Until Element Is Visible            ${CHOSEN_END_DATE}                
     Click element                            ${CHOSEN_END_DATE}
+    Wait Until Element Is Visible            ${PURCHASE_DATE} 
+    Click Element                            ${PURCHASE_DATE} 
+    #Wait Until Element Is Visible            ${CHOSEN_DATE}
+    Click Element                            ${CHOSEN_DATE}
     Input Text                               ${PURCHASE_PRETAX_AMOUNT}                       ${PURCHASE_TARIF}
-    Input Text                               ${PURCHASE_TAX_AMOUNT}                          ${PURCHASE_TVA}
+    Click Element                            ${PURCHASE_TAX_AMOUNT}                          
+    Wait Until Element Is Visible            ${PURCHASE_TVA}
+    Click Element                            ${PURCHASE_TVA}
     Wait Until Element Is Visible            ${PURCHASE_ADD_BUTTON}
     Click Element                            ${PURCHASE_ADD_BUTTON}
     Wait Until Page Contains                 La facture fournisseur a été créée avec succès   timeout=10s

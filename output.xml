@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-09-03T11:33:00.058998" rpa="false" schemaversion="5">
-<suite id="s1" name="CreateOffer" source="C:\TESTS\LenweTests\leanwe-test-auto\LeanweTest\tests-suits\CreateOffer.robot">
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2025-10-15T15:25:57.773114" rpa="false" schemaversion="5">
+<suite id="s1" name="CreateOffer" source="C:\Users\HP\Desktop\projects\leanwe-test-auto\LeanweTest\tests-suits\CreateOffer.robot">
 <test id="s1-t1" name="CREATE A NEW OFFER" line="12">
 <kw name="LOG IN AS SUPPORT" owner="GlobalHelpers">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:00.542381" level="INFO">Opening browser 'chrome' to base url 'https://staging.leanwe.com'.</msg>
+<msg time="2025-10-15T15:25:58.701710" level="INFO">Opening browser 'chrome' to base url 'https://staging.leanwe.com'.</msg>
 <arg>${Leanwe_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-03T11:33:00.542381" elapsed="2.040138"/>
+<status status="PASS" start="2025-10-15T15:25:58.700668" elapsed="2.548689"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-03T11:33:02.582519" elapsed="0.383193"/>
+<status status="PASS" start="2025-10-15T15:26:01.250360" elapsed="0.045007"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:02.966930" elapsed="0.648552"/>
+<status status="PASS" start="2025-10-15T15:26:01.295367" elapsed="0.891797"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:03.615482" elapsed="0.025451"/>
+<status status="PASS" start="2025-10-15T15:26:02.187164" elapsed="0.025003"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:03.640933" level="INFO">Typing text 'redouane@yopmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
+<msg time="2025-10-15T15:26:02.212167" level="INFO">Typing text 'redouane@yopmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
 <arg>${LOGIN_PAGE_FORM_USERNAME_INPUT}</arg>
 <arg>redouane@yopmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:03.640933" elapsed="0.194218"/>
+<status status="PASS" start="2025-10-15T15:26:02.212167" elapsed="0.289996"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:03.836319" level="INFO">Typing text 'secret2023' into text field 'xpath=//input[@name="password"]'.</msg>
+<msg time="2025-10-15T15:26:02.503169" level="INFO">Typing text 'secret2023' into text field 'xpath=//input[@name="password"]'.</msg>
 <arg>${LOGIN_PAGE_FORM_PASSWORD_INPUT}</arg>
 <arg>secret2023</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:03.835151" elapsed="0.099036"/>
+<status status="PASS" start="2025-10-15T15:26:02.503169" elapsed="0.162879"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:03.934187" level="INFO">Clicking element 'xpath://body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/button[1]'.</msg>
+<msg time="2025-10-15T15:26:02.666048" level="INFO">Clicking element 'xpath://body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/button[1]'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:03.934187" elapsed="0.043538"/>
+<status status="PASS" start="2025-10-15T15:26:02.666048" elapsed="0.104336"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:00.542381" elapsed="3.436202"/>
+<status status="PASS" start="2025-10-15T15:25:58.700668" elapsed="4.069716"/>
 </kw>
 <kw name="SELECT OFFER FROM SIDEBAR" owner="offerTestHelpers">
 <kw name="SELECT ITEM FROM SIDEBAR" owner="GlobalHelpers">
@@ -52,530 +52,530 @@
 <arg>${DASHBOARD_TITLE_XPATH}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-03T11:33:03.978583" elapsed="2.314844"/>
+<status status="PASS" start="2025-10-15T15:26:02.772382" elapsed="2.705838"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:06.302635" level="INFO">${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1ae19bad73a16ff42f0527ceb6e5743c", element="f.716B1A409E4653FAA5B880CC7411A04C.d.2E7B3F7E5239C11FAEF0DFC7481AC1A7.e.90")&gt;</msg>
+<msg time="2025-10-15T15:26:05.494651" level="INFO">${sidebar_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4e899601aec96bf059ba89b35a9b362b", element="f.792B51A4212DF918F3D6B63977204610.d.CB734ED5530B312986B808C6431A5650.e.71")&gt;</msg>
 <var>${sidebar_element}</var>
 <arg>${sidebar_Xpath}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:06.293427" elapsed="0.009208"/>
+<status status="PASS" start="2025-10-15T15:26:05.479221" elapsed="0.016429"/>
 </kw>
 <kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:06.303641" level="INFO">Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1ae19bad73a16ff42f0527ceb6e5743c", element="f.716B1A409E4653FAA5B880CC7411A04C.d.2E7B3F7E5239C11FAEF0DFC7481AC1A7.e.90")&gt;'.</msg>
+<msg time="2025-10-15T15:26:05.495650" level="INFO">Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="4e899601aec96bf059ba89b35a9b362b", element="f.792B51A4212DF918F3D6B63977204610.d.CB734ED5530B312986B808C6431A5650.e.71")&gt;'.</msg>
 <arg>${sidebar_element}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:06.302635" elapsed="0.276086"/>
+<status status="PASS" start="2025-10-15T15:26:05.495650" elapsed="0.404455"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${SIDEBAR_ITEM_TITLE}</arg>
 <arg>timeout=2s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-03T11:33:06.578721" elapsed="0.012721"/>
+<status status="PASS" start="2025-10-15T15:26:05.900105" elapsed="0.015999"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:06.591442" level="INFO">Clicking element 'xpath=//div[contains(text(),'Offres')]'.</msg>
+<msg time="2025-10-15T15:26:05.916104" level="INFO">Clicking element 'xpath=//div[contains(text(),'Offres')]'.</msg>
 <arg>${SIDEBAR_ITEM_TITLE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:06.591442" elapsed="0.044084"/>
+<status status="PASS" start="2025-10-15T15:26:05.916104" elapsed="0.128167"/>
 </kw>
 <return>
 <value>${sidebar_element}</value>
-<status status="PASS" start="2024-09-03T11:33:06.635526" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:06.044271" elapsed="0.000000"/>
 </return>
 <arg>${OFFER_SIDEBAR_ITEM}</arg>
-<status status="PASS" start="2024-09-03T11:33:03.978583" elapsed="2.656943"/>
+<status status="PASS" start="2025-10-15T15:26:02.771383" elapsed="3.272888"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:03.978583" elapsed="2.656943"/>
+<status status="PASS" start="2025-10-15T15:26:02.770384" elapsed="3.273887"/>
 </kw>
-<kw name="CLICK THE ADD NEW BUTTON" owner="offerTestHelpers">
+<kw name="CLICK THE ADD NEW OFFER BUTTON" owner="offerTestHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${NEW_OFFER_BTN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:06.636527" elapsed="0.228472"/>
+<status status="PASS" start="2025-10-15T15:26:06.045269" elapsed="0.237753"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:06.865509" level="INFO">Clicking element 'xpath=//button/span/span[contains(text(), 'Nouvelle Offre')]'.</msg>
+<msg time="2025-10-15T15:26:06.284028" level="INFO">Clicking element 'xpath=//button/span/span[contains(text(), 'Nouvelle Offre')]'.</msg>
 <arg>${NEW_OFFER_BTN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:06.865509" elapsed="0.165995"/>
+<status status="PASS" start="2025-10-15T15:26:06.283022" elapsed="0.288935"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:06.635526" elapsed="0.395978"/>
+<status status="PASS" start="2025-10-15T15:26:06.045269" elapsed="0.526688"/>
 </kw>
 <kw name="FILL OUT THE OFFER CREATION FORM" owner="offerTestHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${OFFER_TITLE_FIELD}</arg>
 <arg>timeout=4s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.032573" elapsed="0.259428"/>
+<status status="PASS" start="2025-10-15T15:26:06.573967" elapsed="0.258726"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2024-09-03T11:33:07.292001" level="INFO">${current_datetime} = 20240903113307</msg>
+<msg time="2025-10-15T15:26:06.832693" level="INFO">${current_datetime} = 20251015152606</msg>
 <var>${current_datetime}</var>
 <arg>result_format=%Y%m%d%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.292001" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:06.832693" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-03T11:33:07.293008" level="INFO">${FULL_OFFER_NAME} = TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:06.833687" level="INFO">${FULL_OFFER_NAME} = TEST_AUTO_OFFRE_20251015152606</msg>
 <var>${FULL_OFFER_NAME}</var>
 <arg>${OFFER_NAME}_${current_datetime}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.292001" elapsed="0.001007"/>
+<status status="PASS" start="2025-10-15T15:26:06.832693" elapsed="0.000994"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${OFFER_TITLE_FIELD}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.293008" elapsed="0.015390"/>
+<status status="PASS" start="2025-10-15T15:26:06.833687" elapsed="0.031335"/>
 </kw>
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:07.309501" level="INFO">Clicking element 'xpath=//label[contains(text(), 'Titre')]/following-sibling::INPUT'.</msg>
+<msg time="2025-10-15T15:26:06.866065" level="INFO">Clicking element 'xpath=//input[@cy-data="title_field"]'.</msg>
 <arg>${OFFER_TITLE_FIELD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.309501" elapsed="0.047601"/>
+<status status="PASS" start="2025-10-15T15:26:06.866065" elapsed="0.112958"/>
 </kw>
 <arg>5</arg>
 <arg>5</arg>
 <arg>Click Element</arg>
 <arg>${OFFER_TITLE_FIELD}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.308398" elapsed="0.048704"/>
+<status status="PASS" start="2025-10-15T15:26:06.866065" elapsed="0.113958"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:07.358103" level="INFO">Typing text 'TEST_AUTO_OFFRE_20240903113307' into text field 'xpath=//label[contains(text(), 'Titre')]/following-sibling::INPUT'.</msg>
+<msg time="2025-10-15T15:26:06.981060" level="INFO">Typing text 'TEST_AUTO_OFFRE_20251015152606' into text field 'xpath=//input[@cy-data="title_field"]'.</msg>
 <arg>${OFFER_TITLE_FIELD}</arg>
 <arg>${FULL_OFFER_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.357102" elapsed="0.351604"/>
+<status status="PASS" start="2025-10-15T15:26:06.980023" elapsed="0.451670"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:07.710272" level="INFO">Typing text 'France' into text field 'xpath=//Input[@cy-data="country_field"]'.</msg>
+<msg time="2025-10-15T15:26:07.432691" level="INFO">Typing text 'France' into text field 'xpath=//Input[@cy-data="country_field"]'.</msg>
 <arg>${OFFER_COUNTRY_FIELD}</arg>
 <arg>${OFFRE_COUNTRY}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.708706" elapsed="0.272513"/>
+<status status="PASS" start="2025-10-15T15:26:07.431693" elapsed="0.174987"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:07.982234" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
-<msg time="2024-09-03T11:33:07.982234" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
-<msg time="2024-09-03T11:33:07.982234" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<msg time="2025-10-15T15:26:07.607674" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
+<msg time="2025-10-15T15:26:07.607674" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
+<msg time="2025-10-15T15:26:07.607674" level="INFO">Releasing special key ARROW_DOWN.</msg>
 <arg>none</arg>
 <arg>ARROW_DOWN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.981219" elapsed="0.010336"/>
+<status status="PASS" start="2025-10-15T15:26:07.606680" elapsed="0.017223"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:07.991555" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
-<msg time="2024-09-03T11:33:07.991555" level="INFO">Pressing special key ENTER to browser.</msg>
-<msg time="2024-09-03T11:33:07.991555" level="INFO">Releasing special key ENTER.</msg>
+<msg time="2025-10-15T15:26:07.624942" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2025-10-15T15:26:07.624942" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2025-10-15T15:26:07.624942" level="INFO">Releasing special key ENTER.</msg>
 <arg>none</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-09-03T11:33:07.991555" elapsed="0.038456"/>
+<status status="PASS" start="2025-10-15T15:26:07.623903" elapsed="0.045196"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:08.030011" level="INFO">Typing text 'PARIS' into text field 'xpath=//Input[@cy-data="city_field"]'.</msg>
+<msg time="2025-10-15T15:26:07.670098" level="INFO">Typing text 'PARIS' into text field 'xpath=//Input[@cy-data="city_field"]'.</msg>
 <arg>${OFFER_CITY_FIELD}</arg>
 <arg>${OFFRE_CITY}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.030011" elapsed="0.131025"/>
+<status status="PASS" start="2025-10-15T15:26:07.670098" elapsed="0.186793"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:08.162181" level="INFO">Clicking element 'xpath=//Input[@cy-data="manager_select"]'.</msg>
+<msg time="2025-10-15T15:26:07.856891" level="INFO">Clicking element 'xpath=//Input[@cy-data="manager_select"]'.</msg>
 <arg>${MANAGER_SELECT_FIELD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.162181" elapsed="0.073994"/>
+<status status="PASS" start="2025-10-15T15:26:07.856891" elapsed="0.137929"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${MANAGER_SELECTED_OPTION}</arg>
 <arg>timeout=7s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.236175" elapsed="0.264103"/>
+<status status="PASS" start="2025-10-15T15:26:07.995821" elapsed="0.253638"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:08.500278" level="INFO">Clicking element 'xpath=//div[contains(text(),'Veronica Dixon')]'.</msg>
+<msg time="2025-10-15T15:26:08.250470" level="INFO">Clicking element 'xpath=//div[contains(text(),'John Doe')]'.</msg>
 <arg>${MANAGER_SELECTED_OPTION}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.500278" elapsed="0.060273"/>
+<status status="PASS" start="2025-10-15T15:26:08.249459" elapsed="0.107846"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:08.561207" level="INFO">Clicking element 'xpath=//label[contains(text(),"Date début")]/following-sibling::Input'.</msg>
+<msg time="2025-10-15T15:26:08.357305" level="INFO">Clicking element 'xpath=//form[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]'.</msg>
 <arg>${OFFER_START_DATE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.560551" elapsed="0.084340"/>
+<status status="PASS" start="2025-10-15T15:26:08.357305" elapsed="0.221968"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${OFFER_START_DATE_DAY}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.644891" elapsed="0.245209"/>
+<status status="PASS" start="2025-10-15T15:26:08.579273" elapsed="0.253105"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:08.891205" level="INFO">Clicking element 'xpath=//tbody/tr[2]/td[2]/button[1]/div[1]'.</msg>
+<msg time="2025-10-15T15:26:08.832378" level="INFO">Clicking element 'xpath=//table[1]/tbody[1]/tr[2]/td[3]/button[1]'.</msg>
 <arg>${OFFER_START_DATE_DAY}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.891205" elapsed="0.068812"/>
+<status status="PASS" start="2025-10-15T15:26:08.832378" elapsed="0.123239"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:08.960017" level="INFO">Clicking element 'xpath=//label[text()='Date fin']/following-sibling::input'.</msg>
+<msg time="2025-10-15T15:26:08.955617" level="INFO">Clicking element 'xpath=//form[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]'.</msg>
 <arg>${OFFER_END_DATE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:08.960017" elapsed="0.067940"/>
+<status status="PASS" start="2025-10-15T15:26:08.955617" elapsed="0.143746"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${OFFER_END_DATE_DAY}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.027957" elapsed="0.252217"/>
+<status status="PASS" start="2025-10-15T15:26:09.099363" elapsed="0.511657"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:09.281613" level="INFO">Clicking element 'xpath=(//table[1]/tbody[1]/tr[5]/td[1]/button[1])[2]'.</msg>
+<msg time="2025-10-15T15:26:09.612021" level="INFO">Clicking element 'xpath=(//table[1]/tbody[1]/tr[5]/td[1]/button[1])[2]'.</msg>
 <arg>${OFFER_END_DATE_DAY}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.281613" elapsed="0.086727"/>
+<status status="PASS" start="2025-10-15T15:26:09.612021" elapsed="0.145739"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:09.368340" level="INFO">Typing text '400' into text field 'xpath=//Input[@cy-data="salary_field"]'.</msg>
+<msg time="2025-10-15T15:26:09.758794" level="INFO">Typing text '400' into text field 'xpath=//Input[@cy-data="salary_field"]'.</msg>
 <arg>${OFFER_TJM_FIELD}</arg>
 <arg>${OFFRE_TJM}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.368340" elapsed="0.100748"/>
+<status status="PASS" start="2025-10-15T15:26:09.758794" elapsed="0.177695"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:09.469088" level="INFO">Typing text '4' into text field 'xpath=//Input[@cy-data="level_field"]'.</msg>
+<msg time="2025-10-15T15:26:09.936489" level="INFO">Typing text '4' into text field 'xpath=//Input[@cy-data="level_field"]'.</msg>
 <arg>${OFFER_LEVEL_EXP_FIELD}</arg>
 <arg>4</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.469088" elapsed="0.108357"/>
+<status status="PASS" start="2025-10-15T15:26:09.936489" elapsed="0.173135"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:09.577445" level="INFO">Clicking element 'xpath=//Input[@cy-data="process_select"]'.</msg>
+<msg time="2025-10-15T15:26:10.109624" level="INFO">Clicking element 'xpath=//Input[@cy-data="process_select"]'.</msg>
 <arg>${OFFER_RECRUITE_PROCESS}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.577445" elapsed="0.088670"/>
+<status status="PASS" start="2025-10-15T15:26:10.109624" elapsed="0.173268"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${OFFER_SELECTED_PROCESS}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.666115" elapsed="0.253317"/>
+<status status="PASS" start="2025-10-15T15:26:10.282892" elapsed="0.278705"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:09.920432" level="INFO">Clicking element 'xpath=//div[contains(text(),'Process_cadre')]'.</msg>
+<msg time="2025-10-15T15:26:10.562597" level="INFO">Clicking element 'xpath=//div[contains(text(),'Process_cadre')]'.</msg>
 <arg>${OFFER_SELECTED_PROCESS}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.919432" elapsed="0.066195"/>
+<status status="PASS" start="2025-10-15T15:26:10.562597" elapsed="0.168033"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:09.985627" level="INFO">Clicking element 'xpath=//Input[@cy-data="frequence_select"]'.</msg>
+<msg time="2025-10-15T15:26:10.730630" level="INFO">Clicking element 'xpath=//Input[@cy-data="frequence_select"]'.</msg>
 <arg>${OFFER_FREQUENCE_DAYS}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:09.985627" elapsed="0.084832"/>
+<status status="PASS" start="2025-10-15T15:26:10.730630" elapsed="0.300794"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${OFFER_FREQUENCE_DAYS_CHOICE}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:10.072893" elapsed="0.246185"/>
+<status status="PASS" start="2025-10-15T15:26:11.031424" elapsed="0.085998"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:10.320077" level="INFO">Clicking element 'xpath=//div[contains(text(),'Deux')]'.</msg>
+<msg time="2025-10-15T15:26:11.119425" level="INFO">Clicking element 'xpath=//div[contains(text(),'Deux')]'.</msg>
 <arg>${OFFER_FREQUENCE_DAYS_CHOICE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:10.319078" elapsed="0.063870"/>
+<status status="PASS" start="2025-10-15T15:26:11.119425" elapsed="0.230997"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:10.382948" level="INFO">Typing text 'company@yopmail.com' into text field 'xpath=//Input[@cy-data="publicEmail_field"]'.</msg>
+<msg time="2025-10-15T15:26:11.351426" level="INFO">Typing text 'company@yopmail.com' into text field 'xpath=//Input[@cy-data="publicEmail_field"]'.</msg>
 <arg>${OFFER_PUBLIC_EMAIL_FIELD}</arg>
 <arg>${OFFER_PUBLIC_EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:10.382948" elapsed="0.278179"/>
+<status status="PASS" start="2025-10-15T15:26:11.350422" elapsed="0.700611"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:10.662169" level="INFO">Typing text 'Reference_auto_0001' into text field 'xpath=//Input[@cy-data="reference_field"]'.</msg>
+<msg time="2025-10-15T15:26:12.052037" level="INFO">Typing text 'Reference_auto_0001' into text field 'xpath=//Input[@cy-data="reference_field"]'.</msg>
 <arg>${OFFER_REFERENCE_FIELD}</arg>
 <arg>${OFFER_REFRENCE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:10.661127" elapsed="0.257797"/>
+<status status="PASS" start="2025-10-15T15:26:12.052037" elapsed="0.390575"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:10.918924" level="INFO">Typing text 'This company is created to try out an automated script made qith robot framework' into text field 'xpath=(//div[@data-placeholder="Insérer du texte ici"])[1]'.</msg>
+<msg time="2025-10-15T15:26:12.443615" level="INFO">Typing text 'This company is created to try out an automated script made qith robot framework' into text field 'xpath=(//div[@data-placeholder="Insérer du texte ici"])[1]'.</msg>
 <arg>${OFFER_COMPANY_TEXT_AREA}</arg>
 <arg>${OFFER_COMPANY_TEXT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:10.918924" elapsed="0.742379"/>
+<status status="PASS" start="2025-10-15T15:26:12.443615" elapsed="0.997145"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:11.662318" level="INFO">Typing text 'This Job post is created to test the offers section in the plateform and check out if the offers are created as expected' into text field 'xpath=(//div[@data-placeholder="Insérer du texte ici"])[2]'.</msg>
+<msg time="2025-10-15T15:26:13.441760" level="INFO">Typing text 'This Job post is created to test the offers section in the plateform and check out if the offers are created as expected' into text field 'xpath=(//div[@data-placeholder="Insérer du texte ici"])[2]'.</msg>
 <arg>${OFFER_DESCRIPTION_TEXT_AREA}</arg>
 <arg>${OFFER_DESCRIPTION}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:11.661303" elapsed="1.283227"/>
+<status status="PASS" start="2025-10-15T15:26:13.441760" elapsed="1.399002"/>
 </kw>
 <return>
 <value>${FULL_OFFER_NAME}</value>
-<status status="PASS" start="2024-09-03T11:33:12.944530" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:14.840762" elapsed="0.000000"/>
 </return>
-<msg time="2024-09-03T11:33:12.944530" level="INFO">${offer_name} = TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:14.841760" level="INFO">${offer_name} = TEST_AUTO_OFFRE_20251015152606</msg>
 <var>${offer_name}</var>
-<status status="PASS" start="2024-09-03T11:33:07.032573" elapsed="5.911957"/>
+<status status="PASS" start="2025-10-15T15:26:06.572962" elapsed="8.268798"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-09-03T11:33:12.945567" level="INFO">${GLOBAL_OFFER_NAME} = TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:14.841760" level="INFO">${GLOBAL_OFFER_NAME} = TEST_AUTO_OFFRE_20251015152606</msg>
 <arg>${GLOBAL_OFFER_NAME}</arg>
 <arg>${offer_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-09-03T11:33:12.945567" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:14.841760" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-03T11:33:12.946588" level="INFO">Created offer name: TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:14.842762" level="INFO">Created offer name: TEST_AUTO_OFFRE_20251015152606</msg>
 <arg>Created offer name: ${offer_name}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-03T11:33:12.946588" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:14.841760" elapsed="0.001002"/>
 </kw>
 <kw name="SUBMIT THE OFFER FORM" owner="offerTestHelpers">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:12.947825" level="INFO">Clicking element 'xpath=//Button[@cy-data="createOffer_btn"]'.</msg>
+<msg time="2025-10-15T15:26:14.843768" level="INFO">Clicking element 'xpath=//Button[@cy-data="createOffer_btn"]'.</msg>
 <arg>${OFFER_CREATE_BTN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:12.947825" elapsed="0.099942"/>
+<status status="PASS" start="2025-10-15T15:26:14.842762" elapsed="0.120510"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:12.947689" elapsed="0.100078"/>
+<status status="PASS" start="2025-10-15T15:26:14.842762" elapsed="0.120510"/>
 </kw>
 <kw name="CHECK THE DISPLAY OF SUCCESS NOTIFICATION" owner="offerTestHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SNACKBAR_SUCCESS}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:13.047767" elapsed="0.928285"/>
+<status status="PASS" start="2025-10-15T15:26:14.964293" elapsed="1.198031"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:13.996131" level="INFO">Element 'xpath=//div[contains(@class, "v-snack__wrapper")]' contains text 'Offre créée avec succès'.</msg>
+<msg time="2025-10-15T15:26:16.192444" level="INFO">Element 'xpath=//div[contains(@class, "v-snack__wrapper")]' contains text 'Offre créée avec succès'.</msg>
 <arg>${SNACKBAR_SUCCESS}</arg>
 <arg>${OFFER_SUCESS_NOTIFICATION}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2024-09-03T11:33:13.977383" elapsed="0.018748"/>
+<status status="PASS" start="2025-10-15T15:26:16.162324" elapsed="0.030120"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:13.047767" elapsed="0.948364"/>
+<status status="PASS" start="2025-10-15T15:26:14.963272" elapsed="1.229172"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:00.542381" elapsed="13.453750"/>
+<status status="PASS" start="2025-10-15T15:25:58.699708" elapsed="17.492736"/>
 </test>
-<test id="s1-t2" name="VERIFY THE OFFER EXISTENCE" line="23">
+<test id="s1-t2" name="VERIFY THE OFFER EXISTENCE" line="22">
 <kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2024-09-03T11:33:13.997131" level="INFO">${offer_name} = TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:16.193455" level="INFO">${offer_name} = TEST_AUTO_OFFRE_20251015152606</msg>
 <var>${offer_name}</var>
 <arg>${GLOBAL_OFFER_NAME}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2024-09-03T11:33:13.997131" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:16.193455" elapsed="0.000000"/>
 </kw>
 <kw name="SEARSH FOR NEW OFFER" owner="offerTestHelpers">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Nouvelle Offre</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-03T11:33:13.998129" elapsed="0.013731"/>
+<status status="PASS" start="2025-10-15T15:26:16.194482" elapsed="0.017707"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${OFFER_SEARCH_BAR}</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:14.011860" elapsed="0.018336"/>
+<status status="PASS" start="2025-10-15T15:26:16.212189" elapsed="0.026600"/>
 </kw>
 <kw name="Get Dynamic Offer Card Title Locator" owner="offerTestHelpers">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-03T11:33:14.030746" level="INFO">${locator} = xpath=//span[contains(text(),"TEST_AUTO_OFFRE_20240903113307")]</msg>
+<msg time="2025-10-15T15:26:16.239786" level="INFO">${locator} = xpath=//span[contains(text(),"TEST_AUTO_OFFRE_20251015152606")]</msg>
 <var>${locator}</var>
 <arg>xpath=//span[contains(text(),"${offer_name}")]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-03T11:33:14.030746" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:16.239786" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${locator}</value>
-<status status="PASS" start="2024-09-03T11:33:14.030746" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:16.239786" elapsed="0.000000"/>
 </return>
-<msg time="2024-09-03T11:33:14.031251" level="INFO">${dynamic_locator} = xpath=//span[contains(text(),"TEST_AUTO_OFFRE_20240903113307")]</msg>
+<msg time="2025-10-15T15:26:16.240805" level="INFO">${dynamic_locator} = xpath=//span[contains(text(),"TEST_AUTO_OFFRE_20251015152606")]</msg>
 <var>${dynamic_locator}</var>
 <arg>${searched_offer}</arg>
-<status status="PASS" start="2024-09-03T11:33:14.030196" elapsed="0.001055"/>
+<status status="PASS" start="2025-10-15T15:26:16.238789" elapsed="0.002016"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:14.031251" level="INFO">Typing text 'TEST_AUTO_OFFRE_20240903113307' into text field 'xpath=//input[@placeholder = "Rechercher..."]'.</msg>
+<msg time="2025-10-15T15:26:16.240805" level="INFO">Typing text 'TEST_AUTO_OFFRE_20251015152606' into text field 'xpath=//input[@placeholder = "Rechercher"]'.</msg>
 <arg>${OFFER_SEARCH_BAR}</arg>
 <arg>${searched_offer}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:14.031251" elapsed="0.193061"/>
+<status status="PASS" start="2025-10-15T15:26:16.240805" elapsed="0.271530"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${dynamic_locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:14.225313" elapsed="0.014788"/>
+<status status="PASS" start="2025-10-15T15:26:16.512335" elapsed="0.025002"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-03T11:33:14.240101" level="INFO">my title: TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:16.537337" level="INFO">my title: TEST_AUTO_OFFRE_20251015152606</msg>
 <arg>my title: ${searched_offer}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-03T11:33:14.240101" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:16.537337" elapsed="0.000000"/>
 </kw>
 <arg>${offer_name}</arg>
-<status status="PASS" start="2024-09-03T11:33:13.998129" elapsed="0.241972"/>
+<status status="PASS" start="2025-10-15T15:26:16.193455" elapsed="0.343882"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-03T11:33:16.241441" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-10-15T15:26:18.538430" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-03T11:33:14.240101" elapsed="2.001431"/>
+<status status="PASS" start="2025-10-15T15:26:16.538345" elapsed="2.000085"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:13.997131" elapsed="2.244401"/>
+<status status="PASS" start="2025-10-15T15:26:16.193455" elapsed="2.344975"/>
 </test>
-<test id="s1-t3" name="Apply Filters Test" line="28">
+<test id="s1-t3" name="Apply Filters Test" line="27">
 <kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2024-09-03T11:33:16.252803" level="INFO">${offer_name} = TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:18.539475" level="INFO">${offer_name} = TEST_AUTO_OFFRE_20251015152606</msg>
 <var>${offer_name}</var>
 <arg>${GLOBAL_OFFER_NAME}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.241532" elapsed="0.011271"/>
+<status status="PASS" start="2025-10-15T15:26:18.539475" elapsed="0.000000"/>
 </kw>
 <kw name="Apply Filters And Verify Results" owner="offerTestHelpers">
 <kw name="FILL IN A FIELD WITH JS" owner="offerTestHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=${FIELD_ID}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.252803" elapsed="0.014624"/>
+<status status="PASS" start="2025-10-15T15:26:18.541500" elapsed="0.021243"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.268428" level="INFO">Executing JavaScript:
+<msg time="2025-10-15T15:26:18.563775" level="INFO">Executing JavaScript:
 var field = document.getElementById('max_tjm'); field.value = 900; field.dispatchEvent(new Event('input'));
 Without any arguments.</msg>
 <arg>var field = document.getElementById('${FIELD_ID}'); field.value = ${NEW_VAL}; field.dispatchEvent(new Event('input'));</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.267427" elapsed="0.016007"/>
+<status status="PASS" start="2025-10-15T15:26:18.562743" elapsed="0.012141"/>
 </kw>
 <arg>${Max-TJM-ID}</arg>
 <arg>${MAX_TJM}</arg>
-<status status="PASS" start="2024-09-03T11:33:16.252803" elapsed="0.030631"/>
+<status status="PASS" start="2025-10-15T15:26:18.541500" elapsed="0.033384"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.284433" level="INFO">Typing text '400' into text field 'xpath=//label[text()= 'Min TJM']/following-sibling::input'.</msg>
+<msg time="2025-10-15T15:26:18.575885" level="INFO">Typing text '400' into text field 'xpath=//input[@id='min_tjm']'.</msg>
 <arg>${OFFER_MIN_TJM_FILTER}</arg>
 <arg>${OFFRE_TJM}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.283434" elapsed="0.096830"/>
+<status status="PASS" start="2025-10-15T15:26:18.574884" elapsed="0.106370"/>
 </kw>
 <kw name="FILL IN A FIELD WITH JS" owner="offerTestHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=${FIELD_ID}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.380264" elapsed="0.016175"/>
+<status status="PASS" start="2025-10-15T15:26:18.682252" elapsed="0.023612"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.396439" level="INFO">Executing JavaScript:
+<msg time="2025-10-15T15:26:18.706845" level="INFO">Executing JavaScript:
 var field = document.getElementById('max_month'); field.value = 33; field.dispatchEvent(new Event('input'));
 Without any arguments.</msg>
 <arg>var field = document.getElementById('${FIELD_ID}'); field.value = ${NEW_VAL}; field.dispatchEvent(new Event('input'));</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.396439" elapsed="0.014387"/>
+<status status="PASS" start="2025-10-15T15:26:18.705864" elapsed="0.011005"/>
 </kw>
 <arg>${MAX-MONTH-ID}</arg>
 <arg>${MAX_MONTHS}</arg>
-<status status="PASS" start="2024-09-03T11:33:16.380264" elapsed="0.030562"/>
+<status status="PASS" start="2025-10-15T15:26:18.682252" elapsed="0.034617"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.410826" level="INFO">Typing text '0' into text field 'xpath=//label[text()= 'Min Mois']/following-sibling::input'.</msg>
+<msg time="2025-10-15T15:26:18.717872" level="INFO">Typing text '0' into text field 'xpath=//input[@id='min_month']'.</msg>
 <arg>${OFFER_MIN_MONTH_FILTER}</arg>
 <arg>${MIN_MONTHS}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.410826" elapsed="0.073672"/>
+<status status="PASS" start="2025-10-15T15:26:18.716869" elapsed="0.109463"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.485295" level="INFO">Clicking element 'xpath=//input[@placeholder="Pays"]'.</msg>
+<msg time="2025-10-15T15:26:18.826332" level="INFO">Clicking element 'xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/input[1]'.</msg>
 <arg>${OFFER_COUNTRY_FILTER}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.484498" elapsed="0.063142"/>
+<status status="PASS" start="2025-10-15T15:26:18.826332" elapsed="0.130001"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.547640" level="INFO">Typing text 'France' into text field 'xpath=//input[@placeholder="Pays"]'.</msg>
+<msg time="2025-10-15T15:26:18.957331" level="INFO">Typing text 'France' into text field 'xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/input[1]'.</msg>
 <arg>${OFFER_COUNTRY_FILTER}</arg>
 <arg>${OFFRE_COUNTRY}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.547640" elapsed="0.087953"/>
+<status status="PASS" start="2025-10-15T15:26:18.957331" elapsed="0.110146"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.636099" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
-<msg time="2024-09-03T11:33:16.636099" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
-<msg time="2024-09-03T11:33:16.636099" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<msg time="2025-10-15T15:26:19.068476" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
+<msg time="2025-10-15T15:26:19.068476" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
+<msg time="2025-10-15T15:26:19.068476" level="INFO">Releasing special key ARROW_DOWN.</msg>
 <arg>none</arg>
 <arg>ARROW_DOWN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.636099" elapsed="0.008189"/>
+<status status="PASS" start="2025-10-15T15:26:19.067477" elapsed="0.008996"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.644288" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
-<msg time="2024-09-03T11:33:16.644288" level="INFO">Pressing special key ENTER to browser.</msg>
-<msg time="2024-09-03T11:33:16.644288" level="INFO">Releasing special key ENTER.</msg>
+<msg time="2025-10-15T15:26:19.077473" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2025-10-15T15:26:19.077473" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2025-10-15T15:26:19.077473" level="INFO">Releasing special key ENTER.</msg>
 <arg>none</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.644288" elapsed="0.023930"/>
+<status status="PASS" start="2025-10-15T15:26:19.077473" elapsed="0.034999"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.668218" level="INFO">Typing text 'PARIS' into text field 'xpath=//input[@placeholder="Ville"]'.</msg>
+<msg time="2025-10-15T15:26:19.113473" level="INFO">Typing text 'PARIS' into text field 'xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/input[1]'.</msg>
 <arg>${OFFER_CITY_FILTER}</arg>
 <arg>${OFFRE_CITY}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.668218" elapsed="0.120919"/>
+<status status="PASS" start="2025-10-15T15:26:19.113473" elapsed="0.144003"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:16.789137" level="INFO">Clicking element 'xpath=//input[@placeholder="Statut"]'.</msg>
+<msg time="2025-10-15T15:26:19.258475" level="INFO">Clicking element 'xpath=//Input[@cy-data="offer-status-select"]'.</msg>
 <arg>${OFFER_STATUS_FILTER}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.789137" elapsed="0.047053"/>
+<status status="PASS" start="2025-10-15T15:26:19.257476" elapsed="0.107252"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SELECTED_STATUS}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:16.836190" elapsed="0.229140"/>
+<status status="PASS" start="2025-10-15T15:26:19.364728" elapsed="0.247053"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:17.065330" level="INFO">Clicking element 'xpath=//div/div[contains(text(),"Brouillon")]'.</msg>
+<msg time="2025-10-15T15:26:19.612780" level="INFO">Clicking element 'xpath=//div/div[contains(text(),"Brouillon")]'.</msg>
 <arg>${SELECTED_STATUS}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:17.065330" elapsed="0.046546"/>
+<status status="PASS" start="2025-10-15T15:26:19.611781" elapsed="0.085941"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${OFFER_CARD_TITLE_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-03T11:33:17.111876" elapsed="0.015149"/>
+<status status="PASS" start="2025-10-15T15:26:19.698720" elapsed="0.024425"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-03T11:33:20.127421" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
+<msg time="2025-10-15T15:26:23.724666" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-03T11:33:17.127025" elapsed="3.000396"/>
+<status status="PASS" start="2025-10-15T15:26:19.723145" elapsed="4.001521"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-03T11:33:20.138320" level="INFO">${card_title_text} = TEST_AUTO_OFFRE_20240903113307</msg>
+<msg time="2025-10-15T15:26:23.745116" level="INFO">${card_title_text} = TEST_AUTO_OFFRE_20251015152606</msg>
 <var>${card_title_text}</var>
 <arg>${OFFER_CARD_TITLE_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-03T11:33:20.127421" elapsed="0.010899"/>
+<status status="PASS" start="2025-10-15T15:26:23.724666" elapsed="0.020450"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${card_title_text}</arg>
 <arg>${offer_name}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-03T11:33:20.138320" elapsed="0.000000"/>
+<status status="PASS" start="2025-10-15T15:26:23.745116" elapsed="0.000000"/>
 </kw>
 <arg>${offer_name}</arg>
-<status status="PASS" start="2024-09-03T11:33:16.252803" elapsed="3.885517"/>
+<status status="PASS" start="2025-10-15T15:26:18.541500" elapsed="5.203616"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-03T11:33:22.139690" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-10-15T15:26:25.746389" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-03T11:33:20.138320" elapsed="2.001370"/>
+<status status="PASS" start="2025-10-15T15:26:23.745116" elapsed="2.001273"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:16.241532" elapsed="5.898158"/>
+<status status="PASS" start="2025-10-15T15:26:18.538430" elapsed="7.207959"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-03T11:33:22.141250" elapsed="2.156856"/>
+<status status="PASS" start="2025-10-15T15:26:25.746956" elapsed="2.177667"/>
 </kw>
-<status status="PASS" start="2024-09-03T11:33:00.060109" elapsed="24.237997"/>
+<status status="PASS" start="2025-10-15T15:25:57.776064" elapsed="30.148559"/>
 </suite>
 <statistics>
 <total>

@@ -28,9 +28,9 @@ pipeline {
                 bat "if not exist results mkdir results"
                 
                 // Run all tests in your tests folder
-               bat "${env.PYTHON} -m robot -d results LeanweTest/tests-suits/CreateOffer.robot"
+               bat "${env.PYTHON} -m robot -d results LeanweTest/tests-suits"
 
-                bat "${env.PYTHON} -m robot -d results LeanweTest/tests-suits/CreatePurchase.robot"
+             
             }
         }
     }

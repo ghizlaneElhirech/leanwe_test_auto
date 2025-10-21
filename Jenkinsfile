@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         PYTHON = "python"
+    }
 
     stages {
         stage('Checkout') {
@@ -58,3 +59,4 @@ pipeline {
         }
     }
 }
+

@@ -16,8 +16,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing Python dependencies...'
-                bat "${env.PYTHON} -m pip install --upgrade pip"
-                bat "${env.PYTHON} -m pip install -r requirements.txt"
+            
+                bat " pip install -r requirements.txt"
             }
         }
 

@@ -55,7 +55,7 @@ pipeline {
                      <p>Build: empty for now </p>
                      <p>See report: empty for now </a></p>
                      """,
-                    to: 'elhirechghizlane@gmail.com'
+                    to: 'nabil.chababnabil@gmail.com'
                )
         }
 

@@ -51,7 +51,7 @@ pipeline {
                    subject: "Robot Framework Tests Successed",
                     body: """
                      <p>Hello,</p>
-                     <p>The Robot Framework tests have failed on Jenkins.</p>
+                     <p>The Robot Framework tests have successed on Jenkins.</p>
                      <p>Build: empty for now </p>
                      <p>See report: empty for now </a></p>
                      """,

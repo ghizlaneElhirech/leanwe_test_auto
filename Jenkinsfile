@@ -55,7 +55,16 @@ pipeline {
 
         failure {
             echo 'Build or tests failed!'
-            sendEmail(to: 'ghizlane.elhirech@uit.ac.ma', subject: 'Build or tests failed!', body: 'Build or tests failed!')
+            emailext (
+                   subject: "❌ Robot Framework Tests Failed",
+                    body: """
+                     <p>Hello,</p>
+                     <p>The Robot Framework tests have failed on Jenkins.</p>
+                     <p>Build: empty for now </p>
+                     <p>See report: empty for now </a></p>
+                     """,
+                    to: 'ghizlane.elhirech@uit.ac.ma'
+               )
         }
     }
 }

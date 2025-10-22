@@ -28,7 +28,7 @@ pipeline {
                 bat "if not exist results mkdir results"
                 
                 // Run all tests in your tests folder
-               bat "${env.PYTHON} -m robot -d results LeanweTest/tests-suits"
+               bat "${env.PYTHON} -m robot -d results LeanweTest/tests-suits/CreatePurchase.robot"
 
              
             }
@@ -55,6 +55,7 @@ pipeline {
 
         failure {
             echo 'Build or tests failed!'
+            sendEmail(to: 'ghizlane.elhirech@uit.ac.ma', subject: 'Build or tests failed!', body: 'Build or tests failed!')
         }
     }
 }

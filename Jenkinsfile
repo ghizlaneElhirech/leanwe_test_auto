@@ -63,7 +63,7 @@ pipeline {
                      <p>Build: empty for now </p>
                      <p>See report: empty for now </a></p>
                      """,
-                    to: 'ghizlane.elhirech@uit.ac.ma'
+                    to: 'elhirechghizlane@gmail.com'
                )
         }
     }

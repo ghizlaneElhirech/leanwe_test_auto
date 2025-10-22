@@ -47,6 +47,16 @@ pipeline {
 
         success {
             echo 'Build and tests completed successfully!'
+                emailext (
+                   subject: "Robot Framework Tests Successed",
+                    body: """
+                     <p>Hello,</p>
+                     <p>The Robot Framework tests have failed on Jenkins.</p>
+                     <p>Build: empty for now </p>
+                     <p>See report: empty for now </a></p>
+                     """,
+                    to: 'elhirechghizlane@gmail.com'
+               )
         }
 
         unstable {

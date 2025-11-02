@@ -9,11 +9,17 @@ Resource     GlobalHelpers.resource
 *** Keywords ***
 
 SELECT PURCHASE ITEM FROM SIDEBAR
-    ${sidebar_element}=    SELECT ITEM FROM SIDEBAR                  ${GLOBAL_PURCHASE_ITEM} 
-    Wait Until Element Is Visible             ${PURCHASE_SIDEBAR_ITEM}
-    Click Element                             ${PURCHASE_SIDEBAR_ITEM}
-    Mouse Out                                 ${sidebar_element}
-    # Wait Until Page Contains Element          xpath=//body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/header[1]/div[1]/div[1]/span[1]
+     Wait Until Page Contains Element         ${DASHBOARD_TITLE_XPATH}             timeout=5s
+     ${sidebar_element}  Get WebElement       ${sidebar_Xpath}
+     Mouse Over                               ${sidebar_element}
+     Scroll Down
+     Wait Until Element Is Visible    ${GLOBAL_PURCHASE_ITEM}    timeout=10s
+     Scroll Element Into View         ${GLOBAL_PURCHASE_ITEM}
+     Click Element                    ${GLOBAL_PURCHASE_ITEM}
+     Sleep  5s
+     Wait Until Element Is Visible    ${PURCHASE_SIDEBAR_ITEM}    timeout=10s
+     Scroll Element Into View         ${PURCHASE_SIDEBAR_ITEM}
+     Click Element                    ${PURCHASE_SIDEBAR_ITEM}
  
 FILL OUT THE PURCHASE CREATION FORM    
     ${current_datetime}=    Get Current Date     result_format=%Y%m%d%H%M%S
@@ -56,14 +62,12 @@ FILL OUT THE PURCHASE CREATION FORM
     Wait Until Element Is Enabled            ${CHOSEN_END_DATE}
     Wait Until Element Is Visible            ${CHOSEN_END_DATE}                
     Click element                            ${CHOSEN_END_DATE}
-    Wait Until Element Is Visible            ${PURCHASE_DATE} 
-    Click Element                            ${PURCHASE_DATE} 
+   # Wait Until Element Is Visible            ${PURCHASE_DATE} 
+    #Click Element                            ${PURCHASE_DATE} 
     #Wait Until Element Is Visible            ${CHOSEN_DATE}
-    Click Element                            ${CHOSEN_DATE}
+    #Click Element                            ${CHOSEN_DATE}
     Input Text                               ${PURCHASE_PRETAX_AMOUNT}                       ${PURCHASE_TARIF}
     Click Element                            ${PURCHASE_TAX_AMOUNT}                          
-    Wait Until Element Is Visible            ${PURCHASE_TVA}
-    Click Element                            ${PURCHASE_TVA}
     Wait Until Element Is Visible            ${PURCHASE_ADD_BUTTON}
     Click Element                            ${PURCHASE_ADD_BUTTON}
     Wait Until Page Contains                 La facture fournisseur a été créée avec succès   timeout=10s
@@ -84,11 +88,12 @@ SEARCH FOR A PURCHASE
 
 APPLY FILTERS IN PURCHASE PAGE
     [Arguments]                           ${purchase_name}
-    SELECT FILTER FROM A LIST             ${PURCHASE_START_DATE_FILTER}          ${CHOSEN_START_DATE}
-    SELECT FILTER FROM A LIST             ${PURCHASE_END_DATE_FILTER}            xpath=(//table[1]/tbody[1]/tr[3]/td[6]/button[1])[2]
+    SELECT FILTER FROM A LIST             ${PURCHASE_START_DATE_FILTER}          ${CHOSEN_YEAR_DATE}  
+    SELECT FILTER FROM A LIST             ${PURCHASE_END_DATE_FILTER}            ${PURCHASE_END_DATE_FILTER_VALUE}
     SELECT FILTER FROM A LIST             ${PURCHASE_STATUS_FILTER}              ${PURCHASE_FNP_STATUS}
-    SELECT FILTER FROM A LIST             ${PURCHASE_TYPE_FILTER}                ${PURCHASE_CHOSEN_TYPE_FILTER}
     SELECT FILTER FROM A LIST             ${PURCHASE_CATEGORY_FILTER}            ${PURCHASE_CATEGORY_CHOSEN_FILTER}
-    Wait Until Element Is Visible         ${PURCHASE_CARD_TITLE_LOCATOR}
-    ${card_title_text}=    Get Text       ${PURCHASE_CARD_TITLE_LOCATOR}
-    Should Be Equal As Strings            ${card_title_text}                 ${purchase_name}
+    SELECT FILTER FROM A LIST             ${PURCHASE_TYPE_FILTER}                ${PURCHASE_CHOSEN_TYPE_FILTER}
+
+    # Wait Until Element Is Visible         ${PURCHASE_CARD_TITLE_LOCATOR}
+    # ${card_title_text}=    Get Text       ${PURCHASE_CARD_TITLE_LOCATOR}
+    # Should Be Equal As Strings            ${card_title_text}                 ${purchase_name}

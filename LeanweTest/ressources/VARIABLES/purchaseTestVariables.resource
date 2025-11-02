@@ -1,7 +1,7 @@
 *** Variables ***
 
 ${GLOBAL_PURCHASE_ITEM}                   xpath=(//div[contains(text(),"Achats")])[1]
-${PURCHASE_SIDEBAR_ITEM}                  xpath=(//div[contains(text(),"Mes Achats")])[1]
+${PURCHASE_SIDEBAR_ITEM}                  xpath=(//div[contains(text(),"Achats")])[2]
 ${PURCHASE_NEW_BUTTON}                    xpath=//button[@cy-data="createNew_btn"]
 ${PURCHASE_INVOICE_NUMBER_FIELD}          xpath=//input[@cy-data="purchase_invoice_number_field"]
 ${PURCHASE_INVOICE_NUMBER_VALUE}          INV-12453352
@@ -25,19 +25,21 @@ ${PURCHASE_DATE}                          xpath=//form[1]/div[1]/div[10]/div[1]/
 ${CHOSEN_DATE}                            xpath=(//table[1]/tbody[1]/tr[2]/td[2]/button[1])[1]
 ${PURCHASE_PRETAX_AMOUNT}                 xpath=//Input[@cy-data="title_field"]
 ${PURCHASE_TARIF}                         700
-${PURCHASE_TAX_AMOUNT}                    xpath=//input[@id='input-976']
+${PURCHASE_TAX_AMOUNT}                    xpath=//input[@cy-data="item-tax-amount-field"]
 ${PURCHASE_TVA}                           xpath=//div[contains(text(),"20%")]
 ${PURCHASE_ADD_BUTTON}                    xpath=//Button[@cy-data="submitSale_btn"]
 ${PURCHASE_SEARCH_BAR}                    xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1]
-${PURCHASE_START_DATE_FILTER}             xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+${PURCHASE_START_DATE_FILTER}             xpath=/html/body/div/div[2]/div[2]/div[1]/div[3]/main/div/div[1]/div[1]/div/div[2]/div/div/div[1]/div[1]/div[1]
+${PURCHASE_START_DATE_FILTER_VALUE}       xpath=//div[contains(text(),"2024")]
 ${PURCHASE_END_DATE_FILTER}               xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+${PURCHASE_END_DATE_FILTER_VALUE}         xpath=//div[contains(text(),"Novembre")]
 ${PURCHASE_STATUS_FILTER}                 xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${PURCHASE_FNP_STATUS}                    xpath=//div[contains(text(),"FNP")]
-${PURCHASE_TYPE_FILTER}                   xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
-${PURCHASE_CHOSEN_TYPE_FILTER}            xpath=//div/div[contains(text(),"Semestriel")]
-${PURCHASE_CATEGORY_FILTER}               xpath=//main[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+${PURCHASE_TYPE_FILTER}                   xpath=//Input[@cy-data="purchase-invoice-type-select"]
+${PURCHASE_CHOSEN_TYPE_FILTER}            xpath=//div[contains(text(),"Unitaire")]
+${PURCHASE_CATEGORY_FILTER}               xpath=//div[@cy-data="purchase-invoice-category-container"]
 ${PURCHASE_CATEGORY_CHOSEN_FILTER}        xpath=//div[contains(text(),"Exemple")]
 ${PURCHASE_TITLE}                         PURCHASE_AUTO
-${PURCHASE_CARD_TITLE_LOCATOR}            xpath=//main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]/div[1]/span[1]
+${PURCHASE_CARD_TITLE_LOCATOR}            xpath=/html/body/div/div[2]/div[1]/div[1]/div[3]/main/div/div[1]/div[3]/div[1]/div/div[1]/a/div/div[1]/div/span
 ${CHOSEN_YEAR_DATE}                       xpath=//body[1]/div[1]/div[2]/div[3]/div[1]/div[6]/div[1]/div[1]
 ${CHOSEN_MONTH_FILTER}                    xpath=//body[1]/div[1]/div[2]/div[4]/div[1]/div[10]/div[1]

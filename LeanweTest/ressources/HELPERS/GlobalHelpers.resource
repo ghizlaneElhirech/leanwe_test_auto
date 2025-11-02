@@ -427,7 +427,7 @@ SELECT ITEM FROM SIDEBAR
 SELECT FILTER FROM A LIST 
     [Arguments]                           ${FILTER_FILED}         ${SELECTED_FILTER}
     Click Element                         ${FILTER_FILED} 
-    Wait Until Element Is Visible         ${SELECTED_FILTER}
+    Wait Until Element Is Visible         ${SELECTED_FILTER}     timeout=10s
     Sleep    1s
     Click Element                         ${SELECTED_FILTER}
 # APPLY FILTERS IN PURCHASE PAGE

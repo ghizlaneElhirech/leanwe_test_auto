@@ -8,8 +8,28 @@ Resource     GlobalHelpers.resource
 
 
 *** Keywords ***
+
+
 SELECT OFFER FROM SIDEBAR 
-    SELECT ITEM FROM SIDEBAR                    ${OFFER_SIDEBAR_ITEM}
+     Wait Until Page Contains Element         ${DASHBOARD_TITLE_XPATH}             timeout=5s
+     ${sidebar_element}  Get WebElement       ${sidebar_Xpath}
+     Mouse Over                               ${sidebar_element}
+     Execute JavaScript    arguments[0].scrollTop += 300;    ARGUMENTS    ${sidebar_element}
+     Sleep  0.5s
+     Execute JavaScript    arguments[0].scrollTop += 300;    ARGUMENTS    ${sidebar_element}
+     Sleep  0.5s
+     Execute JavaScript    arguments[0].scrollTop += 300;    ARGUMENTS    ${sidebar_element}
+     Wait Until Element Is Visible    ${OFFER_SIDEBAR_ITEM}    timeout=10s
+     Scroll Element Into View         ${OFFER_SIDEBAR_ITEM}
+     Click Element                    ${OFFER_SIDEBAR_ITEM}
+     Sleep  2s
+     Wait Until Element Is Visible    ${OFFER_SIDEBAR_ITEM_VALUE}    timeout=10s
+     sleep  2s
+     Scroll Element Into View         ${OFFER_SIDEBAR_ITEM_VALUE}
+     Sleep  2s
+     Click Element                    ${OFFER_SIDEBAR_ITEM_VALUE}
+
+
 CLICK THE ADD NEW OFFER BUTTON 
     Wait Until Element Is Visible             ${NEW_OFFER_BTN}
     Click Element                             ${NEW_OFFER_BTN}

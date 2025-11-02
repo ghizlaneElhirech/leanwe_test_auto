@@ -1,5 +1,8 @@
 *** Variables ***
-${OFFER_SIDEBAR_ITEM}                     xpath=//div[contains(text(),'Offres')]
+${OFFER_SIDEBAR_ITEM}                     xpath=(//div[contains(text(),'Offres')])[1]
+${SIDEBAR_CONTAINER}                      xpath=//body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/aside[1]/div[2]
+
+${OFFER_SIDEBAR_ITEM_VALUE}               xpath=(//div[contains(text(),'Offres')])[2]
 ${NEW_OFFER_BTN}                          xpath=//button/span/span[contains(text(), 'Nouvelle Offre')]
 ${OFFER_ADD_MODAL_TITLE}                  xpath=//div/span[contains(text(), 'Créer une offre')]
 # ${OFFER_TITLE_FIELD}                      xpath=//Input[@cy-data="title_field"]

@@ -28,8 +28,6 @@ FILL OUT THE PURCHASE CREATION FORM
     Click Element                            ${PURCHASE_NEW_BUTTON}
     Wait Until Element Is Visible            ${PURCHASE_TITLE_FIELD}                     
     Wait Until Keyword Succeeds     5     5         Input Text                               ${PURCHASE_TITLE_FIELD}                       ${FULL_PURCHASE_TITLE}
-    Click Element                            ${PURCHASE_INVOICE_NUMBER_FIELD}
-    Input Text                               ${PURCHASE_INVOICE_NUMBER_FIELD}    ${PURCHASE_INVOICE_NUMBER_VALUE}
     Click Element                            ${PURCHASE_PAYMENT_MODE}                  
     Wait Until Element Is Visible            ${ESPECE_PAYMENT_MODE}
     Click Element                            ${ESPECE_PAYMENT_MODE}
@@ -54,18 +52,16 @@ FILL OUT THE PURCHASE CREATION FORM
     Press Keys          none                     ENTER 
     Wait Until Element Is Visible            ${PURCHASE_START_DATE} 
     Click Element                            ${PURCHASE_START_DATE} 
-    Wait Until Element Is Visible            ${CHOSEN_START_DATE}
-    Click Element                            ${CHOSEN_START_DATE}
+    Sleep    2s
+    Wait Until Element Is Enabled            ${CHOSEN_START_DATE}
+    Wait Until Element Is Visible            ${CHOSEN_START_DATE}                
+    Click element                            ${CHOSEN_START_DATE}
     Wait Until Element Is Visible            ${PURCHASE_END_DATE} 
     Click Element                            ${PURCHASE_END_DATE} 
     Sleep    2s
     Wait Until Element Is Enabled            ${CHOSEN_END_DATE}
     Wait Until Element Is Visible            ${CHOSEN_END_DATE}                
     Click element                            ${CHOSEN_END_DATE}
-   # Wait Until Element Is Visible            ${PURCHASE_DATE} 
-    #Click Element                            ${PURCHASE_DATE} 
-    #Wait Until Element Is Visible            ${CHOSEN_DATE}
-    #Click Element                            ${CHOSEN_DATE}
     Input Text                               ${PURCHASE_PRETAX_AMOUNT}                       ${PURCHASE_TARIF}
     Click Element                            ${PURCHASE_TAX_AMOUNT}                          
     Wait Until Element Is Visible            ${PURCHASE_ADD_BUTTON}

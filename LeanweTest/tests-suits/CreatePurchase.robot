@@ -21,4 +21,4 @@ SEARCH FOR THE CREATED PURCHASE
  VERIFY THE FILTERS IN PURCHASE PAGE
      ${purchase_name}=    Get Variable Value    ${GLOBAL_PURCHASE_NAME}
      APPLY FILTERS IN PURCHASE PAGE             ${purchase_name}
-     Sleep    2S
+   Sleep    2S

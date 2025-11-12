@@ -58,12 +58,18 @@ FILL OUT THE PURCHASE CREATION FORM
     Click element                            ${CHOSEN_START_DATE}
     Wait Until Element Is Visible            ${PURCHASE_END_DATE} 
     Click Element                            ${PURCHASE_END_DATE} 
-    Sleep    2s
+    Sleep    3s
     Wait Until Element Is Enabled            ${CHOSEN_END_DATE}
     Wait Until Element Is Visible            ${CHOSEN_END_DATE}                
     Click element                            ${CHOSEN_END_DATE}
+    Wait Until Element Is Visible            ${PURCHASE_DUE_DATE} 
+    Click Element                            ${PURCHASE_DUE_DATE} 
+    Sleep    3s
+    Wait Until Element Is Enabled            ${CHOSEN_DUE_DATE}
+    Wait Until Element Is Visible            ${CHOSEN_DUE_DATE}                
+    Click element                            ${CHOSEN_DUE_DATE} 
     Input Text                               ${PURCHASE_PRETAX_AMOUNT}                       ${PURCHASE_TARIF}
-    Click Element                            ${PURCHASE_TAX_AMOUNT}                          
+    Click Element                            ${PURCHASE_TAX_AMOUNT}                         
     Wait Until Element Is Visible            ${PURCHASE_ADD_BUTTON}
     Click Element                            ${PURCHASE_ADD_BUTTON}
     Wait Until Page Contains                 La facture fournisseur a été créée avec succès   timeout=10s

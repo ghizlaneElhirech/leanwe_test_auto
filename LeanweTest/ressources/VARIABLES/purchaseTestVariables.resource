@@ -22,6 +22,8 @@ ${CHOSEN_START_DATE}                      xpath=(//table[1]/tbody[1]/tr[2]/td[2]
 ${PURCHASE_END_DATE}                      xpath=//form[1]/div[1]/div[8]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
 ${CHOSEN_END_DATE}                        xpath=//body[1]/div[1]/div[2]/div[6]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[6]/button[1]/div[1]
 ${PURCHASE_DATE}                          xpath=//form[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+${PURCHASE_DUE_DATE}                      xpath=//form[1]/div[1]/div[11]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
+${CHOSEN_DUE_DATE}                        xpath=(//table[1]/tbody[1]/tr[2]/td[2]/button[1])[3]
 ${CHOSEN_DATE}                            xpath=/html/body/div/div[2]/div[6]/div/div/div[1]/div/div[2]/table/tbody/tr[6]/td[1]/button
 ${PURCHASE_PRETAX_AMOUNT}                 xpath=//Input[@cy-data="title_field"]
 ${PURCHASE_TARIF}                         700
